@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:Faces xmlns:nscomp="com.glearning.melee.components.chat.*" xmlns:mx="http://www.adobe.com/2006/mxml"
+	 creationComplete="initFacesWindow()" x="590" y="325" width="182" height="102" backgroundColor="#000000" backgroundAlpha="0.3">
+	<mx:UIComponent id="faceList" width="179" height="101">
+	</mx:UIComponent>
+</nscomp:Faces>

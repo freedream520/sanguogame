@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:CustomerTooltipImpl xmlns:nscomp="com.glearning.melee.components.prompts.*" xmlns:mx="http://www.adobe.com/2006/mxml" implements="mx.core.IToolTip" width="220"
+	  backgroundColor="#000000" backgroundAlpha="0.7" paddingTop="5" borderThickness="1" borderColor="#F5F6CE" borderStyle="solid" horizontalScrollPolicy="off" verticalScrollPolicy="off"
+	   >
+
+</nscomp:CustomerTooltipImpl>

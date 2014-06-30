@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:PlacePanelImpl xmlns:nscomp="com.glearning.melee.components.placepanel.*" xmlns:ns1 = "com.glearning.melee.components.*" xmlns:filters="flash.filters.*"  xmlns:mx="http://www.adobe.com/2006/mxml" width="526" height="341"
+	 backgroundImage="images/area.png">
+	<mx:Script>
+		<![CDATA[
+			import com.glearning.melee.model.PlaceInfo;
+			import com.glearning.melee.model.MySelf;
+		]]>
+	</mx:Script>
+	<mx:Label x="29" y="12" width="130" textAlign="center" id="txtPlaceName" text="{PlaceInfo.instance.regionName}" fontWeight="bold" letterSpacing="8">
+	<mx:filters>
+	     <filters:GlowFilter color="0x5C4734"  strength="30"/>
+	</mx:filters>
+	</mx:Label>
+	<!--<mx:Image source = "images/luoyang.png"  x="49" y="10"/>-->
+	<mx:LinkButton x="426" y="10" width="73" styleName="worldPicture" click="openWorldMap()"/>
+	<ns1:CustomerButtonComponent x="345" y="10" width="73" styleName="backCountry" id='toCity' data="{MySelf.instance.town}"/>
+	<mx:TextArea x="216" y="56" text="{PlaceInfo.instance.description}" id="txtPlaceDescription"  width="301" backgroundAlpha="0.0" borderThickness="0" editable="false" height="50"/>
+	<mx:LinkButton x="151" y="10" label="{PlaceInfo.instance.faction}" id="txtFaction" alpha="0" width="53"/>
+	<mx:Canvas x="215" y="194" width="301" height="141" id="monsterList" backgroundAlpha="0.0">
+	</mx:Canvas>
+	<mx:Canvas x="215" y="109" width="301" height="80" id="sincelocation" backgroundAlpha="0.0">
+	</mx:Canvas>
+	<mx:Canvas x="215" y="37" width="301" height="18" id="placeSorted" backgroundAlpha="0.0">
+	</mx:Canvas>
+	<nscomp:PlaceMapComponent x="13" y="37" id="placeMap">
+	</nscomp:PlaceMapComponent>
+	
+</nscomp:PlacePanelImpl>

@@ -1,0 +1,141 @@
+<project name="Melee" default="dist" basedir=".">
+    <description>
+        ant build file for melee
+    </description>
+  <!-- set global properties for this build -->
+  <property name="client" location="client"/>
+  <property name="server" location="server"/>
+  <property name="build" location="build"/>
+  <property name="dist"  location="dist"/>
+  <property name="release"  location="release"/>
+  
+  <property environment="env"/>
+  <property name="BUILD_TAG" value="${env.BUILD_ID}"/>
+
+
+	<property name="FLEX_HOME" value="D:/Program Files/Adobe/Flex Builder 3/sdks/3.2.0"/>
+	
+	<taskdef resource="flexTasks.tasks" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar" />
+
+	<taskdef resource="net/sf/antcontrib/antcontrib.properties">
+	  <classpath>
+	    <pathelement location="ant-contrib-1.0b3.jar"/>
+	  </classpath>
+	</taskdef>
+
+	<var name="VERSION" value="${BUILD_TAG}" />
+	 
+	<target name="init_version" if="release_version">
+		<var name="VERSION" value="${release_version}" />
+		<echo message="${VERSION}" />
+	</target>
+		
+	 
+  <target name="init" depends="init_version">
+    <!-- Create the time stamp -->
+    <tstamp/>
+    <!-- Create the build directory structure used by compile -->
+    <mkdir dir="${build}"/>
+    <mkdir dir="${build}/client"/>
+    <mkdir dir="${build}/server"/>
+
+  	<echo message="${VERSION}" file="${server}/version.txt"/>
+    
+  </target>
+
+  <target name="build_client" depends="init" description="compile the client source " >
+  	
+    <echo>Building swf file...</echo>
+    <mxmlc file="${client}/src/melee.mxml" output="${build}/client/melee.swf" keep-generated-actionscript="false">
+        <load-config filename="${FLEX_HOME}/frameworks/flex-config.xml"/>
+        <source-path path-element="${FLEX_HOME}/frameworks"/>
+        <source-path path-element="${client}/src"/>
+        <compiler.library-path dir="${client}" append="true">  
+                <include name="libs" />  
+        </compiler.library-path>  
+    </mxmlc>
+
+    <echo>Building Custom Wrapper...</echo>
+    <copy file="${client}/html-template/index.ant.template.html" tofile="${build}/client/index.html" overwrite="true" encoding="utf-8">
+        <filterchain>
+            <replacetokens>
+                <token key="version_major" value="9"/>
+                <token key="version_minor" value="0"/>
+                <token key="version_revision" value="0"/>
+                <token key="application" value="melee"/>
+                <token key="width" value="980"/>
+                <token key="height" value="540"/>
+                <token key="bgcolor" value="#FFFFFF"/>
+                <token key="swf" value="melee"/>
+                <token key="title" value="三国士"/>
+            </replacetokens>
+        </filterchain>
+    </copy>
+    <copy file="${client}/html-template/AC_OETags.js" tofile="${build}/client/AC_OETags.js" overwrite="true"/>
+    <copy file="${client}/html-template/playerProductInstall.swf" tofile="${build}/client/playerProductInstall.swf" overwrite="true"/>
+    <echo>Built Custom Wrapper</echo>
+
+  </target>
+
+  <target name="build_server" depends="init" description="compile the server source " >
+	  <exec executable="python" dir="${server}" failonerror="true">
+	    <arg value="setup_egg.py"/>
+	    <arg value="bdist_egg"/>
+	    <arg value="--exclude-source-files"/>
+	  </exec>
+	  <copy todir="${build}/server" overwrite="true">
+	    <fileset dir="${server}/dist" includes="*.egg"/>
+	  </copy>
+  </target>
+
+  <target name="build" depends="build_client, build_server" description="compile the source " >
+  </target>
+
+  <target name="dist" depends="build" description="generate the distribution" >
+    <!-- Create the distribution directory -->
+    <mkdir dir="${dist}"/>
+    <mkdir dir="${release}"/>
+    
+    <copy todir="${dist}">
+    	<fileset dir="${build}/server" />
+  	</copy>
+    <copy file="${server}/src/melee.ini" todir="${dist}" />
+    <copy file="${server}/src/startServer.py" todir="${dist}" />
+    <copy file="${basedir}/readme.txt" todir="${dist}" />
+    <copy file="${server}/version.txt" todir="${dist}" />
+    
+    <mkdir dir="${dist}/data"/>
+    <copy todir="${dist}/data">
+    	<fileset dir="${server}/src/data" excludes="**/.svn/*" />
+  	</copy>
+  	
+    <mkdir dir="${dist}/sql"/>
+    <copy file="${basedir}/data/melee.sql" todir="${dist}/sql" />
+    
+    <mkdir dir="${dist}/web"/>
+    <copy todir="${dist}/web">
+    	<fileset dir="${build}/client" />
+  	</copy>
+    <copy todir="${dist}/web/images">
+    	<fileset dir="${basedir}/images" excludes="**/.svn/*" />
+  	</copy>
+  	
+	  <zip destfile="${release}/${env.JOB_NAME}-${VERSION}.zip" basedir="${dist}">
+	  </zip>
+  </target>
+
+  <target name="clean"
+        description="clean up" >
+    <!-- Delete the ${build} and ${dist} directory trees -->
+	  <exec executable="python" dir="${server}" failonerror="true">
+	    <arg value="setup_egg.py"/>
+	    <arg value="clean"/>
+	  </exec>
+	  <delete dir="${server}/src/melee.egg-info"/>
+    <delete dir="${server}/build"/>
+    <delete dir="${server}/dist"/>
+    <delete dir="${build}"/>
+    <delete dir="${dist}"/>
+    <delete dir="${release}"/>
+  </target>
+</project>

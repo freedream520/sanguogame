@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:SelectPlayerImpl xmlns:nscomp="com.glearning.melee.components.friendsSystem.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="287" height="138" backgroundImage="images/NormalTip/NprmalTip.png">
+	<mx:Label x="113" y="2" text="查询玩家" fontWeight="bold"/>
+	<mx:Label x="51" y="28" text="请填写您要查看的人物角色名称："/>
+	<mx:TextInput x="81.5" y="56" width="124" id="playerName"/>
+	<mx:LinkButton x="42" y="94" click="ok()" styleName="ok"/>
+	<mx:LinkButton x="163" y="94" styleName="cancel" click="close()"/>
+</nscomp:SelectPlayerImpl>

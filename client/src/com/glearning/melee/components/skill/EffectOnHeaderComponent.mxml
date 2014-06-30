@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:EffectOnHeaderImpl toolTip=" " toolTipCreate="createCustomToolTip(event)"  xmlns:nscomp="com.glearning.melee.components.skill.*" xmlns:mx="http://www.adobe.com/2006/mxml"
+	                     width="32" height="32">
+	
+</nscomp:EffectOnHeaderImpl>

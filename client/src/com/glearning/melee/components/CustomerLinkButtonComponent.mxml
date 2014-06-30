@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:CustomerLinkButtonImpl toolTip=" " toolTipCreate="createCustomToolTip(event)" xmlns:nscomp="com.glearning.melee.components.*" xmlns:mx="http://www.adobe.com/2006/mxml">
+	
+</nscomp:CustomerLinkButtonImpl>

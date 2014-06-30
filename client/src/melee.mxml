@@ -1,0 +1,1291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" width="980" height="540" applicationComplete="initNetwork()" xmlns:nscomp="com.glearning.melee.components.*" xmlns:ns1="com.glearning.melee.components.packages.*" xmlns:ns2="com.glearning.melee.components.quest.*" xmlns:ns3="com.glearning.melee.components.plaryer.*" 
+				xmlns:ns4="com.glearning.melee.components.citypanel.*" xmlns:ns5="com.glearning.melee.components.placepanel.*" xmlns:ns6="com.glearning.melee.components.player.*" creationComplete="checkCloseEvent()" horizontalScrollPolicy="off" verticalScrollPolicy="off"
+	            backgroundAlpha="0" backgroundColor="0xffffff"  xmlns:ns7="com.glearning.melee.components.skill.*" xmlns:ns8="com.glearning.melee.components.task.*" xmlns:ns9="com.glearning.melee.components.resthouse.*" xmlns:ns10="com.glearning.melee.components.ProcedureHall.*" xmlns:ns11="com.glearning.melee.components.chat.*"
+	            preloader="com.glearning.melee.components.loading.LoadingProgressBar" xmlns:ns12="com.glearning.melee.components.shop.*" xmlns:ns13="com.glearning.melee.components.login.*" xmlns:ns14="com.glearning.melee.components.warehouseSystem.*" xmlns:ns15="com.glearning.melee.components.forgingSystem.*"
+	             currentState="login" frameRate="15">
+	<mx:states>
+	    <mx:State>
+	    	
+	    </mx:State>
+		<mx:State name="city" enterState="showTip(event)">
+			<mx:AddChild relativeTo="{canvas1}" position="lastChild">
+				<ns4:CityPanelComponent x="220" y="23" id="cityMap">
+				</ns4:CityPanelComponent>
+			</mx:AddChild>
+		
+			
+		</mx:State>
+		<mx:State name="place" enterState="showPlaceTip(event)">
+			<mx:AddChild relativeTo="{canvas1}" position="lastChild">
+				<ns5:PlacePanelComponent x="222" y="28" id="placePanel">
+				</ns5:PlacePanelComponent>
+			</mx:AddChild>
+			<mx:AddChild relativeTo="{canvas1}" position="lastChild">
+				<ns5:PlacePlayerListComponent x="756" y="28" id="placePlayerList">
+				</ns5:PlacePlayerListComponent>
+			</mx:AddChild>
+		</mx:State>
+		<mx:State name="character" enterState="showCharacterTip(event)">
+		<mx:AddChild relativeTo="{canvas1}" position="lastChild">
+				<mx:Canvas x="219" y="25" width="743" height="491" id="playInfo" backgroundImage="images/sanGuo/roleUI.png">
+						<mx:LinkButton x="35" y="4" label="人物信息" styleName="roleClickButton"/>
+						<nscomp:CustomerButtonComponent x="137" y="4" label="技能信息" styleName="roleNoClickButton" click="LoadSkill(event)" id="skillButton" data="人物技能"/>
+						<mx:LinkButton x="705" y="6" width="20" height="20" styleName="CloseBtn" click="closeCharacter()"/>
+						
+				</mx:Canvas>
+			</mx:AddChild>
+			<mx:AddChild relativeTo="{canvas1}" position="lastChild">
+				<ns1:CharacterPackageComponent x="452" y="381" id="characterPackage" name="characterPackage">
+				</ns1:CharacterPackageComponent>
+			</mx:AddChild>
+			<mx:AddChild relativeTo="{canvas1}" position="lastChild">
+				<ns1:EquipmentSlotPackageComponent x="691" y="65" id="slot">
+				</ns1:EquipmentSlotPackageComponent>
+			</mx:AddChild>
+			<mx:AddChild relativeTo="{canvas1}" position="lastChild">
+				<ns6:PortionPointComponent x="451" y="65" id="portionPoint">
+				</ns6:PortionPointComponent>
+			</mx:AddChild>
+			<mx:AddChild relativeTo="{canvas1}" position="lastChild">
+				<ns6:PlayerAttackInfoComponent x="451" y="183">
+				</ns6:PlayerAttackInfoComponent>
+			</mx:AddChild>
+			<mx:AddChild relativeTo="{canvas1}" position="lastChild">
+				<ns6:PlayerDetailsComponent x="242" y="65" id="playerDetails">
+				</ns6:PlayerDetailsComponent>
+			</mx:AddChild>
+			<mx:AddChild relativeTo="{canvas1}" position="lastChild">
+				<ns1:CharacterTempPackageComponent x="629" y="92" id="tempPackage" visible="false">
+				</ns1:CharacterTempPackageComponent>
+			</mx:AddChild>
+			
+		</mx:State>
+		<mx:State name="skill" enterState="showSkillTip(event)">
+			<mx:AddChild relativeTo="{canvas1}" position="lastChild">
+				<ns7:SkillPanelComponent x="219" y="26" id="skillPanel">
+				</ns7:SkillPanelComponent>
+			</mx:AddChild>
+		</mx:State>
+		<mx:State name="goldtask">
+			<mx:AddChild relativeTo="{canvas1}" position="lastChild">
+				<ns8:GoldTaskComponent x="216" y="25" id="goldTask">
+				</ns8:GoldTaskComponent>
+			</mx:AddChild>
+		</mx:State>
+		<mx:State name="resthouse">
+			<mx:AddChild relativeTo="{canvas1}" position="lastChild">
+				<ns9:RestHousePanleComponent x="217" y="27" id="restHousePanle">
+				</ns9:RestHousePanleComponent>
+			</mx:AddChild>
+		</mx:State>
+		<mx:State name="procedurehall">
+			<mx:AddChild relativeTo="{canvas1}" position="lastChild">
+				<ns10:ProcedureHallPanleComponent x="217" y="28" id="procedureHall">
+				</ns10:ProcedureHallPanleComponent>
+			</mx:AddChild>
+		</mx:State>
+		<mx:State name="shop">
+			<mx:RemoveChild target="{chatWindow}"/>
+			<mx:RemoveChild target="{miniTask}"/>
+			<mx:AddChild relativeTo="{canvas1}" position="lastChild">
+				<ns12:ShopPageComponent x="218" y="28" id="shopPage">
+				</ns12:ShopPageComponent>
+			</mx:AddChild>
+		</mx:State>
+		<mx:State name="login">
+			<mx:AddChild relativeTo="{canvas1}" position="lastChild">
+				<mx:Canvas x="0" y="0" width="100%" height="100%" backgroundColor="0x000000">
+				    <mx:Image source="images/sanGuo/login/loginBg.jpg" width="100%" height="100%"/>				    
+				</mx:Canvas>
+			</mx:AddChild>
+		</mx:State>
+		<mx:State name="chatEffect"/>
+		<mx:State name="warehouse">
+			<mx:AddChild relativeTo="{canvas1}" position="lastChild">
+				<ns14:WarehouseComponent x="218" y="28" id="warehouse">
+				</ns14:WarehouseComponent>
+			</mx:AddChild>
+		</mx:State>
+		<mx:State name="forging">
+			<mx:AddChild relativeTo="{canvas1}" position="lastChild">
+				<ns15:ForgingComponent x="218" y="28" id="forging">
+				</ns15:ForgingComponent>
+			</mx:AddChild>
+		</mx:State>
+	</mx:states>
+	
+	<mx:Style source="/melee.css"/>
+
+    <mx:Script>
+        <![CDATA[
+        	import mx.rpc.http.mxml.HTTPService;
+ 
+        	import com.glearning.melee.components.GameLoadingComponent;
+        	import com.glearning.melee.components.login.ChooseGenderComponent;
+        	import mx.controls.LinkButton;
+        	import com.glearning.melee.components.newplayerquest.NpcGuideComponent;
+        	import com.glearning.melee.components.player.PersonalTopComponent;
+
+        	import com.glearning.melee.components.player.ChooseProfessionComponent;
+        	import com.glearning.melee.components.player.ChooseCountryComponent;
+
+        	import com.glearning.melee.components.team.TeamResponseComponent;
+        	import com.glearning.melee.components.prompts.NormalTipComponent;
+        	import com.glearning.melee.components.mailSystem.MailSystemComponent;
+        	import com.glearning.melee.components.login.LoginComponent;
+        	import com.glearning.melee.components.task.TaskComponent;
+        	import com.glearning.melee.components.utils.PopUpEffect;
+        	import com.glearning.melee.model.PlaceInfo;
+			import mx.collections.ArrayCollection;
+			import mx.collections.ItemResponder;
+			import mx.rpc.events.*;
+			import mx.utils.ArrayUtil;
+			import com.glearning.melee.model.MySelf;
+			import com.glearning.melee.net.RemoteService;
+			import mx.rpc.AsyncToken;
+			import com.glearning.melee.collections.collection;
+	        import mx.events.FlexEvent;
+	        import mx.messaging.events.MessageEvent;
+	        import com.glearning.melee.components.packages.EquipmentSlotPackageComponent;
+	        import com.glearning.melee.model.SkillInfo;
+	        import com.glearning.melee.model.EffectInfo;
+	        import mx.managers.PopUpManager;
+	        import mx.utils.URLUtil;
+	        import flash.errors.IOError;
+            import com.glearning.melee.components.utils.AutoTip;
+            import flash.external.ExternalInterface;
+           
+        [Bindable]
+        private var sum:int = 0;
+        [Bindable]
+        private var resp:String = "";
+        public var fxArray:Array = new Array();
+        public var traversalArray:Array = new Array();
+        public var figureArray:Array = new Array();
+        private const FX_URL:String = "images/data/fx.csv";
+		private const BALLOON_URL:String = "images/data/balloon.csv";
+		private const FIGURE_URL:String = "images/data/figure.csv";
+		private var urlFxReq:URLRequest;  
+        private var urlFxLdr:URLLoader;  
+   		private var urlBalloonReq:URLRequest;  
+        private var urlBalloonLdr:URLLoader;
+        private var urlFigureReq:URLRequest; 
+        private var urlFigureLdr:URLLoader;          
+        public var playerTask:TaskComponent;
+     
+        public var isNeed:Boolean = false;
+        public var timer:Timer = new Timer(10000);
+      	public var interview:int = 1;
+      	public var isFirst:Boolean = false;
+      	public var isFirstEnterPlace:Boolean = false;
+      	public var initialProcedure:int = 1;
+      	public var initialGold:int = 1;
+      	public var initialShop:int = 1;
+      	
+		public var chooseGender:ChooseGenderComponent;
+		public var loginWindow:LoginComponent;
+		public var username:String = new String();
+		public var password:String = new String();
+      	public var isLeave:Boolean;
+      	public var gameLoading:GameLoadingComponent = new GameLoadingComponent();
+      	public var httpService:HTTPService;
+		private var config:XML;    
+		[Bindable]
+         private var fullURL:String;
+        [Bindable]
+         private var protocol:String;
+        [Bindable]
+         private var port:int;
+        [Bindable]
+         private var serverName:String;
+        [Bindable]
+         private var isSecure:Boolean;
+    
+		 private static var FUNCTION_USEREXIT:String =    
+		    "document.insertScript = function () " +   
+		    "{ " +   
+		        "window.onbeforeunload = function() " +   
+		        "{ " +   
+		            "var flexObj = confirm('你确定要离开三国士吗？');" +
+		            "if(flexObj) " +   
+		            "{ " +   
+		                "melee.checkExit();window.opener = null;window.close(); " +   
+		            "}else" + 
+		            "{" + 
+		                "return 'false';" + 
+		            "}" +   
+		        "} " +   
+		    "} ";  
+
+
+      	public function checkCloseEvent():void
+      	{
+      		ExternalInterface.call(FUNCTION_USEREXIT);   
+			ExternalInterface.addCallback("checkExit",checkExit);   
+			
+
+      	}
+      	
+      	//关闭页面的处理
+      	public function checkExit():void { 
+            if(collection.playerId == 0)
+               return;
+            else
+               RemoteService.instance.logoffServer(collection.playerId).addHandlers(onLogoffServer); 
+		}  
+		
+		public function onLogoffServer(event:ResultEvent,token:AsyncToken):void
+		{
+			isLeave = event.result.result;
+		}
+      	
+        public function creationComplete():void
+        {
+        	RemoteService.bol=false;
+        	RemoteService.instance.subscribe(collection.playerId.toString(),requestInvite);
+        }
+        
+       
+        
+        public function requestInvite(msg:MessageEvent):void
+        {
+        	var remoteTrans:NormalTipComponent = new NormalTipComponent();
+        	if((msg.message.body.toString()).lastIndexOf('向您发起组队邀请') != -1)
+        	{
+        		var nickName:String = (msg.message.body.toString()).substring(0,(msg.message.body.toString()).indexOf('向'));        		
+        		PopUpManager.addPopUp(remoteTrans,this.canvas1,true);
+        		PopUpManager.centerPopUp(remoteTrans);
+        		remoteTrans.tipText.text = msg.message.body.toString();
+        		remoteTrans.accept.addEventListener(MouseEvent.CLICK,function():void{PopUpManager.removePopUp(remoteTrans);RemoteService.instance.responseJoinTeamRequest(collection.playerId,nickName).addHandlers(onResponseJoin)});
+        	}else if((msg.message.body.toString()).lastIndexOf('已经加入了您的队伍')!= -1)
+        	{
+        		MySelf.instance.isTeamMember = true;
+        		MySelf.instance.isLeader = true;
+        		PopUpManager.addPopUp(remoteTrans,this.canvas1,true);
+        		PopUpManager.centerPopUp(remoteTrans);
+        		remoteTrans.tipText.text = msg.message.body.toString();
+        		remoteTrans.accept.addEventListener(MouseEvent.CLICK,function():void{PopUpManager.removePopUp(remoteTrans);});
+        		RemoteService.instance.noticeTeamMemberToRefreshTeamList(collection.playerId).addHandlers(onNoticeTeamMember);
+        	}else if(msg.message.body == 'has new team member')
+        	{
+        		RemoteService.instance.noticeTeamMemberToRefreshTeamList(collection.playerId).addHandlers(onNoticeTeamMember);
+        	}else if((msg.message.body.toString()).lastIndexOf('取消了您的组队邀请')!= -1)
+        	{        		
+        		PopUpManager.addPopUp(remoteTrans,this.canvas1,true);
+        		PopUpManager.centerPopUp(remoteTrans);
+        		remoteTrans.tipText.text = msg.message.body.toString();
+        		remoteTrans.accept.addEventListener(MouseEvent.CLICK,function():void{PopUpManager.removePopUp(remoteTrans);});
+        		remoteTrans.cancel.visible = false;
+        	}else if((msg.message.body.toString()).lastIndexOf('已经离开队伍')!= -1)
+        	{
+        		
+        		PopUpManager.addPopUp(remoteTrans,this.canvas1,true);
+        		PopUpManager.centerPopUp(remoteTrans);
+        		remoteTrans.tipText.text = msg.message.body.toString();
+        		remoteTrans.accept.addEventListener(MouseEvent.CLICK,function():void{PopUpManager.removePopUp(remoteTrans);});
+        		RemoteService.instance.noticeTeamMemberToRefreshTeamList(collection.playerId).addHandlers(onNoticeTeamMember);
+        	}else if((msg.message.body.toString()).lastIndexOf('已经解散队伍')!= -1)
+        	{
+        		MySelf.instance.isLeader = false;
+        		MySelf.instance.isTeamMember = false;
+        		PopUpManager.addPopUp(remoteTrans,this.canvas1,true);
+        		PopUpManager.centerPopUp(remoteTrans);
+        		remoteTrans.tipText.text = msg.message.body.toString();
+        		remoteTrans.accept.addEventListener(MouseEvent.CLICK,function():void{PopUpManager.removePopUp(remoteTrans);});
+        		RemoteService.instance.noticeTeamMemberToRefreshTeamList(collection.playerId).addHandlers(onNoticeTeamMember);
+        	}else if((msg.message.body.toString()).lastIndexOf('已经成为队长')!= -1)
+        	{
+        	    
+        		PopUpManager.addPopUp(remoteTrans,this.canvas1,true);
+        		PopUpManager.centerPopUp(remoteTrans);
+        		remoteTrans.tipText.text = msg.message.body.toString();
+        		remoteTrans.accept.addEventListener(MouseEvent.CLICK,function():void{PopUpManager.removePopUp(remoteTrans);});
+        		RemoteService.instance.noticeTeamMemberToRefreshTeamList(collection.playerId).addHandlers(onNoticeTeamMember);
+        	}else if((msg.message.body.toString()).lastIndexOf('您已经成功剔除')!= -1)
+        	{
+        		
+        		PopUpManager.addPopUp(remoteTrans,this.canvas1,true);
+        		PopUpManager.centerPopUp(remoteTrans);
+        		remoteTrans.tipText.text = msg.message.body.toString();
+        		remoteTrans.accept.addEventListener(MouseEvent.CLICK,function():void{PopUpManager.removePopUp(remoteTrans);});
+        		RemoteService.instance.noticeTeamMemberToRefreshTeamList(collection.playerId).addHandlers(onNoticeTeamMember);
+        	}
+        	else if((msg.message.body.toString()).lastIndexOf('您已经被剔除出队伍了')!= -1)
+        	{
+        		MySelf.instance.isLeader = false;
+        		MySelf.instance.isTeamMember = false;
+        		PopUpManager.addPopUp(remoteTrans,this.canvas1,true);
+        		PopUpManager.centerPopUp(remoteTrans);
+        		remoteTrans.tipText.text = msg.message.body.toString();
+        		remoteTrans.accept.addEventListener(MouseEvent.CLICK,function():void{PopUpManager.removePopUp(remoteTrans);});
+        		RemoteService.instance.noticeTeamMemberToRefreshTeamList(collection.playerId).addHandlers(onNoticeTeamMember);
+        	}
+        	else if((msg.message.body.toString()).lastIndexOf('已经被剔除出队伍了')!= -1)
+        	{
+        		PopUpManager.addPopUp(remoteTrans,this.canvas1,true);
+        		PopUpManager.centerPopUp(remoteTrans);
+        		remoteTrans.tipText.text = msg.message.body.toString();
+        		remoteTrans.accept.addEventListener(MouseEvent.CLICK,function():void{PopUpManager.removePopUp(remoteTrans);});
+        		RemoteService.instance.noticeTeamMemberToRefreshTeamList(collection.playerId).addHandlers(onNoticeTeamMember);
+        	}
+        	else if((msg.message.body.toString()).lastIndexOf('enter place')!= -1)
+        	{
+        		
+        		var pid:int = (int)(msg.message.body.toString().substring(msg.message.body.toString().lastIndexOf(':')+1)); 
+        		if(MySelf.instance.location != pid)       		
+        		RemoteService.instance.enterPlace(collection.playerId,pid,true).addHandlers(collection.setEnterPlace);
+        	}
+        	else if((msg.message.body.toString()).lastIndexOf('resort')!= -1)
+        	{
+        		RemoteService.instance.noticeTeamMemberToRefreshTeamList(collection.playerId).addHandlers(onNoticeTeamMember);
+        	}
+        	else if((msg.message.body.toString()).lastIndexOf('team battle')!= -1)
+        	{
+        		RemoteService.instance.getProcessingBattleData(collection.playerId).addHandlers(collection.onBattle);
+        	}
+        }
+        
+        public function onNoticeTeamMember(event:ResultEvent,token:AsyncToken):void
+        {
+        	this.placePlayerList.showTeamInfo2(event.result['data'].members);
+        }
+        
+        public function onResponseJoin(event:ResultEvent,token:AsyncToken):void
+        {
+        	var teamResponse:TeamResponseComponent = new TeamResponseComponent();        	
+        	PopUpManager.addPopUp(teamResponse,this.canvas1,true);
+        	PopUpManager.centerPopUp(teamResponse);
+        	teamResponse.initArray( event.result['data'].members as Array);
+        	teamResponse.accept.addEventListener(MouseEvent.CLICK,function():void{MySelf.instance.isTeamMember = true;MySelf.instance.isLeader =false;PopUpManager.removePopUp(teamResponse);RemoteService.instance.confirmJoin(collection.playerId,teamResponse.leaderId).addHandlers(onConfirmJoin);});
+        	teamResponse.cancel.addEventListener(MouseEvent.CLICK,function():void{PopUpManager.removePopUp(teamResponse);RemoteService.instance.cancelJoinTeamRequest(collection.playerId,teamResponse.leaderId).addHandlers(onCancelJoin);});
+        }
+        
+        public function onConfirmJoin(event:ResultEvent,token:AsyncToken):void
+        {
+            RemoteService.instance.noticeTeamMemberToRefreshTeamList(collection.playerId).addHandlers(onNoticeTeamMember);
+        }
+        
+        public function onCancelJoin(event:ResultEvent,token:AsyncToken):void
+        {
+        	
+        }
+       
+         private function initNetwork():void {    
+        	var url:String = Application.application.url;
+
+            fullURL = URLUtil.getFullURL(url, url);
+            port = URLUtil.getPort(url);
+            protocol = URLUtil.getProtocol(url);
+            serverName = URLUtil.getServerName(url);
+            isSecure = URLUtil.isHttpsURL(url);        
+
+        	RemoteService.bol = false;		
+        	RemoteService.instance.connect( "http://"+serverName+":"+port+"/services", "MeleeService" );
+        	RemoteService.bol = false;
+        	RemoteService.instance.login( "correct", "correct" );
+        	loginWindow = new LoginComponent();
+        	loginWindow.obj = this;    
+        	showLogin();    		    	
+  			initLoginWindow();           
+        }
+        
+       
+        
+        public function showLogin():void
+		{
+			PopUpEffect.Show(loginWindow,this,false);
+		}
+		
+		public function onLogin(event:ResultEvent,token:AsyncToken):void{
+			if(event.result['result']==true){
+				PopUpEffect.Hide(loginWindow);
+				collection.playerId = event.result['data'].id;
+				RemoteService.instance.getPlayerInfo(collection.playerId).addHandlers( Application.application.loadPlayerResult );
+			}else if(event.result.result == 'new')
+			{
+			   username = loginWindow.userName.text;
+			   password = loginWindow.password.text;
+			   chooseGender = new ChooseGenderComponent();			   
+			   PopUpEffect.Show(chooseGender,this,true);
+			   chooseGender.enterGame.addEventListener(MouseEvent.CLICK,createNewPlayer);
+			}			
+			else{               
+				var tip:NormalTipComponent = new NormalTipComponent();
+				PopUpEffect.Show(tip,this,true);
+		        tip.hideButton();
+		        tip.tipText.text = event.result['reason'];
+		        tip.accept.addEventListener(MouseEvent.CLICK,function():void{PopUpEffect.Hide(tip);});
+   			} 
+		}
+		
+		public function createNewPlayer(event:MouseEvent):void
+		{
+			var tip:NormalTipComponent = new NormalTipComponent();			
+			if(chooseGender.nickName.text == '' || chooseGender.nickName.text == null)
+			{
+				PopUpEffect.Show(tip,this,true);
+		    	tip.hideButton();
+		        tip.tipText.text = '请输入您的昵名！';
+		        tip.accept.addEventListener(MouseEvent.CLICK,function():void{PopUpEffect.Hide(tip);});
+			}
+//			else if(chooseGender.nickName.text.indexOf('\'')!=0 ||
+//			        chooseGender.nickName.text.indexOf('\"')!=0 )
+//			{
+//				PopUpEffect.Show(tip,this,true);
+//		    	tip.hideButton();
+//			    tip.tipText.text ='不能包含非法字符';
+//		        tip.accept.addEventListener(MouseEvent.CLICK,function():void{PopUpEffect.Hide(tip);});
+//			}
+			else if(chooseGender.nickName.length > 10)
+			{
+				PopUpEffect.Show(tip,this,true);
+		    	tip.hideButton();
+			    tip.tipText.text = '��ɫ����角色名不能超过10个字符';
+		        tip.accept.addEventListener(MouseEvent.CLICK,function():void{PopUpEffect.Hide(tip);});
+			}
+			else
+			{
+				RemoteService.bol = false;
+				RemoteService.instance.searchSameNickName(chooseGender.nickName.text).addHandlers(onSearchSameNickName);
+			}
+			
+			
+		}
+		
+		public function onSearchSameNickName(event:ResultEvent,token:AsyncToken):void
+		{
+			if(event.result.result == true)
+			{
+				if(chooseGender.maleRadio.selected == true)
+				{
+					RemoteService.bol = false;
+					RemoteService.instance.activeNewPlayer(username,password,chooseGender.nickName.text,'images/npc/Player170/M_0.png',1).addHandlers(onActiveNewPlayer,false);
+				}else
+				{
+					RemoteService.bol = false;
+					RemoteService.instance.activeNewPlayer(username,password,chooseGender.nickName.text,'images/npc/Player170/F_0.png',2).addHandlers(onActiveNewPlayer,false);
+				}
+//				dispatchEvent(new Event(Event.COMPLETE))
+			}
+			else
+			{
+				var error:NormalTipComponent = new NormalTipComponent();
+				PopUpEffect.Show(error,this,true);
+				error.hideButton();
+				error.tipText.text = event.result.reason;
+				error.accept.addEventListener(MouseEvent.CLICK,function():void{PopUpEffect.Hide(error);});
+			}
+		}
+		
+		public function onActiveNewPlayer(event:ResultEvent,token:AsyncToken):void
+		{
+			collection.playerId = event.result['data'].id;
+			RemoteService.instance.getPlayerInfo(collection.playerId).addHandlers( Application.application.loadPlayerResult );
+			PopUpEffect.Hide(chooseGender);
+			PopUpEffect.Hide(loginWindow);
+            RemoteService.instance.addMail(collection.playerId,chooseGender.nickName.text,chooseGender.nickName.text+'玩家您好\n'+
+			'欢迎进入《三国士》网页游戏，目前游戏正在小范围测试阶段，您将获得500点的点券奖励。本游戏帐号将于2010年5月29删除，不保留帐号数据，请谅解。'+
+			'凡是到论坛给予我们提交建议、修改意见、缺陷说明的玩家都将获得有偿奖品，具体奖励请见论坛\n'+
+			'地址如下：http://3g.imayi.com/bbs\n'+
+			'反馈意见提交地址如下：http://3g.imayi.com/bbs/viewthread.php?tid=15&extra=page%3D1\n'+
+			'目前游戏已经完成以下功能：\n'+
+			'世界观（三国的世界观）\n'+
+			'登陆游戏\n'+
+			'角色成长:经验升级,加点,攻击/暴击/破防/闪避的属性成长\n'+
+			'职业(6个职业:勇士/卫士/武士/侠士/谋士/术士)\n'+
+			'NPC&怪物\n'+
+			'地图:世界地图,城市地图,区域地图\n'+
+			'设施:赏金组织,宿屋,商店,议事中心,\n'+
+			'战斗:普通战斗,技能,掉落\n'+
+			'状态\n'+
+			'装备,道具\n'+
+			'好友\n'+
+			'邮件\n'+
+			'聊天\n'+
+			'任务\n'+
+			'死亡/复活\n'+
+			'挂机:修炼,修行\n'+
+			'仓库\n'+
+			'副本\n'+
+			'铸造:升级\n'+
+			'我们殷切的希望您能够给予我们宝贵意见。\n'+			
+			'谢谢',null,-1
+            ).addHandlers(onAddMail);          
+		}
+       
+        public function onAddMail(event:ResultEvent,token:AsyncToken):void
+        {
+        	
+        }      
+        
+        public function onIsNewPlayer(event:ResultEvent,token:AsyncToken):void
+        {
+        	 
+        	if(event.result.result == true)
+        	{
+        		MySelf.instance.isNewPlayer = 1;        		
+        		newPlayerQuestProgress(event.result.progress);
+        		MySelf.instance.progress = event.result.progress;
+        		MySelf.instance.isKilled = event.result.isKilled;
+        	}else
+        	{
+        		MySelf.instance.isNewPlayer = 0;
+        	}
+        	frashMiniTask();
+        	
+        }
+        
+        public function newPlayerQuestProgress(progress:int):void
+        {
+        	var npcGuide:NpcGuideComponent = new NpcGuideComponent();
+		    npcGuide.type = progress;
+		    PopUpManager.addPopUp(npcGuide,this,true);
+		    PopUpManager.centerPopUp(npcGuide);
+
+        	switch(progress)
+        	{
+        		case 1:        		       
+		        		npcGuide.finish.addEventListener(MouseEvent.CLICK,function():void{
+		        		PopUpManager.removePopUp(npcGuide);
+
+		        		if(Application.application.currentState == 'city')
+		        		{
+		        			(Application.application.cityMap.getChildByName('议事中心') as CustomerButtonComponent).startEffect();
+                        	AutoTip._showTip('点击议事中心找南华星君交谈',Application.application.cityMap.getChildByName('议事中心'));
+		        		}	
+		        		});	        		
+                        break;
+                case 2:                        
+						npcGuide.finish.addEventListener(MouseEvent.CLICK,function():void{PopUpManager.removePopUp(npcGuide);
+						                                                      var chooseProfession:ChooseProfessionComponent = new ChooseProfessionComponent();
+//			                                                                  PopUpManager.addPopUp(chooseProfession,Application.application.canvas1,true);			                                                                 
+//			                                                                  PopUpManager.centerPopUp(chooseProfession);
+                                                                           
+                                                                              addChild(chooseProfession);
+//                                                                              chooseProfession.addEventListener(FlexEvent.in
+//                                                                              PopUpManager.addPopUp(gameLoading,Application.application.canvas1,true);
+//                                                                              PopUpManager.centerPopUp(gameLoading);
+			                                                                  });
+			            break;
+			    case 3:			           
+		        		npcGuide.finish.addEventListener(MouseEvent.CLICK,function():void{character.startEffect();
+                        AutoTip._showTip('点击角色按钮装备武器',character);
+                        PopUpManager.removePopUp(npcGuide);
+
+                        });
+                        break;
+                case 4:                        			        		
+		        		npcGuide.finish.addEventListener(MouseEvent.CLICK,function():void{
+		        		PopUpManager.removePopUp(npcGuide);
+		        		if(Application.application.currentState == 'character')
+		        		{
+		        			AutoTip._showTip('点击完成能力加点',Application.application.portionPoint.getChildByName('plusModel'));
+		        			
+		        		}else
+		        		{
+		        			character.startEffect();
+		        			AutoTip._showTip('点击进入角色界面完成能力加点',character);
+		        		    PopUpManager.removePopUp(npcGuide);
+//		        		    AutoTip._destoryTip();
+		        		}
+		        		});
+		        		break;
+		        case 5:		               
+		                npcGuide.finish.addEventListener(MouseEvent.CLICK,function():void{quest.startEffect();
+		                                                                                    AutoTip._showTip('点击任务按钮查看任务',quest);
+		                                                                                    PopUpManager.removePopUp(npcGuide);
+
+		                                                                                    });
+		                break;
+		        case 6:
+		                npcGuide.finish.addEventListener(MouseEvent.CLICK,function():void{
+		                PopUpManager.removePopUp(npcGuide);
+
+		                if(Application.application.currentState == 'city')
+		                {
+		                	(Application.application.cityMap.getChildByName('武器屋') as CustomerButtonComponent).startEffect();
+                        	AutoTip._showTip('点击武器屋和武器屋老板交谈',Application.application.cityMap.getChildByName('武器屋'));
+		                }
+		                
+		                });
+		                break;
+		        case 7:
+		                npcGuide.finish.addEventListener(MouseEvent.CLICK,function():void{
+		                PopUpManager.removePopUp(npcGuide);	
+
+		                if(Application.application.currentState == 'city')
+		                {
+		                	(Application.application.cityMap.getChildByName('防具屋') as CustomerButtonComponent).startEffect();
+                        	AutoTip._showTip('点击防具屋和防具屋老板交谈',Application.application.cityMap.getChildByName('防具屋'));
+		                }
+		                
+		                });
+		                break;
+		        case 8:
+		                npcGuide.finish.addEventListener(MouseEvent.CLICK,function():void{
+		                PopUpManager.removePopUp(npcGuide);
+
+		                if(Application.application.currentState == 'city')
+		                {
+		                	(Application.application.cityMap.getChildByName('杂货屋') as CustomerButtonComponent).startEffect();
+                        	AutoTip._showTip('点击杂货屋和杂货屋老板交谈',Application.application.cityMap.getChildByName('杂货屋'));	
+		                }
+		                
+		                });
+		                break;
+		        case 9:
+		                npcGuide.finish.addEventListener(MouseEvent.CLICK,function():void{
+		                PopUpManager.removePopUp(npcGuide);
+
+		                if(Application.application.currentState == 'city')
+		                {
+		                	(Application.application.cityMap.getChildByName('赏金组织') as CustomerButtonComponent).startEffect();
+                        	AutoTip._showTip('点击赏金组织和赏金猎人交谈',Application.application.cityMap.getChildByName('赏金组织'));	
+		                }
+		                
+		                });
+		                break;
+		        case 10:
+		                npcGuide.finish.addEventListener(MouseEvent.CLICK,function():void{
+		                PopUpManager.removePopUp(npcGuide);
+		                if(AutoTip._tip != null)
+		                AutoTip._tip.visible = true;
+		                if(Application.application.currentState != 'character')
+		                {
+		                	character.startEffect();
+                            AutoTip._showTip('点击角色按钮使用药剂',character);
+                           
+		                }
+		                 RemoteService.instance.sendNewPlayerThing(collection.playerId,1421,1,1).addHandlers(onSendNewPlayerThing);
+		                });
+		                break;
+		         case 11:
+		                if(MySelf.instance.isKilled == 0)
+		                {
+		                	npcGuide.finish.addEventListener(MouseEvent.CLICK,function():void{
+			                PopUpManager.removePopUp(npcGuide);
+			                if(AutoTip._tip != null)
+			                AutoTip._tip.visible = true;
+			                if(Application.application.currentState == 'city')
+			                {
+			                	(Application.application.cityMap.getChildByName('出口') as CustomerButtonComponent).startEffect();
+	                        	AutoTip._showTip('出门去杀怪吧',Application.application.cityMap.getChildByName('出口'));
+			                }
+			                else if(Application.application.currentState == 'place')
+			                {
+			                	RemoteService.instance.enterPlace(collection.playerId,MySelf.instance.location).addHandlers( collection.setEnterPlace ); 
+			                }
+			                });
+		                }else
+		                {
+		                	npcGuide.finish.addEventListener(MouseEvent.CLICK,function():void{
+			                PopUpManager.removePopUp(npcGuide);
+			                if(AutoTip._tip != null)
+			                AutoTip._tip.visible = true;
+			                if(Application.application.currentState == 'city')
+			                {
+			                	(Application.application.cityMap.getChildByName('议事中心') as CustomerButtonComponent).startEffect();
+	                        	AutoTip._showTip('向南华新君提交杀怪任务',Application.application.cityMap.getChildByName('议事中心'));
+			                }else if(Application.application.currentState == 'place')
+			                {
+			                	Application.application.placePanel.toCity.startEffect();
+								AutoTip._showTip('返回国都向南华新君交付任务',Application.application.placePanel.toCity);
+			                }
+			                });
+		                }
+		               
+		                break;
+		         case 12:
+		                if(MySelf.instance.isKilled == 0)
+		                {
+		                	npcGuide.finish.addEventListener(MouseEvent.CLICK,function():void{
+			                PopUpManager.removePopUp(npcGuide);
+			                if(AutoTip._tip != null)
+			                AutoTip._tip.visible = true;
+			                if(Application.application.currentState == 'city')
+			                {
+			                	(Application.application.cityMap.getChildByName('出口') as CustomerButtonComponent).startEffect();
+	                        	AutoTip._showTip('出门去杀怪吧',Application.application.cityMap.getChildByName('出口'));
+			                }
+			                 else if(Application.application.currentState == 'place')
+			                {
+			                	RemoteService.instance.enterPlace(collection.playerId,MySelf.instance.location).addHandlers( collection.setEnterPlace ); 
+			                }
+			                });
+		                }else
+		                {
+		                	npcGuide.finish.addEventListener(MouseEvent.CLICK,function():void{
+			                PopUpManager.removePopUp(npcGuide);
+			                if(AutoTip._tip != null)
+			                AutoTip._tip.visible = true;
+			                if(Application.application.currentState == 'city')
+			                {
+			                	(Application.application.cityMap.getChildByName('议事中心') as CustomerButtonComponent).startEffect();
+	                        	AutoTip._showTip('向南华新君提交杀怪任务',Application.application.cityMap.getChildByName('议事中心'));
+			                }else if(Application.application.currentState == 'place')
+			                {
+			                	Application.application.placePanel.toCity.startEffect();
+								AutoTip._showTip('返回国都向南华新君交付任务',Application.application.placePanel.toCity);
+			                }
+			                });
+		                }
+		               
+		                break;
+		         case 13:
+		                if(MySelf.instance.isKilled == 0)
+		                {
+		                	npcGuide.finish.addEventListener(MouseEvent.CLICK,function():void{
+			                PopUpManager.removePopUp(npcGuide);
+			                if(AutoTip._tip != null)
+			                AutoTip._tip.visible = true;
+			                if(Application.application.currentState == 'city')
+			                {
+			                	(Application.application.cityMap.getChildByName('出口') as CustomerButtonComponent).startEffect();
+	                        	AutoTip._showTip('出门去杀怪吧',Application.application.cityMap.getChildByName('出口'));
+			                }
+			                 else if(Application.application.currentState == 'place')
+			                {
+			                	RemoteService.instance.enterPlace(collection.playerId,MySelf.instance.location).addHandlers( collection.setEnterPlace ); 
+			                }
+			                });
+		                }else
+		                {
+		                	npcGuide.finish.addEventListener(MouseEvent.CLICK,function():void{
+			                PopUpManager.removePopUp(npcGuide);
+			                if(AutoTip._tip != null)
+			                AutoTip._tip.visible = true;
+			                if(Application.application.currentState == 'city')
+			                {
+			                	(Application.application.cityMap.getChildByName('议事中心') as CustomerButtonComponent).startEffect();
+	                        	AutoTip._showTip('向南华新君提交杀怪任务',Application.application.cityMap.getChildByName('议事中心'));
+			                }else if(Application.application.currentState == 'place')
+			                {
+			                	Application.application.placePanel.toCity.startEffect();
+								AutoTip._showTip('返回国都向南华新君交付任务',Application.application.placePanel.toCity);
+			                }
+			                });
+		                }
+		               
+		                break;
+		        case 14:
+		                npcGuide.finish.addEventListener(MouseEvent.CLICK,function():void{character.startEffect();
+                        AutoTip._showTip('进入角色界面选择人物技能',character);PopUpManager.removePopUp(npcGuide);
+                        if(AutoTip._tip != null)
+                        AutoTip._tip.visible = true;
+                        });
+                        break;
+                case 15:
+                        npcGuide.finish.addEventListener(MouseEvent.CLICK,function():void{
+                        PopUpManager.removePopUp(npcGuide);
+                        if(AutoTip._tip != null)
+                        AutoTip._tip.visible = true;
+		        		if(Application.application.currentState == 'city')
+		        		{
+		        			(Application.application.cityMap.getChildByName('议事中心') as CustomerButtonComponent).startEffect();
+                        	AutoTip._showTip('点击议事中心找南华新君交谈',Application.application.cityMap.getChildByName('议事中心'));
+		        		}	
+		        		});	        		
+                        break;
+                case 16:
+                        npcGuide.finish.addEventListener(MouseEvent.CLICK,function():void{
+                        PopUpManager.removePopUp(npcGuide);
+                        if(AutoTip._tip != null)
+                        AutoTip._tip.visible = true;
+		        		var chooseCountry:ChooseCountryComponent = new ChooseCountryComponent()
+		        		PopUpManager.addPopUp(chooseCountry,Application.application.canvas1,true);
+		        		PopUpManager.centerPopUp(chooseCountry);
+		        		});	        		
+                        break;
+        	}
+        }
+        
+        public function onSendNewPlayerThing(event:ResultEvent,token:AsyncToken):void
+        {
+        	
+        }
+        
+		public function initLoginWindow():void{
+
+			creationComplete();
+			try{
+	        	urlBalloonReq = new URLRequest(BALLOON_URL);  
+				urlBalloonLdr = new URLLoader();
+				urlBalloonLdr.addEventListener(Event.COMPLETE, doBalloonEvent);  
+				urlBalloonLdr.load(urlBalloonReq);
+				Application.application.frameRate = 12;
+				urlFxReq = new URLRequest(FX_URL);  
+				urlFxLdr = new URLLoader();
+				urlFxLdr.addEventListener(Event.COMPLETE, doFxEvent);  
+				urlFxLdr.load(urlFxReq);
+				urlFigureReq = new URLRequest(FIGURE_URL);  
+				urlFigureLdr = new URLLoader();
+				urlFigureLdr.addEventListener(Event.COMPLETE, doFigureEvent);  
+				urlFigureLdr.load(urlFigureReq);
+			}catch(e:IOError){}
+
+        	
+  			timer.addEventListener(TimerEvent.TIMER,sync);
+  			timer.start();
+			
+		}
+
+        
+        //读取特效表
+		public function doFxEvent(event:Event):void{
+			var s1:String = urlFxLdr.data; 
+            var a1:Array = s1.split("\r\n");
+            for(var i:int = 1;i<a1.length;i++){
+            	fxArray.push(a1[i].toString().split(','));
+            } 
+		}
+		
+		//读取对话泡表 
+		public function doBalloonEvent(event:Event):void{
+			var s1:String = urlBalloonLdr.data; 
+            var a1:Array = s1.split("\r\n");
+            for(var i:int = 1;i<a1.length;i++){
+            	traversalArray.push(a1[i].toString().split(','));
+            } 
+		}
+		
+		//战斗人物形象表
+		public function doFigureEvent(event:Event):void{
+			var s1:String = urlFigureLdr.data; 
+            var a1:Array = s1.split("\r\n");
+            for(var i:int = 1;i<a1.length;i++){
+            	figureArray.push(a1[i].toString().split(','));
+            } 
+		}
+		
+		//定时发送请求，计算网速
+		public function sync(event:TimerEvent):void{
+			var now:Date = new Date();
+			var time:Number = now.time;
+			RemoteService.bol = false;
+			RemoteService.instance.syncWithServer(collection.playerId,time).addHandlers(syncCallBack);
+		}
+		
+		public function syncCallBack(event:ResultEvent,token:AsyncToken):void{
+			if (event.result['result']==true){
+				var now:Date = new Date();
+				var current:Number = now.time;
+				var delta:Number = current-event.result['data']['time'];
+				var speed:Number = delta;
+			}
+		}
+        
+        public function loadPlayerResult(event:ResultEvent, token:AsyncToken):void {
+        	chatWindow.initSubscribe();
+        	EffectInfo.instance.effectArray = event.result['skillEffects'] as Array;
+             
+        	EffectInfo.instance.itemEffectArray = event.result['itemEffects'] as Array;        	
+            MySelf.instance.isLeader = event.result['isLeader'];
+            MySelf.instance.isTeamMember = event.result['isTeamMember'];
+        	MySelf.instance.name = event.result['name'];
+        	MySelf.instance.nickName = event.result['nickName'];
+        	MySelf.instance.level = event.result['level'];
+        	MySelf.instance.avatarImage = event.result['portrait']; 
+        	MySelf.instance.growRate = event.result['growthRate'];       	
+        	mainAvatar.update();
+        	mainAvatar.onCreationComplete();
+        	loadPlayerBaseInfo(event.result);        	
+        	if(isNeed == false)
+        	{
+        		RemoteService.instance.isNewPlayer(collection.playerId).addHandlers(onIsNewPlayer);
+        		chatWindow.tellInGame();
+        		isNeed = true;
+        	}
+        }
+        
+        //刷新迷你任务界面
+        public function frashMiniTask():void
+        {
+        	miniTask.init();
+        }
+        private function loadPlayerBaseInfo(result:Object):void {
+        	MySelf.instance.gender = result['gender'];
+        	MySelf.instance.energy = result['energy'];
+        	MySelf.instance.profession = result['profession'];
+        	MySelf.instance.status = result['status'];
+        	MySelf.instance.pkStatus = result['pkStatus'];
+        	MySelf.instance.station = result['station'];
+        	MySelf.instance.coin = result['coin'];
+        	MySelf.instance.coupon = result['coupon'];
+        	MySelf.instance.gold = result['gold'];
+			MySelf.instance.hp = result['hp'];
+			MySelf.instance.maxHp = result['maxHp'];
+			MySelf.instance.mp = result['mp'];
+			MySelf.instance.maxMp = result['maxMp'];
+			MySelf.instance.exp = result['exp'];
+			MySelf.instance.maxExp = result['maxExp'];
+			if(PlaceInfo.instance.placeList !=null)
+			{
+			  if(PlaceInfo.instance.placeList[0]['type'] != '副本')
+			  MySelf.instance.location = result['location'];
+			}else
+			{
+				 MySelf.instance.location = result['location'];
+			}
+			MySelf.instance.town = result['town'];
+			MySelf.instance.camp = result['camp'] ;
+			MySelf.instance.baseDex = result['baseDex'];
+			MySelf.instance.baseStr = result['baseStr'];
+			MySelf.instance.baseVit = result['baseVit'];
+			MySelf.instance.manualDex = result['manualDex'];
+			MySelf.instance.manualStr = result['manualStr'];
+			MySelf.instance.manualVit = result['manualVit'];
+			MySelf.instance.extraStr = result['extraStr'];
+			MySelf.instance.extraDex = result['extraDex'];
+			MySelf.instance.extraVit = result['extraVit'];
+			MySelf.instance.sparePoint = result['sparePoint'];
+			MySelf.instance.currentSpeedDescription = result['currentSpeedDescription'];
+			MySelf.instance.currentDamage = result['currentDamage'];			
+			MySelf.instance.currentDefense = result['currentDefense'];			
+			MySelf.instance.dodgeRate = result['dodgeRate'];
+			MySelf.instance.bogeyRate = result['bogeyRate'];
+			MySelf.instance.criRate = result['criRate'];
+			MySelf.instance.hitRate = result['hitRate'];
+			MySelf.instance.allProfessionStages = result['allProfessionStages'];
+			MySelf.instance.currentProfessionStageIndex = result['currentProfessionStageIndex'];
+			MySelf.instance.professionDescription = result['professionDescription'];
+			MySelf.instance.warehouses = result['warehouses'];
+			MySelf.instance.deposit = result['deposit'];
+			
+        	baseAvatar.update();   
+
+
+        	RemoteService.instance.enterPlace(collection.playerId,result['location'], true).addHandlers( collection.setEnterPlace );   
+//        	RemoteService.instance.subscribe(collection.playerId as String,onGotServerPush);     	
+        }
+        
+//        public function onGotServerPush(event:MessageEvent):void{
+//        	Alert.show(event.message.body.toString());
+//        }
+        
+        
+        public function openCharacter():void
+        {
+        	AutoTip._destoryTip();
+        	character.endEffect();
+        	if(this.currentState.toString() == 'place' || this.currentState.toString() =='city')
+        	{
+        		collection.currentPosition = this.currentState.toString();
+        	}
+        	this.currentState = 'character';
+	       	this.characterPackage.resetPackage();
+        	this.slot.resetPackage();
+        	portionPoint.init();
+        }
+        
+        public function openQuest():void
+        {
+        	quest.data = '任务';
+			quest.endEffect();
+            var playerTask:TaskComponent = new TaskComponent();
+            PopUpManager.addPopUp(playerTask,this,true);
+            PopUpManager.centerPopUp(playerTask);
+            playerTask.addEventListener('closePop',function():void{PopUpManager.removePopUp(playerTask);});
+            playerTask.closeButton.addEventListener(MouseEvent.CLICK,function():void{
+            PopUpManager.removePopUp(playerTask);
+            if(MySelf.instance.isNewPlayer == 1 && MySelf.instance.progress == 5)
+		    {
+		    	Application.application.quest.startEffect();
+		        AutoTip._showTip('点击任务按钮查看任务',Application.application.quest);
+		    }
+            if(AutoTip._tip != null)
+            {
+            	AutoTip._tip.visible=true;
+            }
+           });
+            if(AutoTip._tip != null && MySelf.instance.isNewPlayer == 1 && MySelf.instance.progress == 5)
+            {
+            	AutoTip._destoryTip();
+            	quest.endEffect();
+            }else if(AutoTip._tip != null)
+            {
+            	AutoTip._tip.visible = false;
+            }
+            
+        }
+        
+        public function closeCharacter():void{
+        	this.currentState = collection.currentPosition;
+        	if(MySelf.instance.isNewPlayer == 1)
+        	{
+        		if(MySelf.instance.progress == 3 || MySelf.instance.progress == 4 || MySelf.instance.progress == 10)
+        		   AutoTip._destoryTip();
+        	}
+        	if(MySelf.instance.sparePoint == 0)
+        	{
+        		character.data = '角色';
+        	}else
+        	{
+        		character.data = '您有'+MySelf.instance.sparePoint+'点属性点可加';
+        	}
+        }
+        
+        public function closeQuest():void{
+        	this.currentState = collection.currentPosition;
+        }
+        
+        //加载技能
+        public function LoadSkill(event:MouseEvent):void
+        {        	
+        	
+        	if(AutoTip._tip != null && MySelf.instance.progress != 14)
+        	{
+        		AutoTip._destoryTip();
+        	}
+        	RemoteService.instance.getSkillPanelInfo(collection.playerId).addHandlers(onLoadSkill);
+        	skillButton.endEffect();
+        }
+        
+        public function onLoadSkill(event:ResultEvent, token:AsyncToken):void
+        {        	
+        	SkillInfo.instance.skillCurrentArray = event.result['data']['learnedSkills'];         	
+        	this.currentState = 'skill';      	
+        }
+        
+        //打开邮件系统
+        public function onMailSystem():void{
+        	mail.data = '邮件';
+        	mail.endEffect();
+        	var mailSystem:MailSystemComponent = new MailSystemComponent();
+        	PopUpManager.addPopUp(mailSystem,Application.application.canvas1,true);
+            PopUpManager.centerPopUp(mailSystem);
+            if(AutoTip._tip != null)
+            {
+            	AutoTip._tip.visible = false;
+            }
+            
+        }
+        
+//        public function testTop(event:MouseEvent):void
+//        {
+//        	var top:PersonalTopComponent = new PersonalTopComponent();
+//        	PopUpManager.addPopUp(top,this,true);
+//        	PopUpManager.centerPopUp(top);
+//        }
+        
+        public function showTip(event:FlexEvent):void
+        {        	
+        	chatWindow.visible = true;
+        	miniTask.visible = true;
+        		if(interview == 1)
+	        	{	        		
+	        		   cityMap.addEventListener(FlexEvent.CREATION_COMPLETE,showCityTip); 
+	        	}
+	        	else if(interview == 0)
+	        	{	        		
+	        		   showCityTip(event)
+	        	}
+        	   	 
+        	
+        }
+        
+        public function showCityTip(event:FlexEvent):void
+        {    
+        	interview = 0;    	
+        	if(MySelf.instance.isNewPlayer == 1 && isFirst == true)
+        	{
+        		if(MySelf.instance.progress == 6)
+	        	{
+	        		(Application.application.cityMap.getChildByName('武器屋') as CustomerButtonComponent).endEffect();
+	        		(Application.application.cityMap.getChildByName('武器屋') as CustomerButtonComponent).startEffect();
+	                AutoTip._showTip('点击武器屋和武器屋老板交谈',Application.application.cityMap.getChildByName('武器屋'));
+	        	}else if(MySelf.instance.progress == 7)
+	        	{
+	        		(Application.application.cityMap.getChildByName('防具屋') as CustomerButtonComponent).endEffect();
+	        		(Application.application.cityMap.getChildByName('防具屋') as CustomerButtonComponent).startEffect();
+	                AutoTip._showTip('点击防具屋和防具屋老板交谈',Application.application.cityMap.getChildByName('防具屋'));
+	        	}else if(MySelf.instance.progress == 8)
+	        	{
+	        		(Application.application.cityMap.getChildByName('杂货屋') as CustomerButtonComponent).endEffect();
+	        		(Application.application.cityMap.getChildByName('杂货屋') as CustomerButtonComponent).startEffect();
+	                AutoTip._showTip('点击杂货屋和杂货屋老板交谈',Application.application.cityMap.getChildByName('杂货屋'));	
+	        	}else if(MySelf.instance.progress == 1)
+	        	{
+	        		(Application.application.cityMap.getChildByName('议事中心') as CustomerButtonComponent).endEffect();
+	        		(Application.application.cityMap.getChildByName('议事中心') as CustomerButtonComponent).startEffect();
+	                 AutoTip._showTip('点击议事中心找左慈交谈',Application.application.cityMap.getChildByName('议事中心'));
+	        	}else if((MySelf.instance.progress == 11 && MySelf.instance.isKilled ==0) || (MySelf.instance.progress == 12 && MySelf.instance.isKilled ==0) || (MySelf.instance.progress == 13 && MySelf.instance.isKilled ==0))
+	        	{
+	        		(Application.application.cityMap.getChildByName('出口') as CustomerButtonComponent).endEffect();
+	        		(Application.application.cityMap.getChildByName('出口') as CustomerButtonComponent).startEffect();
+		             AutoTip._showTip('出门去杀怪吧',Application.application.cityMap.getChildByName('出口'));
+	        	}else if((MySelf.instance.progress == 11 && MySelf.instance.isKilled ==1) || (MySelf.instance.progress == 12 && MySelf.instance.isKilled ==1) || (MySelf.instance.progress == 13 && MySelf.instance.isKilled ==1))
+	        	{
+	        		
+	        		(Application.application.cityMap.getChildByName('议事中心') as CustomerButtonComponent).startEffect();
+		             AutoTip._showTip('向南华新君提交杀怪任务',Application.application.cityMap.getChildByName('议事中心'));
+	        	}else if(MySelf.instance.progress == 9)
+	        	{
+	        		(Application.application.cityMap.getChildByName('赏金组织') as CustomerButtonComponent).endEffect();
+	        		(Application.application.cityMap.getChildByName('赏金组织') as CustomerButtonComponent).startEffect();
+	                 AutoTip._showTip('点击赏金组织和赏金猎人交谈',Application.application.cityMap.getChildByName('赏金组织'));	
+	        	}else if(MySelf.instance.progress == 15)
+	        	{
+	        		(Application.application.cityMap.getChildByName('议事中心') as CustomerButtonComponent).startEffect();
+                     AutoTip._showTip('点击议事中心找南华新君交谈',Application.application.cityMap.getChildByName('议事中心'));
+	        	}
+        	}
+        	isFirst = true;
+        	
+        }
+        
+        public function showCharacterTip(event:FlexEvent):void
+        {
+        	chatWindow.visible = false;
+        	miniTask.visible = false;
+        	if(MySelf.instance.isNewPlayer == 1)
+        	{
+        		characterPackage.resetPackage();
+        		if(MySelf.instance.progress == 4)
+        		{
+        			trace(Application.application.portionPoint.getChildByName('plusModel'));
+        			AutoTip._showTip('点击完成能力加点',Application.application.portionPoint.getChildByName('plusModel'));
+        		}else if(MySelf.instance.progress == 3)
+        		{
+        		    Application.application.characterPackage.resetPackage();
+        		}else if(MySelf.instance.progress == 14)
+        		{
+        			AutoTip._destoryTip();
+        			skillButton.startEffect();
+        			AutoTip._showTip('点击进入技能界面',skillButton,'errorTipBelow');
+        		}
+        	}
+        	playerDetails.changeCamp();	
+        }
+        
+        public function showSkillTip(event:FlexEvent):void
+        {
+        	chatWindow.visible = false;
+        	miniTask.visible = false;
+        	if(MySelf.instance.isNewPlayer == 1)
+        	{
+        		if(MySelf.instance.progress == 14)
+        		{
+        			AutoTip._destoryTip();
+        			Application.application.skillButton.startEffect();
+        			AutoTip._showTip('将所学技能拖放至此',Application.application.skillPanel.skillBaseInfo.currentSkill);
+        		}
+        	}
+        }
+
+        public function showBackTip(event:FlexEvent):void
+        {
+        	if(MySelf.instance.isNewPlayer == 1)
+        	{
+        		if(MySelf.instance.isKilled == 1)
+        		{
+        			placePanel.toCity.startEffect();
+					AutoTip._showTip('返回国都向南华新君交付任务',placePanel.toCity);
+        		}
+        	}
+        }
+        
+        public function showPlaceTip(event:FlexEvent):void
+        {
+        	chatWindow.visible = true;
+        	miniTask.visible = true;
+        	if(MySelf.instance.isNewPlayer == 1)
+        	{
+        		if(MySelf.instance.isKilled == 1)
+        		{
+        			placePanel.toCity.startEffect();
+					AutoTip._showTip('返回国都向南华新君交付任务',placePanel.toCity);
+        		}        		
+        		if(baseAvatar.txtStatus.label == '死亡')
+        		{
+        			AutoTip._destoryTip();
+        		}
+        	}
+        	
+        	
+        }
+        
+//        public function procedureTip(event:FlexEvent):void
+//        {
+//        	if(initialProcedure == 1)
+//        	{
+//        		procedureHall.addEventListener(FlexEvent.CREATION_COMPLETE,initProcedure);
+//        	}else
+//        	{
+//        		initProcedure(event);
+//        	}
+//        	
+//        }
+//        
+//        public function initProcedure(event:FlexEvent):void
+//        {
+//        	initialProcedure == 0;
+//        	if(MySelf.instance.isNewPlayer == 1)
+//        	{
+//        		Application.application.procedureHall.taskNpc.glowTalk();
+//        	}
+//        }
+//        
+//        public function goldTaskTip(event:FlexEvent):void
+//        {
+//        	if( initialGold == 1)
+//        	{
+//        		goldTask.addEventListener(FlexEvent.CREATION_COMPLETE,initGold)
+//        	}
+//        	else
+//        	{
+//        		initGold(event);
+//        	}
+//        	
+//        }
+//        
+//        public function initGold(event:FlexEvent):void
+//        {
+//        	initialGold=0;
+//        	if(MySelf.instance.isNewPlayer == 1)
+//        	{
+//        		Application.application.goldTask.Npc.glowTalk();
+//        	}
+//        }
+//        
+//        public function shopTip(event:FlexEvent):void
+//        {
+//            if(initialShop == 1)
+//            {
+//            	shopPage.addEventListener(FlexEvent.CREATION_COMPLETE,initShop)
+//            }else
+//            {
+//            	initShop(event);
+//            }	
+//        }
+//        
+//        public function initShop(event:FlexEvent):void
+//        {
+//        	if(MySelf.instance.isNewPlayer == 1)
+//        	{
+//        		Application.application.shopPage.showTalkTip();
+//        	}
+//        }
+       
+        ]]>
+    </mx:Script>
+    <mx:Canvas width="100%" height="100%" styleName="global" id="canvas1" backgroundColor="#8B7E77" backgroundImage="images/mainPanel.png" backgroundAlpha="1.0">
+    <ns6:MainAvatarComponent x="28" y="28" id="mainAvatar">   
+    </ns6:MainAvatarComponent>
+    <ns6:PlayerBaseInfoComponent x="28" y="221" id="baseAvatar">    
+    </ns6:PlayerBaseInfoComponent>
+    <nscomp:CustomerButtonComponent id="character" styleName="RoleLinkButton" click="openCharacter()" x="28" y="228" data="角色"/>
+    <nscomp:CustomerButtonComponent x="87" y="228" styleName="TaskLinkButton" id="quest"  click="openQuest()" data="任务"/>
+    <nscomp:CustomerButtonComponent x="145" y="228" styleName="MailLinkButton" id="mail" click="onMailSystem()" data="邮件"/>
+    <ns8:MiniTaskComponent x="618" y="373" id="miniTask">
+    </ns8:MiniTaskComponent>
+    <ns11:ChatComponent x="221" y="373" id="chatWindow">
+    </ns11:ChatComponent>
+    <ns11:FacesComponent x="514" y="387" id="faceWindow" visible="false">
+    </ns11:FacesComponent>
+  <!--  <mx:Button x="29" y="510" label="排行" click="testTop(event)"/>-->
+   
+ 
+    	
+    </mx:Canvas>    	
+</mx:Application>

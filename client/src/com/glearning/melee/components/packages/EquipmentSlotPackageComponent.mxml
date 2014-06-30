@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:EquipmentSlotPackageImpl xmlns:nscomp="com.glearning.melee.components.packages.*" xmlns:mx="http://www.adobe.com/2006/mxml" 
+	width="247" height="316">
+	<nscomp:PackageComponent x="13" y="35" alpha="0.8" id="weapon" horizontalScrollPolicy="off" verticalScrollPolicy="off">
+	</nscomp:PackageComponent>
+	<nscomp:PackageComponent x="188" y="35" alpha="0.8" id="cloak" horizontalScrollPolicy="off" verticalScrollPolicy="off">
+	</nscomp:PackageComponent>
+	<nscomp:PackageComponent x="104" y="9" alpha="0.8" id="header" horizontalScrollPolicy="off" verticalScrollPolicy="off">
+	</nscomp:PackageComponent>
+	<nscomp:PackageComponent x="104" y="65" alpha="0.8" id="body" horizontalScrollPolicy="off" verticalScrollPolicy="off">
+	</nscomp:PackageComponent>
+	<nscomp:PackageComponent x="104" y="147" alpha="0.8" id="belt" horizontalScrollPolicy="off" verticalScrollPolicy="off">
+	</nscomp:PackageComponent>
+	<nscomp:PackageComponent x="104" y="176" alpha="0.8" id="trousers" horizontalScrollPolicy="off" verticalScrollPolicy="off">
+	</nscomp:PackageComponent>
+	<nscomp:PackageComponent x="104" y="262" alpha="0.8" id="shoes" horizontalScrollPolicy="off" verticalScrollPolicy="off">
+	</nscomp:PackageComponent>
+	<nscomp:PackageComponent x="160" y="35" alpha="0.8" id="necklace" horizontalScrollPolicy="off" verticalScrollPolicy="off">
+	</nscomp:PackageComponent>
+	<nscomp:PackageComponent x="74" y="147" alpha="0.8" id="waist" horizontalScrollPolicy="off" verticalScrollPolicy="off">
+	</nscomp:PackageComponent>
+	<nscomp:PackageComponent x="188" y="147" alpha="0.8" id="bracer" horizontalScrollPolicy="off" verticalScrollPolicy="off">
+	</nscomp:PackageComponent>
+
+</nscomp:EquipmentSlotPackageImpl>

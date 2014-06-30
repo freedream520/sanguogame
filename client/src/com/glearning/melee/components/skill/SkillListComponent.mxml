@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:SkillListImpl verticalGap="10" horizontalScrollPolicy="off" xmlns:nscomp="com.glearning.melee.components.skill.*" backgroundColor="0xffffff" creationComplete="init()"  xmlns:mx="http://www.adobe.com/2006/mxml" >
+	
+</nscomp:SkillListImpl>

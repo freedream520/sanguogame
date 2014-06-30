@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BattleMiniPersonImpl xmlns="com.glearning.melee.components.battle.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="130" height="160" backgroundAlpha="0" horizontalScrollPolicy="off" verticalScrollPolicy="off">
+	<mx:Move id="hurtEffect" duration="1500" yBy="-40" /> 
+	<mx:SWFLoader id="swf" x="0" y="80" complete="event.currentTarget.content.stop()"/>
+	<mx:Canvas x="0" y="0" width="130" height="160" backgroundAlpha="0" id="effectScene">
+	</mx:Canvas>
+	
+</BattleMiniPersonImpl>

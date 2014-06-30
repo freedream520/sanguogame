@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:SkillAttackInfoImpl xmlns:nscomp="com.glearning.melee.components.skill.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="248" height="432"
+	    backgroundImage="images/sanGuo/right.png">
+	<mx:Script>
+		<![CDATA[
+			import com.glearning.melee.model.SkillInfo;
+		]]>
+	</mx:Script>
+	<mx:Canvas x="10" y="10" width="230">
+		<mx:Label x="0" y="0" text="{SkillInfo.instance.skillName}"/>	
+		<mx:Label x="143" y="0" text="{'MaxLv:Lv'+SkillInfo.instance.skillMaxLevel}"/>
+	</mx:Canvas>
+	<mx:Text x="9" y="55" text="{SkillInfo.instance.skillDescription}" width="230" height="46"/>
+	<mx:VBox x="14" y="134" width="224" height="83" horizontalScrollPolicy="off">
+		<mx:HBox width="100%">
+			<mx:Label text="发动几率:"/>
+			<mx:Label text="{SkillInfo.instance.skillRate/1000}%" width="156"/>
+		</mx:HBox>
+		<mx:HBox width="100%">
+			<mx:Label text="技能消耗:"/>
+			<mx:Label text="{SkillInfo.instance.skillUseMp}"  width="154"/>
+		</mx:HBox>
+		<mx:HBox width="100%">
+			<mx:Label text="效果"/>
+			<mx:Text text="{SkillInfo.instance.skillAttackDamage}" width="184.5" />
+		</mx:HBox>
+		<mx:HBox width="100%">
+			<mx:Label text="技能命中后造成对方"/>
+			<mx:Label text="{SkillInfo.instance.skillAddEffect}" width="109"/>
+		</mx:HBox>
+		<mx:HBox x="0" y="103" width="230">
+			<mx:Label text="持续时间"/>
+			<mx:Label text="0"/>
+		</mx:HBox>
+		<mx:Label/>
+	</mx:VBox>
+	<mx:Canvas x="13" y="363.6" width="225" height="54.800003">
+		<mx:Label x="-3.5527137E-15" y="-1.7763568E-15" text="技能等级"/>
+		<mx:Label x="0" y="16.8" text="人物等级"/>
+		<mx:Label x="0" y="35.8" text="修行费用" width="53" height="19"/>
+		<mx:Label x="61" y="0" text="{SkillInfo.instance.skillLevel}"/>
+		<mx:Label x="61" y="16.8" text="{SkillInfo.instance.skillLevelRequire}"/>
+		<mx:Label x="61" y="35.8" text="{SkillInfo.instance.skillUseCoin}" width="126" height="19"/>
+	</mx:Canvas>
+	<mx:Label x="72" y="36" text="说明" width="104" fontWeight="bold" textAlign="center"/>
+	<mx:Label x="73" y="112" width="104" fontWeight="bold" textAlign="center" htmlText="当前等级({SkillInfo.instance.skillLevel})"/>
+	<mx:Label x="73" y="227" text="下一等级({})" width="104" height="20" textAlign="center" fontWeight="bold"/>
+	<mx:VBox x="13" y="249.4" width="224" height="83" horizontalScrollPolicy="off">
+		<mx:HBox width="100%">
+			<mx:Label text="发动几率:"/>
+			<mx:Label text="{SkillInfo.instance.skillRate/1000}%" width="157"/>
+		</mx:HBox>
+		<mx:HBox width="100%">
+			<mx:Label text="技能消耗:"/>
+			<mx:Label text="{SkillInfo.instance.skillUseMp}"  width="154"/>
+		</mx:HBox>
+		<mx:HBox width="100%">
+			<mx:Label text="效果"/>
+			<mx:Text text="{SkillInfo.instance.skillAttackDamage}" width="184.5" />
+		</mx:HBox>
+		<mx:HBox width="100%">
+			<mx:Label text="技能命中后造成对方"/>
+			<mx:Label text="{SkillInfo.instance.skillRemoveEffect}" width="109"/>
+		</mx:HBox>
+		<mx:HBox x="0" y="103" width="230">
+			<mx:Label text="持续时间"/>
+			<mx:Label text="0"/>
+		</mx:HBox>
+		<mx:Label/>
+	</mx:VBox>
+	<mx:Label x="73" y="342.4" text="修炼条件" width="104" height="20" textAlign="center" fontWeight="bold"/>
+	
+</nscomp:SkillAttackInfoImpl>

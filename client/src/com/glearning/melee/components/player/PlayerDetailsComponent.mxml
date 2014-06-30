@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:PlayerDetailsImpl xmlns:nscomp="com.glearning.melee.components.player.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="209" height="433"
+	    horizontalScrollPolicy="off" verticalScrollPolicy="off" creationComplete="init()" backgroundImage="images/sanGuo/baseUI.png">
+	<mx:Script>
+		<![CDATA[
+			import com.glearning.melee.model.MySelf;
+		]]>
+	</mx:Script>
+		<mx:LinkButton x="22" y="285" styleName="friend" fontWeight="normal" click="openFriendsSystem()"/>
+		<mx:LinkButton x="103" y="285" styleName="business" fontWeight="normal"/>
+		<mx:LinkButton x="10" y="263" label="显示副本进度" styleName="CommonLinkButton" fontWeight="normal" cornerRadius="0" color="0xff0000" alpha="0.0" id="showFB"/>
+		<mx:LinkButton x="100" y="263" label="清除副本进度" styleName="CommonLinkButton" fontWeight="normal" color="0xff0000" alpha="0.0" id="deleteFB"/>
+		<mx:Label x="86" y="154" text="{MySelf.instance.sin}" width="61" height="20"/>
+		<mx:Label x="86" y="175" text="{MySelf.instance.contribution}" width="61"/>
+		<mx:Label x="86" y="195" text="{MySelf.instance.fisticuff}" width="110" height="20"/>
+		<mx:Label x="86" y="215" text="{MySelf.instance.honors}" width="113"/>
+		<mx:Label x="86" y="235" text="{MySelf.instance.family}" width="113"/>
+		<mx:LinkButton x="158" y="155" label="洗刷" fontWeight="normal" styleName="CommonLinkButton" alpha="0" height="20"/>
+		<mx:LinkButton x="158" y="174" label="提升" fontWeight="normal" styleName="CommonLinkButton" alpha="0"/>
+		<mx:TextArea x="12" y="326" width="187" height="99" backgroundAlpha="0.0" text="{MySelf.instance.professionDescription}" editable="false" borderStyle="none"/>
+	
+	<mx:Label x="86" y="35" width="111" height="20" id="camp"/>
+	<mx:Label x="86" y="55" text="{MySelf.instance.title}" width="110" height="20"/>
+	<mx:Label x="86" y="74" text="{MySelf.instance.Prestige}" width="110" height="20"/>
+	<mx:Label x="86" y="95" text="{MySelf.instance.worldRank}" width="110" height="20"/>
+	<mx:Label x="86" y="116" text="{MySelf.instance.profession}" width="112"/>
+	<mx:Label x="88" y="136" height="20" id="profession"/>
+	
+</nscomp:PlayerDetailsImpl>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:CityPanelImpl xmlns:nscomp="com.glearning.melee.components.citypanel.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="728" height="341"
+	    creationComplete="init()" >
+	<mx:Script>
+		<![CDATA[
+			import com.glearning.melee.model.CityInfo;
+		]]>
+	</mx:Script>
+	<mx:Image x="0" y="0" width="728" height="341" source="{CityInfo.instance.cityImg}"/>
+	<mx:Label x="55" y="8" id="cityName" text="{CityInfo.instance.cityName}" visible="false"/>
+	<mx:LinkButton x="111" y="6" id="cityFaction" label="{CityInfo.instance.cityFaction}" alpha="0.0" color="#61FF2A" textRollOverColor="#61FF2A" visible="false"/>
+	<mx:LinkButton x="624" y="10" styleName="worldPicture" click="openWorldMap()"/>
+	
+</nscomp:CityPanelImpl>

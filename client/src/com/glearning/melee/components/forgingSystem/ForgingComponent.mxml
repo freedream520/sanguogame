@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:ForgingImpl xmlns:nscomp="com.glearning.melee.components.forgingSystem.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="738" height="484"
+	         backgroundImage="images/sanGuo/shop/shopBackImage.jpg" xmlns:ns1="com.glearning.melee.components.shop.*" xmlns:ns2="com.glearning.melee.components.packages.*">
+	<mx:LinkButton x="698" y="10" width="20" height="20" styleName="CloseBtn" click="backToCity()"/>
+	<mx:Text x="33" y="81" width="236" height="61" enabled="false">
+		<mx:text><![CDATA[铸造屋老板:
+经过我的手,一块烂泥也能坚如钢铁!
+专帮烂泥去扶墙!]]></mx:text>
+	</mx:Text>
+	<mx:Canvas backgroundImage="images/sanGuo/shop/npcBorder.png" x="292" y="48" width="172" height="172">
+		<mx:Image x="1" y="1" height="170" width="170" source="{image}"/>
+	</mx:Canvas>
+	<mx:Image x="40" y="166" source="images/talk.gif"/>
+	<mx:LinkButton x="48" y="161" label="交谈" alpha="0" click="showTask()"/>
+	<ns2:EquipmentSlotPackageComponent id="equip" x="467" y="24">
+	</ns2:EquipmentSlotPackageComponent>
+	<ns2:CharacterPackageComponent x="229" y="353" id="characterPackage" name="characterPackage">
+	</ns2:CharacterPackageComponent>
+	<mx:Text leading="4" x="244" y="245" width="215" height="40">
+		<mx:text><![CDATA[可以在这里对装备进行升级,镶嵌,合成以及其它改造.
+]]></mx:text>
+	</mx:Text>
+	<mx:Canvas x="30" y="210" width="187" height="260" backgroundImage="images/sanGuo/shop/shopBorder.png">
+		<mx:Label x="72" y="0" text="锻 造" fontWeight="bold"/>
+		<ns2:PackageComponent x="17" y="29" id="forgingPackage">
+		</ns2:PackageComponent>
+		<mx:LinkButton x="57.5" y="227"  styleName="forgingBtn" click="startSynthetic()"/>
+		<mx:Label x="12.5" y="199" text="(请拖入您需要合成的物品)" fontWeight="bold"/>
+	</mx:Canvas>
+	<ns2:CharacterTempPackageComponent x="418" y="63" visible="false" id="tempPackage">
+	</ns2:CharacterTempPackageComponent>
+	<mx:Image x="336" y="7" source="images/sanGuo/forging/DuanZhao.png"/>
+	<mx:LinkButton x="247" y="293" label="获取装备升级材料" height="20" fontWeight="normal" styleName="CommonLinkButton"/>
+	<mx:LinkButton x="247" y="316" label="获取武器镶嵌材料" fontWeight="normal" height="20" styleName="CommonLinkButton"/>
+	<mx:LinkButton x="357" y="293" label="获取通用镶嵌材料" height="20" fontWeight="normal" styleName="CommonLinkButton"/>
+	<mx:LinkButton x="357" y="316" label="获取防具镶嵌材料" height="20" fontWeight="normal" styleName="CommonLinkButton"/>
+	<mx:LinkButton x="40" y="144" label="我想了解下哪些物品可以铸造？" height="20" fontWeight="normal" styleName="CommonLinkButton"/>
+</nscomp:ForgingImpl>

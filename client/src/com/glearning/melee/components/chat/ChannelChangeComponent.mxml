@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ChannelChangeImpl xmlns="com.glearning.melee.components.chat.*" width="33" height="14" xmlns:mx="http://www.adobe.com/2006/mxml">
+	<mx:LinkButton id="channel" x="0" y="0"/>
+</ChannelChangeImpl>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:WorkoutOptionImpl xmlns:nscomp="com.glearning.melee.components.Workout.*" xmlns:filters="flash.filters.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="379" height="184" backgroundImage="images/sanGuo/payMoney.png">
+	<mx:LinkButton x="345" y="0" width="20" height="20" styleName="CloseBtn" click="close()"/>
+	<mx:Label x="162" y="0.8" text="查看修炼" color="#e0b28e" fontWeight="bold">
+	<mx:filters>
+	     <filters:GlowFilter color="0x5C4734"  strength="2"/>
+	</mx:filters>
+	</mx:Label>
+	<mx:HBox y="50" horizontalGap="0" width="349" x="15">
+		<mx:Label text="你处于修炼中，正在对【"/>
+		<mx:Label text="{monsterName}"/>
+		<mx:Label text="】进行"/>
+		<mx:Label text="{totalCount}" width="25"/>
+		<mx:Label text="次自动攻击"/>
+	</mx:HBox>
+	<mx:HBox x="15" y="77" width="349" horizontalGap="0">
+		<mx:Label text="修炼完成你将提升"/>
+		<mx:Label text="{expBonus}"/>
+		<mx:Label text="点经验，并有机会获得战利品"/>
+	</mx:HBox>
+	<mx:Label x="15" y="104" text="距离修炼结束还有："/>
+	<mx:Label x="136" y="104" text="" id="timeDown"/>
+	<mx:HBox x="0" y="131" width="100%" horizontalAlign="center">
+		<mx:LinkButton click="finish()" styleName="workoutFinish"/>
+		<mx:LinkButton click="terminate()" styleName="workoutOver"/>
+		<mx:LinkButton click="close()" styleName="closeBattle"/>
+	</mx:HBox>
+</nscomp:WorkoutOptionImpl>

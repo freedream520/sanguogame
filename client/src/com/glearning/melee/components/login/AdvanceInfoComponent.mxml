@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:AdvanceInfoImpl verticalAlign="middle" xmlns:nscomp="com.glearning.melee.components.login.*" xmlns:mx="http://www.adobe.com/2006/mxml" >	
+	<mx:Label id="info" color="#E7D688"/>
+</nscomp:AdvanceInfoImpl>

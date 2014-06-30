@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:MailImpl xmlns:nscomp="com.glearning.melee.components.mailSystem.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="568" horizontalAlign="center" verticalAlign="top" creationComplete="init()" verticalGap="0" backgroundColor="#020101">
+	<mx:Text width="92%"  text="引用:{mailData.reference}" id="reference" alpha="0.0" enabled="false"/>
+	<mx:Text width="100%" htmlText="{mailData.content}" alpha="0.0" enabled="false"/>
+	<mx:HBox x="10" y="110" width="100%" horizontalGap="0">
+		<mx:HBox horizontalGap="0" id="allBtn">
+			<mx:HBox horizontalGap="0" id="playerBtn" >
+				<mx:HBox horizontalGap="0" id="isFriend" >
+					<mx:LinkButton label="加为好友" height="20" textDecoration="underline" styleName="CommonLinkButton" color="#DFB28B" alpha="0"  click="addFriend()"/>
+					<mx:LinkButton label="加为仇敌" textDecoration="underline" height="20" styleName="CommonLinkButton" color="#DFB28B" alpha="0"  click="addEnemy()"/>
+				</mx:HBox>
+				<mx:LinkButton label="回复信函" textDecoration="underline" height="20" styleName="CommonLinkButton" color="#DFB28B" alpha="0"  click="reply()"/>	
+			</mx:HBox>
+			<mx:HBox horizontalGap="0" id="systemBtn">
+				<mx:LinkButton label="回应组队请求" textDecoration="underline" height="20" styleName="CommonLinkButton" alpha="0" color="#DFB28B" id="teamRequest"/>
+			</mx:HBox>
+			<mx:LinkButton label="删除信函" styleName="CommonLinkButton" height="20" id="del" click="delMail()" color="#DFB28B" alpha="0"/>	
+		</mx:HBox>
+		<mx:HBox width="100%" horizontalAlign="right" horizontalGap="0">
+			<mx:Label text="{dateTime}"/>
+			<mx:Label text="{type}"/>
+			<mx:HBox horizontalGap="0" id="playerFrom">
+				<mx:Label text="来自:"/>
+				<mx:LinkButton height="20" textDecoration="underline" label="{mailData.name}" styleName="CommonLinkButton" color="#DFB28B" alpha="0" click="openPeople()"/>
+			</mx:HBox>
+		</mx:HBox>
+	</mx:HBox>
+</nscomp:MailImpl>

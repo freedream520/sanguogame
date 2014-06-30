@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TaskStepImpl xmlns="com.glearning.melee.components.*" xmlns:mx="http://www.adobe.com/2006/mxml" height="28" width="412">
+	<mx:Label text="Label" width="307" height="100%"/>
+	<mx:LinkButton label="传送"/>
+	<mx:Label text="Label" height="100%"/>
+	
+</TaskStepImpl>

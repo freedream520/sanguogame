@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:SkillImpl xmlns:nscomp="com.glearning.melee.components.skill.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="250" height="432"
+	    backgroundImage="images/sanGuo/middle.png">
+	<mx:LinkButton x="31" y="402" id="learnSkill" styleName="learnButton"/>
+	<mx:LinkButton x="154" y="402" id="useSkill" styleName="useButton"/>
+	<nscomp:SkillListComponent id="skillList" x="11" y="34" width="230" height="355" backgroundAlpha="0">
+	</nscomp:SkillListComponent>
+	<mx:LinkButton x="87" y="4" label="可学技能" id="learningSkill" styleName="tabNoClickButton"/>
+	<mx:LinkButton x="7" y="4" label="当前技能" id="learnedSkill" styleName="tabNoClickButton"/>
+	<mx:LinkButton x="167" y="4" label="所有技能" id="allSkill" styleName="tabNoClickButton"/>
+</nscomp:SkillImpl>

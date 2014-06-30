@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:WorldMapImpl xmlns:nscomp="com.glearning.melee.components.worldpanel.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="980" height="540" 
+	backgroundImage="images/places/WorldMap.jpg" horizontalScrollPolicy="off" verticalScrollPolicy="off">
+	<mx:Script>
+		<![CDATA[
+			import com.glearning.melee.model.WorldMapInfo;
+		]]>
+	</mx:Script>
+	<mx:LinkButton x="908" y="0" click="close()" styleName="CloseBtn" width="20" height="20"/>
+	<mx:Image x="{WorldMapInfo.instance.playerX}" y="{WorldMapInfo.instance.playerY}">
+		<mx:source>images/placeCursor.png</mx:source>
+	</mx:Image>
+</nscomp:WorldMapImpl>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:PayMoneyImpl xmlns:nscomp="com.glearning.melee.components.prompts.*" xmlns:filters="flash.filters.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="379" height="184" backgroundImage="images/sanGuo/payMoney.png">
+	<mx:LinkButton x="344" y="0" styleName="CloseBtn" width="20" height="20" click="closePayMoney()"/>
+	<mx:Label x="175" y="0.75" text="支付" color="#e0b28e" fontWeight="bold">
+	<mx:filters>
+	     <filters:GlowFilter color="0x5C4734"  strength="2"/>
+	</mx:filters>
+	</mx:Label>
+	<mx:Label x="44" y="51" text="" width="298" id="prompt" fontWeight="bold"/>
+	<mx:RadioButton x="44" y="78" label="" groupName="payMoney" id="gold" selected="true"/>
+	<mx:RadioButton x="44" y="109" label="" groupName="payMoney" id="coupon"/>
+	<mx:LinkButton x="98" y="140" styleName="ok" id="payMoneyOK"/>
+	<mx:LinkButton x="214" y="140" styleName="cancel" click="closePayMoney()"/>
+	<mx:Label x="66" y="78" text="" id="goldLabel" fontWeight="bold"/>
+	<mx:Label x="66" y="109" text="" id="couponLabel" fontWeight="bold"/>
+</nscomp:PayMoneyImpl>

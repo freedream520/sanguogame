@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:PlacePlayerListImpl xmlns:nscomp="com.glearning.melee.components.placepanel.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="197" height="343"
+	    backgroundImage="images/sanGuo/team/playerListBG.png" initialize="initTeamTable()">
+
+	<mx:Script>
+		<![CDATA[
+			import mx.controls.List;
+			import com.glearning.melee.model.PlaceInfo;
+			
+		]]>
+	</mx:Script>
+	
+	<mx:Parallel duration="200" id="showTeamEffect">
+		<mx:Resize heightBy="114"  />
+		<mx:Move yBy="-114" />
+	</mx:Parallel>
+	<mx:Parallel duration="200" id="closeTeamEffect">
+		<mx:Resize heightBy="-114"  />
+		<mx:Move yBy="114" />
+	</mx:Parallel>
+	<mx:Resize heightBy="-114" duration="200" id="shrink" />
+	<mx:Resize heightBy="114" duration="200" id="expand" />
+	<mx:DataGrid x="10" y="62" width="177" id="playerList" dataProvider="{PlaceInfo.instance.playerList}" showHeaders="false" height="241" styleName="dataGrid" >
+		<mx:columns>
+		    <mx:DataGridColumn width="18" itemRenderer="com.glearning.melee.components.PlayerCampComponent" />
+			<mx:DataGridColumn textAlign="left" itemRenderer="com.glearning.melee.components.ClickPlayerComponent"/>
+			<mx:DataGridColumn width="19" itemRenderer="com.glearning.melee.components.PlayerPKComponent"/>
+			<mx:DataGridColumn width="19" itemRenderer="com.glearning.melee.components.EmailOrTalkComponent"/>
+			<mx:DataGridColumn width="19" itemRenderer="com.glearning.melee.components.ExChangeComponent"/>
+			<mx:DataGridColumn width="19" itemRenderer="com.glearning.melee.components.InvitePlayerComponent"/>
+		</mx:columns>
+	</mx:DataGrid>
+	<mx:LinkButton x="10" y="47" width="85" height="17" id="searchPlayer" label="玩家查询" styleName="searchPlayer" click="SearchPlayer(event)"/>
+	<mx:LinkButton x="102" y="47" width="85" height="17" styleName="searchPlayer" label="查询更多" id="watchMore" click="ListAllPlayer(event)"/>
+	<mx:VBox paddingLeft="1" x="10" y="311" width="177" height="17" id="teamContainer">
+	    <mx:Button id="teamInfo" skin="@Embed(source='/images/sanGuo/team/teamInfoTitle1.png')" overSkin="@Embed(source='/images/sanGuo/team/teamInfoTitle2.png')" width="175" height="17"  x="1" click="moveTeamPanel(event)"/>
+	    <mx:VBox paddingLeft="1" width="175" height="131" visible="false" id="teamInfoList" includeInLayout="false" backgroundImage="images/sanGuo/team/teamInfo.png" >
+		    <mx:LinkButton alpha="0" width="173" height="12" click="closeTeamPanel(event)"/>
+		    <mx:DataGrid visible="false" x="4" y="17" change="dragEnterHandler(event)" width="173" height="70" styleName="dataGrid" id="teamTable" showHeaders="false">
+				<mx:columns>				
+			    <mx:DataGridColumn width="18" itemRenderer="com.glearning.melee.components.PlayerCampComponent" />
+				<mx:DataGridColumn dataField="nickname"/>
+				<mx:DataGridColumn width="15" itemRenderer="com.glearning.melee.components.PlayerPKComponent"/>
+				<mx:DataGridColumn width="15" itemRenderer="com.glearning.melee.components.EmailOrTalkComponent"/>
+				<mx:DataGridColumn width="15" itemRenderer="com.glearning.melee.components.ExChangeComponent"/>
+				<mx:DataGridColumn width="15" itemRenderer="com.glearning.melee.components.team.kickTeamMemberComponent"/>
+			    </mx:columns>
+		    </mx:DataGrid>
+		    <mx:HBox width="173" horizontalAlign="center">
+		    	<mx:LinkButton id="turn" styleName="teamOper" label="转让" width="49" height="18" click="transferTeamLeader(event)"/>
+		    	<mx:LinkButton id="leave" styleName="teamOper" width="49" height="18"  click="disbandTeam(event)"/>
+		    </mx:HBox>
+	    </mx:VBox>
+	</mx:VBox>
+	
+</nscomp:PlacePlayerListImpl>

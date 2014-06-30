@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:WithdrawalImpl xmlns:nscomp="com.glearning.melee.components.warehouseSystem.*" xmlns:filters="flash.filters.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="379" height="184" backgroundImage="images/sanGuo/payMoney.png">
+	<mx:Script>
+		<![CDATA[
+			import com.glearning.melee.model.MySelf;
+		]]>
+	</mx:Script>
+	<mx:LinkButton x="344" y="0" styleName="CloseBtn" width="20" height="20" click="close()"/>
+	<mx:Label x="175" y="0.75" text="取款" color="#e0b28e" fontWeight="bold">
+	<mx:filters>
+	     <filters:GlowFilter color="0x5C4734"  strength="2"/>
+	</mx:filters>
+	</mx:Label>
+	<mx:TextInput x="109.5" y="67" id="momey" text="0" maxChars="10"/>
+	<mx:LinkButton x="95" y="124" styleName="ok" click="ok()"/>
+	<mx:LinkButton x="227" y="124" styleName="cancel" click="close()"/>
+	<mx:HBox x="10" y="99" width="359" horizontalAlign="center" verticalAlign="middle">
+		<mx:Label fontWeight="bold" id="tip" color="#FF0000" />
+	</mx:HBox>
+	<mx:HBox x="10" y="39" width="359" horizontalAlign="center">
+		<mx:Label text="请输入要取出的钱(0~{MySelf.instance.deposit})" fontStyle="normal" fontWeight="bold"/>
+	</mx:HBox>
+</nscomp:WithdrawalImpl>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:showTeamLeaderImpl xmlns:nscomp="com.glearning.melee.components.team.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="8" height="8" backgroundAlpha="0" horizontalAlign="center" verticalAlign="middle" horizontalGap="0" verticalGap="0">
+	<mx:Canvas  id="teamMember"  width="8" height="8">
+	</mx:Canvas>
+	
+</nscomp:showTeamLeaderImpl>

@@ -1,0 +1,11 @@
+
+<nscomp:TaskInfoImpl xmlns:nscomp="com.glearning.melee.components.task.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="480">
+	<mx:HBox x="10" y="10" width="334">
+		<mx:Label id="taskName"/>
+		<mx:Label id="taskType"/>
+		<mx:Label id="taskCategory"/>
+	</mx:HBox>
+	<mx:LinkButton x="352" y="7" label="查看详情" id="watchInfo" alpha="0"/>
+	<mx:VBox x="4" y="34" width="473" verticalGap="0" id="taskContent" backgroundImage="images/sanGuo/tasktextback.png">
+	</mx:VBox>
+</nscomp:TaskInfoImpl>

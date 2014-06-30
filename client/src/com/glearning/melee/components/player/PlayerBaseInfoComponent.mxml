@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:PlayerBaseInfoImpl xmlns:nscomp="com.glearning.melee.components.player.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="172" height="289" backgroundAlpha="0">
+	<mx:Script>
+		<![CDATA[
+			import com.glearning.melee.model.MySelf;
+		]]>
+	</mx:Script>
+	
+	<mx:Canvas x="0" y="0" width="172" height="289" backgroundImage="images/personProperty.png">				
+			
+					<mx:Canvas x="45" y="44" width="116" height="10" backgroundImage="images/sanGuo/profession/emptyChannel.png" id="hpcanvas" toolTip=" " toolTipCreate="createCustomToolTip(event)">	
+					   <mx:Canvas height="8" styleName="characterHpProperty" y="1" left="2" id="hp"/>		
+					</mx:Canvas>
+					<mx:Canvas x="45" y="67" width="116" height="10" backgroundImage="images/sanGuo/profession/emptyChannel.png" id="mpcanvas" toolTip=" " toolTipCreate="createCustomToolTip(event)">
+					   <mx:Canvas height="8" styleName="characterMpProperty" y="1" left="2" id="mp" />	
+					</mx:Canvas>
+					<mx:Canvas x="45" y="89" width="116" height="10" backgroundImage="images/sanGuo/profession/emptyChannel.png" id="expcanvas" toolTip=" " toolTipCreate="createCustomToolTip(event)">
+					   <mx:Canvas height="8" styleName="characterExpProperty" y="1" left="2" id="exp" />			
+					</mx:Canvas>
+				  
+					
+					<mx:Text fontSize="9" fontWeight="bold" text="{MySelf.instance.energy}/200" id="txtEnergy" color="#c70000" width="48" x="51" y="107" height="18"/>
+					<mx:LinkButton label="恢复活力" styleName="CommonLinkButton" height="18" click="resumeEnergy()" x="99" y="107" alpha="0.0"/>				
+			
+			
+					
+					<mx:Text text="{MySelf.instance.profession}" id="txtProfession" x="51" y="129" width="48" height="20"/>
+			
+					
+					<mx:LinkButton label="{MySelf.instance.status}" textAlign="center" styleName="CommonLinkButton" id="txtStatus" x="44" y="152" width="60" height="20" click="openDeath()" alpha="0"/>
+				
+					
+					<mx:Text text="{MySelf.instance.pkStatus}" id="txtPkstatus" x="51" y="175" width="48" height="20"/>
+			
+					
+					<mx:Text text="{MySelf.instance.station}" id="txtStation" x="51" y="198" width="48" height="20"/>
+				
+					
+					<mx:Text text="{MySelf.instance.coin}" id="txtCoin" color="#ff0000" x="51" y="222" width="110" height="20"/>
+				
+					
+					<mx:Text text="{MySelf.instance.coupon}" color="#ff0000" id="txtCoupon" x="51" y="245" width="76" height="20"/>
+				
+					
+					<mx:Text text="{MySelf.instance.gold}" color="#ff0000" id="txtGold" x="51" y="268" width="76" height="20"/>
+					<mx:Canvas x="163" y="43" width="9" height="13">
+				    	<mx:Canvas x="0" y="0" width="9" height="13" backgroundImage="images/sanGuo/emptyBottle.gif">
+						</mx:Canvas>								
+						<mx:Image x="0" y="2" width="7" height="10" source="images/sanGuo/redPotion.gif"/>						
+					</mx:Canvas>
+					<mx:Canvas x="162" y="63" width="9" height="13">
+					    <mx:Canvas x="0" y="0" width="9" height="13" backgroundImage="images/sanGuo/emptyBottle.gif">
+						</mx:Canvas>
+					    <mx:Image x="1" y="2" width="7" height="10" source="images/sanGuo/bluePotion.gif"/>													
+					</mx:Canvas>
+					<mx:Label x="111" y="130" text="{professionStage}" width="48" textAlign="center"/>
+				    
+				
+	</mx:Canvas>
+</nscomp:PlayerBaseInfoImpl>

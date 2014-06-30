@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:QuestItemImpl xmlns:nscomp="com.glearning.melee.components.quest.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="400" height="300">
+	<mx:Label x="10" y="10" text="{itemData.name}"/>
+	<mx:Label x="104" y="10" text="{itemData.type}"/>
+	<mx:LinkButton x="307" y="8" label="详细信息" styleName="CommonLinkButton" alpha="0.0" click="openQuestInfo()"/>
+	
+</nscomp:QuestItemImpl>

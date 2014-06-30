@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:PortionPointImpl xmlns:nscomp="com.glearning.melee.components.player.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="240" height="118"
+	    creationComplete="init()" backgroundImage="images/sanGuo/propertyUI1.png">
+	<mx:Script>
+		<![CDATA[
+			import com.glearning.melee.model.MySelf;	
+			import com.glearning.melee.collections.collection;		
+		]]>
+	</mx:Script>
+	<mx:LinkButton x="154.5" y="8" label="重新分配" color="0xff0000" styleName="CommonLinkButton" click="reassignPoint()"/>
+	<mx:Text x="101" y="13" text="{MySelf.instance.sparePoint}"  color="0xff0000" width="37" id="point" height="20" fontSize="12" dataChange="hasPoint()"/>
+	<mx:Canvas y="51"  x="50" width="116" height="10" backgroundImage="images/sanGuo/profession/emptyChannel.png" id="strcanvas" toolTip=" " toolTipCreate="createCustomToolTip(event)">	
+		<mx:Canvas height="8" styleName="characterProperty" y="1" left="2" id="str"/>		
+	</mx:Canvas>
+	<mx:Canvas x="50" y="73" width="116" height="10" backgroundImage="images/sanGuo/profession/emptyChannel.png" id="dexcanvas" toolTip=" " toolTipCreate="createCustomToolTip(event)">
+		<mx:Canvas height="8" styleName="characterProperty" y="1" left="2" id="dex" />	
+	</mx:Canvas>
+	<mx:Canvas x="50" y="95" width="116" height="10" backgroundImage="images/sanGuo/profession/emptyChannel.png" id="vitcanvas" toolTip=" " toolTipCreate="createCustomToolTip(event)">
+		<mx:Canvas height="8" styleName="characterProperty" y="1" left="2" id="vit" />			
+    </mx:Canvas>
+	
+	
+	<!--<mx:ProgressBar toolTip=" " toolTipCreate="createCustomToolTip(event)" width="136" height="10" labelPlacement="center" label=" " y="51" id="str" x="50" minimum="0" maximum="100" barColor="#ff0000" mode="manual"/>-->
+	<!--<mx:ProgressBar toolTip=" " toolTipCreate="createCustomToolTip(event)" x="50" y="73" label=" " height="10" width="136" labelPlacement="center" id="dex" minimum="0" maximum="100" mode="manual"/>-->
+	<!--<mx:ProgressBar toolTip=" " toolTipCreate="createCustomToolTip(event)" x="50" y="95" width="136" height="10" labelPlacement="center" label=" " id="vit" minimum="0" maximum="100" mode="manual"/>-->
+	<mx:LinkButton x="191" y="48" width="13" height="13" styleName="Individual" id="strAdd" click="addPoint(collection.playerId,'manualStr',0)" name="plusModel"/>
+	<mx:LinkButton x="217" y="48" width="13" height="13" styleName="Groups" id="strAdds" click="addPoint(collection.playerId,'manualStr',1)"/>
+	<mx:LinkButton x="191" y="71" width="13" height="13" styleName="Individual" id="dexAdd" click="addPoint(collection.playerId,'manualDex',0)"/>
+	<mx:LinkButton x="217" y="71" width="13" height="13" styleName="Groups" id="dexAdds" click="addPoint(collection.playerId,'manualDex',1)"/>
+	<mx:LinkButton x="191" y="94" width="13" height="13" styleName="Individual" id="vitAdd" click="addPoint(collection.playerId,'manualVit',0)"/>
+	<mx:LinkButton x="217" y="94" width="13" height="13" styleName="Groups" id="vitAdds" click="addPoint(collection.playerId,'manualVit',1)"/>
+	
+</nscomp:PortionPointImpl>

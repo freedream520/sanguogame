@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ChooseProfessionImpl xmlns="com.glearning.melee.components.player.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="980" height="540" initialize="initial()"
+	                  backgroundImage="images/sanGuo/profession/professionBG.jpg" creationComplete="init()" xmlns:ns1="com.glearning.melee.components.*">
+	<mx:Text x="694" y="122" width="205" id="professionDescription"/>
+	<mx:SWFLoader x="23" y="354" height="112" id="c1" complete="c1_complete = 1;event.currentTarget.content.stop();loadingProgress()" />
+	<mx:SWFLoader x="189" y="354" height="112" id="c2" complete="c2_complete = 1;event.currentTarget.content.stop();loadingProgress()" />
+	<mx:SWFLoader x="352" y="355" height="112" id="c3" complete="c3_complete = 1;event.currentTarget.content.stop();loadingProgress()" />
+	<mx:SWFLoader x="501" y="355" height="112" id="c4" complete="c4_complete = 1;event.currentTarget.content.stop();loadingProgress()" />
+	<mx:SWFLoader x="641" y="355" height="112" id="c5" complete="c5_complete = 1;event.currentTarget.content.stop();loadingProgress()" />
+	<mx:SWFLoader x="792" y="355" height="112" id="c6" complete="c6_complete = 1;event.currentTarget.content.stop();loadingProgress()" />
+	<mx:Image x="510" y="72" width="69" height="30" id="professionTitle"/>
+	<mx:Canvas x="566" y="138" width="116" height="10" backgroundImage="images/sanGuo/profession/emptyChannel.png">	
+	   <mx:Canvas height="8" styleName="characterProperty" y="1" left="2" id="speed" />		
+	</mx:Canvas>
+	<mx:Canvas x="566" y="169" width="116" height="10" backgroundImage="images/sanGuo/profession/emptyChannel.png">	
+	   <mx:Canvas height="8" styleName="characterProperty" y="1" left="2" id="attack" />		
+	</mx:Canvas>
+	<mx:Canvas x="566" y="198" width="116" height="10" backgroundImage="images/sanGuo/profession/emptyChannel.png">	
+	   <mx:Canvas height="8" styleName="characterProperty" y="1" left="2" id="control" />		
+	</mx:Canvas>
+	<mx:Canvas x="566" y="229" width="116" height="10" backgroundImage="images/sanGuo/profession/emptyChannel.png">
+	   <mx:Canvas height="8" styleName="characterProperty" y="1" left="2" id="physical" />	
+	</mx:Canvas>
+	<mx:Canvas x="566" y="259" width="116" height="10" backgroundImage="images/sanGuo/profession/emptyChannel.png">
+	   <mx:Canvas height="8" styleName="characterProperty" y="1" left="2" id="dodge" />			
+	</mx:Canvas>
+	<mx:Canvas x="566" y="288" width="116" height="10" backgroundImage="images/sanGuo/profession/emptyChannel.png">	
+	   <mx:Canvas height="8" styleName="characterProperty" y="1" left="2" id="guard" />
+	</mx:Canvas>
+	<mx:SWFLoader x="48"  y="347" width="100" height="120" source="images/sanGuo/profession/effect1.swf" complete="ce1_complete = 1;event.currentTarget.content.stop();loadingProgress()" id="ce1"/>
+	<mx:SWFLoader x="214" y="347" width="100" height="120" source="images/sanGuo/profession/effect2.swf" complete="ce2_complete = 1;event.currentTarget.content.stop();loadingProgress()" id="ce2"/>
+	<mx:SWFLoader x="376" y="347" width="100" height="120" source="images/sanGuo/profession/effect3.swf" complete="ce3_complete = 1;event.currentTarget.content.stop();loadingProgress()" id="ce3"/>
+	<mx:SWFLoader x="524" y="347" width="100" height="120" source="images/sanGuo/profession/effect1.swf" complete="ce4_complete = 1;event.currentTarget.content.stop();loadingProgress()" id="ce4"/>
+	<mx:SWFLoader x="667" y="347" width="100" height="120" source="images/sanGuo/profession/effect2.swf" complete="ce5_complete = 1;event.currentTarget.content.stop();loadingProgress()" id="ce5"/>
+	<mx:SWFLoader x="824" y="347" width="100" height="120" source="images/sanGuo/profession/effect3.swf" complete="ce6_complete = 1;event.currentTarget.content.stop();loadingProgress()" id="ce6"/>
+	<mx:LinkButton x="460" y="506" styleName="enterCamp" click="handlerSelectProfession(event)" id="okProfession"/>
+	<ns1:CustomerButtonComponent x="67" y="467" skin="@Embed('/images/sanGuo/profession/yongShi.png')" enabled="false" id="p1" data="勇士"/>
+	<ns1:CustomerButtonComponent x="238" y="467" skin="@Embed('/images/sanGuo/profession/weiShi.png')" enabled="false" id="p2" data="卫士"/>
+	<ns1:CustomerButtonComponent x="398" y="467" skin="@Embed('/images/sanGuo/profession/wuShi.png')" enabled="false" id="p3" data="武士"/>
+	<ns1:CustomerButtonComponent x="543" y="467" skin="@Embed('/images/sanGuo/profession/xiaShi.png')" enabled="false" id="p4" data="侠士"/>
+	<ns1:CustomerButtonComponent x="694" y="467" skin="@Embed('/images/sanGuo/profession/mouShi.png')" enabled="false" id="p5" data="谋士"/>
+	<ns1:CustomerButtonComponent x="839" y="467" skin="@Embed('/images/sanGuo/profession/shuShi.png')" enabled="false" id="p6" data="术士"/>
+</ChooseProfessionImpl>

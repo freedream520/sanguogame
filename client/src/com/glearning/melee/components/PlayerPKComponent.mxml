@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:PlayerPKImpl xmlns:nscomp="com.glearning.melee.components.*" xmlns:mx="http://www.adobe.com/2006/mxml" horizontalAlign="center" verticalAlign="middle" horizontalGap="0" verticalGap="0">
+	<mx:Image id="playerPK" click="PK()"/>
+</nscomp:PlayerPKImpl>

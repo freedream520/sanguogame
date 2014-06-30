@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:SendMailImpl xmlns:nscomp="com.glearning.melee.components.mailSystem.*" xmlns:filters="flash.filters.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="379" height="205" backgroundImage="images/sanGuo/procedurehall/hallBorder.png">
+	<mx:LinkButton x="345" y="0" width="20" height="20" styleName="CloseBtn" click="close()"/>
+	<mx:Label x="161" y="1" text="撰写信函" fontWeight="bold">
+	<mx:filters>
+	     <filters:GlowFilter color="0x5C4734"  strength="2"/>
+	</mx:filters>
+	</mx:Label>
+	<mx:Label y="38" text="发信对象：" left="31"/>
+	<mx:TextInput x="92" y="36" width="126" id="playerName"/>
+	<mx:Label x="237" y="38" text="( 请填写人物名称 ) "/>
+	<mx:Label x="31" y="78" text="信函内容："/>
+	<mx:TextArea y="78" width="256" height="75" x="92" id="content"/>
+	<mx:LinkButton x="71" y="161" click="sendMail()" styleName="sendMail"/>
+	<mx:LinkButton x="227" y="161" click="close()" styleName="cancel"/>
+</nscomp:SendMailImpl>

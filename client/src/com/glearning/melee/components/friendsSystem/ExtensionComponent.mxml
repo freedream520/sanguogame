@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:ExtensionImpl xmlns:nscomp="com.glearning.melee.components.friendsSystem.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="379" height="184" backgroundImage="images/sanGuo/payMoney.png">
+	<mx:LinkButton x="344" y="0" width="20" height="20" styleName="CloseBtn" click="close()"/>
+	<mx:Label x="162.5" y="2" text="扩建名录" fontWeight="bold"/>
+	<mx:Text x="19" y="28">
+		<mx:text><![CDATA[扩建好友名录后，您的好友人数和仇敌人数的上限将同时提高。
+每增加 1 人需要支付 2 黄金。
+您最多可以将好友名录扩建到 100 人。 
+]]></mx:text>
+	</mx:Text>
+	<mx:Label x="19" y="78" text="当前容量：{totleCount}人  "/>
+	<mx:Label x="19" y="100" text="扩建容量："/>
+	<mx:Label x="129" y="100" text="( 请填写您要增加的人数 )"/>
+	<mx:HBox x="21" y="126" width="274" horizontalGap="0">
+	<mx:Label text="扩建费用：" />
+	<mx:Label text="{extensionGold}" color="#FF0000" />
+	<mx:Label text="黄金" />
+	</mx:HBox>
+	<mx:TextInput x="81" y="98" width="49" id="extensionCount" change="setExtensionGold()" maxChars="3"/>
+	<mx:LinkButton y="151" click="ok()" styleName="ok" x="84"/>
+	<mx:LinkButton y="151" click="close()" styleName="cancel" x="231"/>
+	
+	
+</nscomp:ExtensionImpl>

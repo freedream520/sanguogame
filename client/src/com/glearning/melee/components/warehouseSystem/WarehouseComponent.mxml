@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:WarehouseImpl xmlns:nscomp="com.glearning.melee.components.warehouseSystem.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="738" height="484"
+	         backgroundImage="images/sanGuo/shop/shopBackImage.jpg" xmlns:ns1="com.glearning.melee.components.shop.*" xmlns:ns2="com.glearning.melee.components.packages.*">
+	<mx:Script>
+		<![CDATA[
+			import com.glearning.melee.model.MySelf;
+		]]>
+	</mx:Script>
+	<mx:LinkButton x="698" y="10" width="20" height="20" styleName="CloseBtn" click="backToCity()"/>
+	<mx:Text x="33" y="81" width="236" height="48" enabled="false">
+		<mx:text><![CDATA[钱庄老板:
+财不露白,不如寄存这,瑞士户头,钢板保险!]]></mx:text>
+	</mx:Text>
+	<mx:Canvas backgroundImage="images/sanGuo/shop/npcBorder.png" x="292" y="48" width="172" height="172">
+		<mx:Image x="1" y="1" height="170" width="170" source="{image}"/>
+	</mx:Canvas>
+	<mx:Image x="40" y="166" source="images/talk.gif"/>
+	<mx:LinkButton x="48" y="161" label="交谈" alpha="0" click="showTask()"/>
+	<ns2:EquipmentSlotPackageComponent id="equip" x="467" y="24">
+	</ns2:EquipmentSlotPackageComponent>
+	<ns2:CharacterPackageComponent x="229" y="353" id="characterPackage" name="characterPackage">
+	</ns2:CharacterPackageComponent>
+	<mx:Text leading="4" x="244" y="279" text="VIP享4倍容量(含物品和铜币上限)&#xa;注：VIP到期后额外空间将关闭，其中物品需再次成为VIP才能取出" width="215" height="55"/>
+	<mx:Canvas x="30" y="210" width="187" height="260" backgroundImage="images/sanGuo/shop/shopBorder.png">
+		<mx:Label x="72" y="0" text="仓   库" fontWeight="bold"/>
+		<ns2:PackageComponent x="17" y="29" id="warehousePackage">
+		</ns2:PackageComponent>
+		<mx:Label x="10" y="191" text="存款：" fontWeight="bold"/>
+		<mx:LinkButton x="27" y="216" label="存款" styleName="teamOper" height="20" click="openDeposit()"/>
+		<mx:LinkButton x="109.5" y="216" label="取款" styleName="teamOper" height="20" click="openWithdrawal()"/>
+		<mx:TextInput x="48" y="189" text="{MySelf.instance.deposit}" width="112.5"  paddingTop="0" styleName="textSkin" editable="false" color="#FF0000"/>
+		<mx:LinkButton styleName="lastPage"  x="61" y="239" height="15" width="15" id="last" click="lastPackage()"/>
+		<mx:LinkButton styleName="nextPage" x="109.5" y="239" height="15" width="15" id="next" click="nextPackage()"/>
+		<mx:Label x="77" y="234" text="{page+1}/{MySelf.instance.warehouses}" width="33" textAlign="center"/>
+	</mx:Canvas>
+	<ns2:CharacterTempPackageComponent x="418" y="63" visible="false" id="tempPackage">
+	</ns2:CharacterTempPackageComponent>
+	<mx:LinkButton x="46" y="135" label="点击升级VIP帐号，享有4倍存储空间" fontWeight="normal" styleName="CommonLinkButton"/>
+	<mx:Label x="244" y="252" text="当前存款上限：{MySelf.instance.level*1000+10000}"/>
+	<mx:Image x="345" y="7" source="images/sanGuo/warehouse/QianZhuang.png"/>
+</nscomp:WarehouseImpl>

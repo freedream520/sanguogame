@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:PackageItemImpl xmlns:nscomp="com.glearning.melee.components.packages.*" toolTipShow="positionToolTip(event)" xmlns:mx="http://www.adobe.com/2006/mxml" backgroundAlpha="0.0" toolTip=" " toolTipCreate="createCustomToolTip(event)">
+	<mx:Image  x="0" y="0" id="itemImage" source="{itemData.image}" />
+	<mx:Label y="{itemData.height}" width="22" height="22" text="{itemData.count}" id="txtCount"/>
+	
+</nscomp:PackageItemImpl>

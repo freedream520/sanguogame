@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:TaskTagImpl xmlns:nscomp="com.glearning.melee.components.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="240" height="25" creationComplete="init()">
+	<mx:Image width="10" height="14" id="taskTip"/>
+	<mx:LinkButton id="taskName" alpha="0"/>	
+</nscomp:TaskTagImpl>

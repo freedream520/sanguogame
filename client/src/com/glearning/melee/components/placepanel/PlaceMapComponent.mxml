@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:PlaceMapImpl xmlns:nscomp="com.glearning.melee.components.placepanel.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="200" height="300" horizontalScrollPolicy="off" verticalScrollPolicy="off" backgroundImage="{PlaceInfo.instance.mapImg}">
+	<mx:Script>
+		<![CDATA[
+			import com.glearning.melee.model.PlaceInfo;
+		]]>
+	</mx:Script>
+	<mx:Image x="0" y="0" width="200" height="300" source="images/places/placesBordor.png">
+	</mx:Image>
+	<mx:Image name="{PlaceInfo.instance.name}" toolTip=" " toolTipCreate="createCustomToolTip(event)"  x="{PlaceInfo.instance.playerX-5}" y="{PlaceInfo.instance.playerY-5}" id="playerIcon" source="images/placeCursor.png">
+	</mx:Image>
+	
+</nscomp:PlaceMapImpl>

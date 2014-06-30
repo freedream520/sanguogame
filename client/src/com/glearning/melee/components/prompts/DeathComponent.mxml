@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:DeathImpl xmlns:nscomp="com.glearning.melee.components.prompts.*" xmlns:filters="flash.filters.*" xmlns:mx="http://www.adobe.com/2006/mxml" backgroundImage="images/sanGuo/deathBorder.png" width="504" height="222">
+	<!--<mx:Image source="images/sanGuo/deathBorder.png" width="504" height="222"/>-->
+	<mx:LinkButton x="470" y="0" styleName="CloseBtn" width="20" height="20" click="closeDeath()"/>
+	<mx:Label x="87" y="31" text="请选择复活类型（" fontWeight="bold" color="#FF0000"/>
+	<mx:LinkButton x="188" y="31" label="购买便携式血气包与内息包" height="20" styleName="CommonLinkButton"/>
+	<mx:Label x="360" y="31" text="）" fontWeight="bold" color="#FF0000"/>
+	<mx:Label x="426.5" y="31" text="复活费用" fontWeight="bold" color="#FF0000"/>
+	<mx:LinkButton x="28" y="75.95" label="" styleName="situ" click="situResurrection()"/>
+	<mx:LinkButton x="28" y="124" label="" styleName="toCity" click="toCity()"/>
+	<mx:LinkButton x="28" y="170" label="" styleName="gold" click="toMoney()"/>
+	<mx:Label x="100" y="75.95" width="235" text="原地复活,恢复50%生命,不恢复魔法" fontWeight="bold"/>
+	<mx:Label x="100" y="124" text="回城复活,恢复1点生命,不恢复魔法" width="204" fontWeight="bold"/>
+	<mx:Label x="99.5" y="170" text="黄金复活,生命与魔法完全恢复,并进入愤怒状态,攻击力提升" fontWeight="bold"/>
+	<mx:Label x="443.5" y="170.8" text="2黄金" color="#FF0000" textDecoration="underline"/>
+	<mx:Label x="449.5" y="127.8" text="免费" color="#FF0000" textDecoration="underline"/>
+	<mx:Label y="77.75" id="charge" textDecoration="underline" color="#FF0000" right="25.5"/>
+	<mx:Label x="217" y="0.79999995" text="人物复活" width="59" fontWeight="bold" color="#e0b28e">
+	<mx:filters>
+	     <filters:GlowFilter color="0x5C4734"  strength="2"/>
+	</mx:filters>
+	</mx:Label>
+	
+</nscomp:DeathImpl>

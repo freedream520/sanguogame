@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<comp:MiniTaskImpl xmlns:comp="com.glearning.melee.components.task.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="332" height="137"
+                 backgroundImage="images/sanGuo/miniBorder/TaskMiniBackGround.png">
+	<mx:ViewStack x="2" y="21" id="viewstack1" width="330" height="115" >
+		<mx:VBox id="currentBox" width="100%" height="100%">
+			<mx:VBox x="0" y="0" width="330" height="112" id="current" horizontalScrollPolicy="off"></mx:VBox>
+		</mx:VBox>
+		<mx:VBox id="battleBox" width="100%" height="100%">
+			<mx:VBox x="0" y="0" width="330" height="115" id='battle' horizontalScrollPolicy="off"></mx:VBox>
+		</mx:VBox>
+		<mx:VBox id="sceneBox" width="100%" height="100%">
+			<mx:VBox x="0" y="0" width="330" height="115" id="scene" horizontalScrollPolicy="off"></mx:VBox>
+		</mx:VBox>
+		<mx:VBox id="recevibleBox" width="100%" height="100%">
+			<mx:VBox x="0" y="0" width="330" height="115" id="recevible" horizontalScrollPolicy="off"></mx:VBox>
+		</mx:VBox>
+	</mx:ViewStack>
+	<mx:LinkButton x="14" y="2" height="20" id="currentButton" styleName="MiniButton2" label="当前任务" click="viewstack1.selectedChild=currentBox;buttonStateChange('currentButton');questLinkBar(event);"/>
+	<mx:LinkButton x="170" y="2" height="20" id="battleButton" styleName="MiniButton1" label="战斗信息" click="viewstack1.selectedChild=battleBox;buttonStateChange('battleButton');questLinkBar(event);"/>
+	<mx:LinkButton x="247" y="2" height="20" id="sceneButton" styleName="MiniButton1" label="场景信息" click="viewstack1.selectedChild=sceneBox;buttonStateChange('sceneButton');questLinkBar(event);"/>
+	<mx:LinkButton x="91" y="2" height="20" id="receiveButton" styleName="MiniButton1" label="可接任务" click="viewstack1.selectedChild=recevibleBox;buttonStateChange('receiveableButton');questLinkBar(event);"/>
+</comp:MiniTaskImpl>

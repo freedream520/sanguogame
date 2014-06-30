@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:PeopleInformationImpl xmlns:nscomp="com.glearning.melee.components.peopleInformation.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="646" height="413" backgroundImage="images/sanGuo/peopleInformation/bg.png" xmlns:ns1="com.glearning.melee.components.packages.*" xmlns:ns2="com.glearning.melee.components.player.*" creationComplete="init()">
+	<mx:LinkButton x="612" y="0" styleName="CloseBtn" width="20" height="20" click="close()"/>
+	<ns1:EquipmentSlotPackageComponent x="388" y="32" id="people">
+	</ns1:EquipmentSlotPackageComponent>
+	<mx:Canvas x="25" y="43" width="172" height="170">	    
+		<mx:Image width="163" height="165" source="{peopleData.portrait}" x="4" y="2"/>
+		<mx:Canvas x="2" width="168" height="170" backgroundImage="images/headBorder.png">
+			
+		</mx:Canvas>		
+	</mx:Canvas>	
+	<mx:LinkButton x="216" y="368" styleName="playerAddFriend" click="openFriend()"/>
+	<mx:LinkButton x="324" y="368" styleName="playerDeal"/>
+	<mx:LinkButton x="438" y="368" styleName="playerSendMail" click="openMail()"/>
+	<mx:LinkButton x="545" y="368" styleName="playerTalk" click="toTalk()"/>
+	<mx:Label x="216" y="43" text="等级:" fontWeight="bold"/>
+	<mx:Label x="216" y="71" text="体力:" fontWeight="bold"/>
+	<mx:Label x="216" y="99" text="法力:" fontWeight="bold"/>
+	<mx:Label x="216" y="127" text="武勇:" fontWeight="bold"/>
+	<mx:Label x="216" y="155" text="机警:" fontWeight="bold"/>
+	<mx:Label x="216" y="183" text="体魄:" fontWeight="bold"/>
+	<mx:Label x="216" y="211" text="命中率:" fontWeight="bold"/>
+	<mx:Label x="303" y="211" text="闪避率:" fontWeight="bold"/>
+	<mx:Label x="251" y="43" text="LV.{peopleData.level}" color="#FF0000"/>
+	<mx:Label x="263" y="211" text="{int(peopleData.hitRate)}%" id="hitRate" color="#FF0000" toolTip=" " toolTipCreate="otherTip(event)"/>
+	<mx:Label x="349" y="211" text="{int(peopleData.dodgeRate)}%" id="dodgeRate" color="#FF0000" toolTip=" " toolTipCreate="otherTip(event)"/>
+	<mx:Label x="216" y="239" text="暴击率:" fontWeight="bold"/>
+	<mx:Label x="263" y="239" text="{int(peopleData.criRate)}%" id="criRate" color="#FF0000" toolTip=" " toolTipCreate="otherTip(event)"/>
+	<mx:Label x="303" y="239" text="破防率:" fontWeight="bold"/>
+	<mx:Label x="349" y="239" text="{int(peopleData.bogeyRate)}%" id="bogeyRate" color="#FF0000" toolTip=" " toolTipCreate="otherTip(event)"/>
+	<mx:Label x="216" y="267" text="攻击:" fontWeight="bold"/>
+	<mx:Label x="251" y="267" id="attack" text="{Math.round(peopleData.currentDamage.minDamage)}-{Math.round(peopleData.currentDamage.maxDamage)}" color="#FF0000" toolTip=" " toolTipCreate="otherTip(event)"/>
+	<mx:Label x="216" y="295" text="速度:" fontWeight="bold"/>
+	<mx:Label x="216" y="323" text="防御:" fontWeight="bold"/>
+	<mx:Label x="251" y="295" color="#FF0000" id="speed" text="{peopleData.currentSpeedDescription}" toolTip=" " toolTipCreate="otherTip(event)"/>
+	<mx:Label x="251" y="323" text="{peopleData.currentDefense}"  id="guard" color="#FF0000" toolTip=" " toolTipCreate="otherTip(event)"/>
+	<mx:ProgressBar toolTip=" " toolTipCreate="hp_mp_Tip(event)" x="251" y="79" minimum="0" maximum="100" label="" width="100" height="4" id="hp" mode="manual" barColor="#ff0000"/>
+	<mx:ProgressBar toolTip=" " toolTipCreate="hp_mp_Tip(event)" x="251" y="107" minimum="0" maximum="100" label="" width="100" height="4" id="mp" mode="manual" barColor="#0000ff"/>
+	<mx:ProgressBar toolTip=" " toolTipCreate="createCustomToolTip(event)" x="251" y="135" minimum="0" maximum="100" label="" width="100" height="4" id="str" mode="manual" barColor="#00ff00"/>
+	<mx:ProgressBar toolTip=" " toolTipCreate="createCustomToolTip(event)" x="251" y="163" minimum="0" maximum="100" label="" width="100" height="4" id="dex" mode="manual" barColor="#00ff00"/>
+	<mx:ProgressBar toolTip=" " toolTipCreate="createCustomToolTip(event)" x="251" y="191" minimum="0" maximum="100" label="" width="100" height="4" id="vit" mode="manual" barColor="#00ff00"/>
+	<mx:Label x="98" y="230" text="{peopleData.camp}" width="99" fontWeight="bold" textAlign="center"/>
+	<!--<mx:Label x="98" y="250" text="{peopleData.title}" width="99" textAlign="center" fontWeight="bold"/>
+	<mx:Label x="98" y="270" text="{peopleData.Prestige}" width="99" fontWeight="bold" textAlign="center"/>
+	<mx:Label x="98" y="290" text="{peopleData..worldRank}" fontWeight="bold" width="99" textAlign="center"/>-->
+	<mx:Label x="98" y="250" text="无" width="99" textAlign="center" fontWeight="bold"/>
+	<mx:Label x="98" y="270" text="0" width="99" fontWeight="bold" textAlign="center"/>
+	<mx:Label x="98" y="290" text="0" fontWeight="bold" width="99" textAlign="center"/>
+	<mx:Label x="98" y="310" text="{peopleData.profession}" fontWeight="bold" width="99" textAlign="center"/>
+	<!--<mx:Label x="98" y="330" text="{peopleData.sin}" fontWeight="bold" width="99" textAlign="center"/>
+	<mx:Label x="98" y="349" text="{peopleData.fisticuff}" fontWeight="bold" width="99" textAlign="center"/>
+	<mx:Label x="98" y="369" text="{peopleData.family}" fontWeight="bold" width="99" textAlign="center"/>-->
+	<mx:Label x="98" y="330" text="0" fontWeight="bold" width="99" textAlign="center"/>
+	<mx:Label x="98" y="349" text="0" fontWeight="bold" width="99" textAlign="center"/>
+	<mx:Label x="98" y="369" text="无" fontWeight="bold" width="99" textAlign="center"/>
+	<mx:Label x="285" y="1" text="查看人物信息" fontWeight="bold"/>
+</nscomp:PeopleInformationImpl>

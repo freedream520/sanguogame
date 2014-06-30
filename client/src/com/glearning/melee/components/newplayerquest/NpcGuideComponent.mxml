@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NpcGuideImpl xmlns="com.glearning.melee.components.newplayerquest.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="504" height="249" 
+	backgroundImage="images/sanGuo/itemBorder.png" creationComplete="init()">
+	<mx:Image x="19" y="34" width="170" height="170" source="images/npc/npc170/NanHuaXingJun.png" id="npcImg"/>
+	<mx:Text x="197" y="34" width="288" height="170" id="description"/>
+	<mx:LinkButton x="318" y="212" id="finish" label="完成"/>
+	<mx:Label x="214" y="1" width="60" text="新手指导"/>
+	<mx:Label x="{npcImg.x+(npcImg.width/2-npcName.width/2)}" y="211" text="南华星君" fontSize="15" fontWeight="bold" id="npcName"/>
+	
+</NpcGuideImpl>

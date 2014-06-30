@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TeamResponseImpl backgroundImage="images/sanGuo/deathBorder.png" width="504" height="222" xmlns="com.glearning.melee.components.team.*" xmlns:mx="http://www.adobe.com/2006/mxml"
+	             >
+	<mx:Label x="216" y="1" text="队伍信息" width="58" textAlign="center" fontWeight="bold"/>
+	<mx:DataGrid x="12" y="42" width="480" height="119" id="teamData" styleName="dataGrid" headerColors="#19140F" backgroundAlpha="0.0" headerSeparatorSkin="mx.skins.ProgrammaticSkin">
+		<mx:columns>
+			<mx:DataGridColumn headerText="人物名称" dataField="nickname" width="150"/>
+			<mx:DataGridColumn headerText="性别" dataField="gender" labelFunction="fun"/>
+			<mx:DataGridColumn headerText="国家" dataField="camp"/>
+			<mx:DataGridColumn headerText="派系" dataField="profession"/>
+			<mx:DataGridColumn headerText="职位" dataField="professionStage"/>
+			<mx:DataGridColumn headerText="等级" dataField="level"/>
+			<mx:DataGridColumn headerText="罪恶" dataField="goodevil"/>
+			<mx:DataGridColumn headerText="信函" itemRenderer="com.glearning.melee.components.EmailOrTalkComponent"/>			
+		</mx:columns>
+	</mx:DataGrid>
+	<mx:LinkButton x="147" y="178" label="接受邀请" styleName="teamOper" id="accept" />
+	<mx:LinkButton x="288" y="178" label="取消邀请" styleName="teamOper" id="cancel" />
+	
+</TeamResponseImpl>

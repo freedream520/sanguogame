@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:RegisterImpl xmlns:nscomp="com.glearning.melee.components.login.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="553" height="366"
+	           backgroundImage="@Embed('/images/sanGuo/login/registerPanel.jpg')" creationComplete="init()">
+	<mx:TextInput x="209" y="86" width="194" styleName="input" id="username"   restrict="A-Z 0-9 a-z"  borderThickness="0" focusOut="validatorUser(event)"/>
+	<mx:TextInput x="209" y="133" width="194" styleName="input" displayAsPassword="true" id="pwd1" focusOut="validatorPwd1(event)"/>
+	<mx:TextInput x="209" y="182" width="194" styleName="input" displayAsPassword="true" id="pwd2" focusOut="validatorPwd2(event)"/>
+	<mx:TextInput x="209" y="229" width="194" styleName="input" id="email" focusOut="validatorEmail(event)"/>
+	<mx:LinkButton x="240" y="289" width="73" height="24" styleName="registerBtn" id="registerBtn"/>
+	<mx:LinkButton x="523" y="10" width="20" height="18" styleName="CloseBtn" id="closeBtn" click="onClose(event)"/>
+	<mx:Label x="257" y="336" id="tipInfo"/>
+	<mx:EmailValidator id="emailValidator" invalid="emailValidator_invalid(event);" valid="emailValidator_invalid(event);"/> 
+	<mx:StringValidator required="true" id="pwd1Validator" maxLength="16" minLength="6" property="text" tooLongError="密码不能超过16个字母" tooShortError="密码不能少于6位" invalid="Pwd1Validator_invalid(event)" valid="Pwd1Validator_invalid(event)" />
+	<mx:StringValidator required="true" id="pwd2Validator" maxLength="16" minLength="6" property="text" tooLongError="密码不能超过16个字母" tooShortError="密码不能少于6位" invalid="Pwd2Validator_invalid(event)" valid="Pwd2Validator_invalid(event)" />
+	<mx:StringValidator required="true" id="userValidator" maxLength="18" minLength="4" property="text" tooLongError="用户名不能超过18个字母" tooShortError="密码不能少于4位" invalid="UserValidator_invalid(event)" valid="UserValidator_invalid(event)"/>
+	<mx:Text x="411" y="231" width="132" id="emailError"/>
+	<mx:Text x="411" y="182" width="132" id="Pwd2Error"/>
+	<mx:Text x="411" y="133" width="132" id="Pwd1Error"/>
+	<mx:Text x="411" y="86" width="132" id="UserError"/>
+	
+
+
+</nscomp:RegisterImpl>

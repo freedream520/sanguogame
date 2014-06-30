@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:MonsterItemImpl xmlns:nscomp="com.glearning.melee.components.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="140" height="40" backgroundAlpha="0.0"
+	    creationComplete="init()">
+	<mx:Image x="0" y="0" id="monsterIcon" data="{monsterData.id}" source="{monsterData.image}" click="monsterInfo()">
+	</mx:Image>
+	<mx:Label x="40" y="0" id="monsterName" text="{monsterData.name}"/>
+	<mx:Image x="40" y="16" click="practices()" id='practice'>
+		<mx:source>images/icon-fight-pk-multi.gif</mx:source>
+	</mx:Image>
+	<mx:Image x="64" y="18" click="attack()" id="fight" width="16" height="16">
+		<mx:source>images/icon-fight.gif</mx:source>
+	</mx:Image>
+
+</nscomp:MonsterItemImpl>

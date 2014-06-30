@@ -1,0 +1,1032 @@
+
+
+/*@font-face { 
+	src: local("Colonna MT");
+	fontFamily: colonna; 
+} */
+
+ComboBox
+{
+   skin:Embed("/images/sanGuo/placeplayer/comboxSkin.gif");	
+   color:#77471F;
+   selectionColor:#604C34;
+   rollOverColor  :#604C34;
+  
+
+}
+
+.talkButton
+{
+	skin:Embed("/images/talkFont.png");	
+}
+
+.errorTip
+{
+  font-size: 12;
+}
+        
+.testTip
+{
+   font-size: 12;
+   border-color: #ffffdd;
+   color: #ff0000;
+   font-weight: bold;
+   
+   backgroundAlpha:0.7;
+   paddingTop:5;
+   borderThickness:1;
+   borderColor:#F5F6CE;
+   borderStyle:solid;
+}
+
+.input
+{
+  	borderSkin:Embed("/images/sanGuo/login/input.gif");	
+}
+
+Text 
+{ 
+    leading: 6; 
+} 
+
+.textSkin
+{
+	borderSkin:Embed("/images/sanGuo/placeplayer/comboxSkin.gif");
+}
+
+
+.dropStyle
+{
+	backgroundAlpha: 0.9; 
+	backgroundColor: #BD9C7D;
+}
+
+
+
+
+.header
+{
+   skin:Embed("/images/sanGuo/placeplayer/comboxSkin.gif");	
+   
+}
+
+
+.goldTaskStyle
+{
+
+	height:20;
+	color:#ff0000;
+}
+
+.refreshShop
+{
+  skin:Embed("/images/sanGuo/shop/refreshShop1.gif");
+  over-skin:Embed("/images/sanGuo/shop/refreshShop2.gif");	
+}
+
+.refrushButton
+{
+    skin:Embed("/images/sanGuo/gold/immediateRush1.gif");
+	over-skin:Embed("/images/sanGuo/gold/immediateRush1.gif");	
+}
+
+
+.battleNumStyle{
+	fontWeight:bold;
+	fontSize:30;
+	fontFamily: colonna;
+	fontStyle:italic;
+}
+
+global
+{
+	fontSize: 12;
+    color:#dfb28b; 
+    disabledColor:#dfb28b;
+    fontWeight: normal;   
+
+   	modalTransparencyBlur: 0; 
+    modalTransparency: 0.5; 
+    modalTransparencyColor: black; 
+    modalTransparencyDuration: 100; 
+    textRollOverColor:#dfb28b;
+
+}
+
+.friend
+{
+	skin:Embed("/images/sanGuo/friend1.gif");
+	over-skin:Embed("/images/sanGuo/friend2.gif");
+	color: #977961;
+	textRollOverColor: #c70000;
+	textSelectedColor: #c70000;
+	fontSize:12;
+}
+
+.lastPage
+{
+	skin:Embed("/images/sanGuo/shop/leftArrow1.gif");
+	over-skin:Embed("/images/sanGuo/shop/leftArrow2.gif");
+
+}
+
+.nextPage
+{
+	skin:Embed("/images/sanGuo/shop/rightArrow1.gif");
+	over-skin:Embed("/images/sanGuo/shop/rightArrow2.gif");
+
+}
+
+.accept
+{
+	skin:Embed("/images/sanGuo/accept1.png");
+	over-skin:Embed("/images/sanGuo/accept2.png");
+	color: #977961;
+	textRollOverColor: #c70000;
+	textSelectedColor: #c70000;	
+}
+
+.business
+{
+	skin:Embed("/images/sanGuo/busyUI1.gif");
+	over-skin:Embed("/images/sanGuo/busyUI2.gif");
+	color: #977961;
+	textRollOverColor: #c70000;
+	textSelectedColor: #c70000;
+	fontSize:12;
+}
+
+.backCountry
+{
+	skin:Embed("/images/backCountry1.gif");
+	over-skin:Embed("/images/backCountry2.gif");
+}
+
+.worldPicture
+{
+	skin:Embed("/images/worldpicture1.gif");
+	over-skin:Embed("/images/worldpicture2.gif");
+}
+
+.searchMore
+{
+	skin:Embed("/images/searchMore1.gif");
+	over-skin:Embed("/images/searchMore2.gif");
+}
+
+.searchPlayer
+{
+	skin:Embed("/images/sanGuo/team/search1.gif");
+	over-skin:Embed("/images/sanGuo/team/search2.gif");
+}
+
+.CommonLinkButton
+{
+	paddingLeft:0;
+	paddingRight:0;
+	paddingTop:0;
+	paddingBottom:0;
+	color: #c70000;
+	textRollOverColor: #c70000;
+	textSelectedColor: #c70000;
+	fontSize:12;
+	textDecoration:underline;
+}
+
+.PlaceButton
+{
+	skin:Embed("/images/button-place.png");
+	over-skin:Embed("/images/button-place-hover.png");
+	down-skin:Embed("/images/button-place-hover.png");
+	color: #dfb28b;
+	textRollOverColor: #dfff00;
+	textSelectedColor: #dfff00;
+	fontSize:12;
+}
+
+.PlaceButtonDisable
+{
+	skin:Embed("/images/button-place-disable.png");
+	color: #43341b;
+	textRollOverColor: #43341b;
+	textSelectedColor: #43341b;
+	fontSize:12;
+	disabledColor:#43341b;
+}
+
+.InfoLinkButton
+{
+	color: #925100;
+	textRollOverColor: #CC9933;	
+	textSelectedColor: #CC9933;
+	disabledColor: #CC9933;
+	fontSize:12;
+}
+
+.tempPackageButton
+{
+	up-skin:Embed("/images/battle/closeButton2.gif");
+	over-skin:Embed("/images/battle/closeButton1.gif");
+	down-skin:Embed("/images/battle/closeButton1.gif");
+	disabled-skin:Embed("/images/battle/closeButton1.gif");	
+}
+
+.CloseBtn
+{
+	skin:Embed("/images/close1.gif");
+	over-skin:Embed("/images/close2.gif");
+}
+
+.MiniButton1
+{
+	skin:Embed("/images/sanGuo/miniBorder/miniButton1.gif");	
+}
+
+.MiniButton2
+{
+	skin:Embed("/images/sanGuo/miniBorder/miniButton2.gif");	
+}
+
+.ChatButton
+{
+	fontSize:12;
+    color:#fffff9;
+	textRollOverColor: #fffff9;	
+	textSelectedColor: #fffff9;
+	disabledColor: #fffff9;
+}
+
+.PlayerListMap
+{
+	verticalGridLines: false;
+	fontSize:12;
+	backgroundAlpha:0;
+	borderThickness:0;
+}
+
+.dataGrid
+{
+	verticalGridLines: false;
+	fontSize:12;
+	backgroundAlpha:0;
+	borderThickness:0;
+	selectionColor:	#604C34;
+}
+
+.PlayerListButton
+{
+	
+	color:#977961;
+	textRollOverColor: #c70000;
+	textSelectedColor: #c70000;
+	fontSize:11;
+	
+}
+
+.RoleLinkButton
+{
+	skin:Embed("/images/role1.gif");
+	over-skin:Embed("/images/role2.gif");
+}
+
+.TaskLinkButton
+{
+	skin:Embed("/images/task1.gif");
+	over-skin:Embed("/images/task2.gif");
+}
+
+.MailLinkButton
+{
+	skin:Embed("/images/mail1.gif");
+	over-skin:Embed("/images/mail2.gif");
+}
+
+.PlayerListMapMore
+{
+	backgroundAlpha: 1;
+	alternatingItemColors: #ffffff, #cccccc;
+	horizontalGridLines: true;
+	verticalGridLines: false;
+	useRollOver: true;
+	borderThickness: 0;
+	textIndent: 0;
+	fontSize:12;
+}
+
+.FriendsList
+{
+	backgroundAlpha: 1;
+	alternatingItemColors: #ffffff, #cccccc;
+	horizontalGridLines: false;
+	verticalGridLines: false;
+	useRollOver: true;
+	borderThickness: 0;
+	textIndent: 0;
+	fontSize:12;
+}
+
+.dataGridHeader
+{
+	color: #c70000;
+	textRollOverColor: #c70000;
+	textSelectedColor: #c70000;
+	fontSize:12;
+}
+
+.tabNoClickButton
+{
+	skin:Embed("/images/sanGuo/noclick.png");
+	color:#725D4A;	
+}
+
+.tabClickButton
+{
+	skin:Embed("/images/sanGuo/click.png");	
+	color:#DEB390;
+}
+
+.learnButton
+{
+	skin:Embed("/images/sanGuo/learnbutton1.gif");
+	over-skin:Embed("/images/sanGuo/learnbutton2.gif");
+	color: #977961;
+	textRollOverColor: #c70000;
+	textSelectedColor: #c70000;
+	fontSize:12;
+}
+
+.useButton
+{
+	skin:Embed("/images/sanGuo/useSkill1.gif");
+	over-skin:Embed("/images/sanGuo/useSkill2.gif");
+	color: #977961;
+	textRollOverColor: #c70000;
+	textSelectedColor: #c70000;
+	fontSize:12;
+}
+
+.teamOper
+{
+	skin:Embed("/images/sanGuo/team1.gif");
+	over-skin:Embed("/images/sanGuo/team2.gif");
+}
+
+.Individual
+{
+	skin:Embed("/images/sanGuo/plus1.gif");
+	over-skin:Embed("/images/sanGuo/plus2.gif");
+}
+.Groups
+{
+	skin:Embed("/images/sanGuo/doubleplus1.gif");
+	over-skin:Embed("/images/sanGuo/doubleplus2.gif");
+}
+
+.repair
+{
+	skin:Embed("/images/sanGuo/repair1.gif");
+	over-skin:Embed("/images/sanGuo/repair2.gif");
+	color: #977961;
+	textRollOverColor: #c70000;
+	textSelectedColor: #c70000;
+	fontSize:12;
+}
+
+.allRepair
+{
+	skin:Embed("/images/sanGuo/allRepair1.gif");
+	over-skin:Embed("/images/sanGuo/allRepair2.gif");
+	color: #977961;
+	textRollOverColor: #c70000;
+	textSelectedColor: #c70000;
+	fontSize:12;
+}
+
+.personality
+{
+	skin:Embed("/images/sanGuo/personality1.gif");
+	over-skin:Embed("/images/sanGuo/personality2.gif");
+	color: #977961;
+	textRollOverColor: #c70000;
+	textSelectedColor: #c70000;
+	fontSize:12;
+}
+
+.tempPack
+{
+	skin:Embed("/images/sanGuo/tempPack1.gif");
+	over-skin:Embed("/images/sanGuo/tempPack2.gif");
+	color: #977961;
+	textRollOverColor: #c70000;
+	textSelectedColor: #c70000;
+	fontSize:12;
+}
+
+.battleStatics
+{
+	skin:Embed("/images/sanGuo/battleStatistics1.gif");
+	over-skin:Embed("/images/sanGuo/battleStatistics2.gif");
+	color: #977961;
+	textRollOverColor: #c70000;
+	textSelectedColor: #c70000;
+	fontSize:12;
+}
+
+.roleClickButton
+{
+	skin:Embed("/images/sanGuo/button2_2.gif");
+}
+
+.topToggleBar
+{
+skin: ClassReference(null);
+upSkin: Embed("/images/sanGuo/button2_1.gif"); 
+overSkin: Embed("/images/sanGuo/button2_1.gif"); 
+downSkin: Embed("/images/sanGuo/button2_1.gif"); 
+disabledSkin: Embed("/images/sanGuo/button2_2.gif"); 
+skin: Embed("/images/sanGuo/button2_2.gif");
+}
+
+.roleNoClickButton
+{
+	skin:Embed("/images/sanGuo/button2_1.gif");
+	over-skin:Embed("/images/sanGuo/button2_2.gif");
+}
+
+.packageStyle
+{
+ 	backgroundAlpha: 0.7;
+	backgroundImage:   Embed("/images/sanGuo/packageImage.png"); 
+    background-repeat:   repeat; 
+    background-position: left;
+    background-blend:    multiply; 
+    borderSkin:      ClassReference("com.degrafa.skins.CSSSkin"); 
+}
+
+.roleStyle
+{
+ 	backgroundAlpha: 0.7;
+	backgroundImage:   Embed("/images/sanGuo/roleImage.png"); 
+    background-repeat:   repeat; 
+    background-position: left;
+    background-blend:    multiply; 
+    borderSkin:      ClassReference("com.degrafa.skins.CSSSkin"); 
+}
+
+.itemInfo
+{
+	backgroundImage:   Embed("/images/sanGuo/itemInfo.png"); 
+    background-repeat:   repeat; 
+    background-position: left;
+    background-blend:    multiply; 
+    borderSkin:      ClassReference("com.degrafa.skins.CSSSkin"); 
+}
+
+.battleHp
+{
+	backgroundImage:   Embed("/images/battle/hp.gif"); 
+    background-repeat:   repeat; 
+    background-position: left;
+    background-blend:    multiply; 
+    borderSkin:      ClassReference("com.degrafa.skins.CSSSkin"); 
+}
+
+.battleMp
+{
+	backgroundImage:   Embed("/images/battle/mp.gif"); 
+    background-repeat:   repeat; 
+    background-position: left;
+    background-blend:    multiply; 
+    borderSkin:      ClassReference("com.degrafa.skins.CSSSkin"); 
+}
+
+.characterProperty
+{
+	backgroundImage:   Embed("/images/sanGuo/profession/green.gif"); 
+    background-repeat:   repeat; 
+    background-position: left;
+    background-blend:    multiply; 
+    borderSkin:      ClassReference("com.degrafa.skins.CSSSkin"); 
+}
+
+.characterHpProperty
+{
+	backgroundImage:   Embed("/images/sanGuo/profession/hpbar.gif"); 
+    background-repeat:   repeat; 
+    background-position: left;
+    background-blend:    multiply; 
+    borderSkin:      ClassReference("com.degrafa.skins.CSSSkin"); 
+}
+
+.characterMpProperty
+{
+	backgroundImage:   Embed("/images/sanGuo/profession/mpbar.gif"); 
+    background-repeat:   repeat; 
+    background-position: left;
+    background-blend:    multiply; 
+    borderSkin:      ClassReference("com.degrafa.skins.CSSSkin"); 
+}
+
+.characterExpProperty
+{
+	backgroundImage:   Embed("/images/sanGuo/profession/expbar.gif"); 
+    background-repeat:   repeat; 
+    background-position: left;
+    background-blend:    multiply; 
+    borderSkin:      ClassReference("com.degrafa.skins.CSSSkin"); 
+}
+
+.closeBattle
+{
+	skin:Embed("/images/battle/closeButton1.gif");
+	over-skin:Embed("/images/battle/closeButton2.gif");
+	down-skin:Embed("/images/battle/closeButton2.gif");
+	disabled-skin:Embed("/images/battle/closeButton2.gif");	
+}
+
+ScrollBar
+{
+    /*划动块图片皮肤*/
+    thumbDownSkin: Embed(source="images/sanGuo/squre1.gif",
+        scaleGridTop=2,                 
+        scaleGridLeft=2, 
+        scaleGridBottom=4, 
+        scaleGridRight=4
+    );
+    thumbOverSkin: Embed(source="images/sanGuo/squre1.gif",
+        scaleGridTop=2,                 
+        scaleGridLeft=2, 
+        scaleGridBottom=4, 
+        scaleGridRight=4
+    );
+    thumbUpSkin: Embed(source="images/sanGuo/squre1.gif",
+        scaleGridTop=2,                 
+        scaleGridLeft=2, 
+        scaleGridBottom=4, 
+        scaleGridRight=4
+    );
+    /*划动块中间图片(翻页图片)皮肤*/
+    thumbIcon: Embed("/images/sanGuo/center1.gif");
+
+    /*轨迹图片(划动路径图片)皮肤*/
+    trackSkin: Embed("/images/sanGuo/bg.png");    
+    
+    /*下/右翻图片皮肤*/
+    downArrowDisabledSkin: Embed("/images/sanGuo/down2.gif");
+    downArrowDownSkin: Embed("/images/sanGuo/down1.gif");
+    downArrowOverSkin: Embed("/images/sanGuo/down1.gif");
+    downArrowUpSkin: Embed("/images/sanGuo/down1.gif");
+    /*上/左翻图片皮肤*/
+    upArrowDisabledSkin: Embed("/images/sanGuo/up2.gif");
+    upArrowDownSkin: Embed("/images/sanGuo/up1.gif");
+    upArrowOverSkin: Embed("/images/sanGuo/up1.gif");
+    upArrowUpSkin: Embed("/images/sanGuo/up1.gif");    
+}
+
+
+.ok
+{
+	skin:Embed("/images/sanGuo/OK1.gif");
+	over-skin:Embed("/images/sanGuo/OK2.gif");
+}
+
+.cancel
+{
+	skin:Embed("/images/sanGuo/Cancel1.gif");
+	over-skin:Embed("/images/sanGuo/Cancel2.gif");
+}
+
+.situ
+{
+	skin:Embed("/images/sanGuo/situ1.gif");
+	over-skin:Embed("/images/sanGuo/situ2.gif");
+}
+
+.toCity
+{
+	skin:Embed("/images/sanGuo/toCity1.gif");
+	over-skin:Embed("/images/sanGuo/toCity2.gif");
+}
+
+.gold
+{
+	skin:Embed("/images/sanGuo/gold1.gif");
+	over-skin:Embed("/images/sanGuo/gold2.gif");
+}
+
+
+.changBattle
+{
+	skin:Embed("/images/battle/changBattle1.gif");
+	over-skin:Embed("/images/battle/changBattle2.gif");
+}
+
+
+
+.workoutOk
+{
+	skin:Embed("/images/sanGuo/workoutOk1.gif");
+	over-skin:Embed("/images/sanGuo/workoutOk2.gif");
+}
+
+.workoutCancel
+{
+	skin:Embed("/images/sanGuo/workoutCancel1.gif");
+	over-skin:Embed("/images/sanGuo/workoutCancel2.gif");
+}
+
+
+
+.workoutFinish
+{
+	skin:Embed("/images/sanGuo/workoutFinish1.gif");
+	over-skin:Embed("/images/sanGuo/workoutFinish2.gif");
+}
+
+.workoutOver
+{
+	skin:Embed("/images/sanGuo/workoutOver1.gif");
+	over-skin:Embed("/images/sanGuo/workoutOver2.gif");
+}
+
+
+
+
+.meal
+{
+	skin:Embed("/images/sanGuo/restHouse/meal1.gif");
+	over-skin:Embed("/images/sanGuo/restHouse/meal2.gif");
+}
+
+.nap
+{
+	skin:Embed("/images/sanGuo/restHouse/nap1.gif");
+	over-skin:Embed("/images/sanGuo/restHouse/nap2.gif");
+}
+
+.lightSleep
+{
+	skin:Embed("/images/sanGuo/restHouse/lightSleep1.gif");
+	over-skin:Embed("/images/sanGuo/restHouse/lightSleep2.gif");
+}
+
+.peacefulSleep
+{
+	skin:Embed("/images/sanGuo/restHouse/peacefulSleep1.gif");
+	over-skin:Embed("/images/sanGuo/restHouse/peacefulSleep2.gif");
+}
+
+.spoor
+{
+	skin:Embed("/images/sanGuo/restHouse/spoor1.gif");
+	over-skin:Embed("/images/sanGuo/restHouse/spoor2.gif");
+}
+
+.training
+{
+	skin:Embed("/images/sanGuo/lobby1-1.gif");
+	over-skin:Embed("/images/sanGuo/lobby1-2.gif");
+}
+
+.trainingStart
+{
+	skin:Embed("/images/sanGuo/trainingStart1.gif");
+	over-skin:Embed("/images/sanGuo/trainingStart2.gif");
+}
+
+.trainingOver
+{
+	skin:Embed("/images/sanGuo/trainingOver1.gif");
+	over-skin:Embed("/images/sanGuo/trainingOver2.gif");
+}
+
+.trainingStop
+{
+	skin:Embed("/images/sanGuo/trainingStop1.gif");
+	over-skin:Embed("/images/sanGuo/trainingStop2.gif");
+}
+
+.trainingDouble
+{
+	skin:Embed("/images/sanGuo/trainingDouble1.gif");
+	over-skin:Embed("/images/sanGuo/trainingDouble2.gif");
+}
+
+
+
+
+.extension
+{
+	skin:Embed("/images/sanGuo/friendsSystem/Extension1.gif");
+	over-skin:Embed("/images/sanGuo/friendsSystem/Extension2.gif");
+}
+
+.addFriend
+{
+	skin:Embed("/images/sanGuo/friendsSystem/Friend1.gif");
+	over-skin:Embed("/images/sanGuo/friendsSystem/Friend2.gif");
+}
+
+.addEnemy
+{
+	skin:Embed("/images/sanGuo/friendsSystem/enemy1.gif");
+	over-skin:Embed("/images/sanGuo/friendsSystem/enemy2.gif");
+}
+
+.systemMail
+{
+	skin:Embed("/images/sanGuo/mailSystem/systemMail1.gif");
+	over-skin:Embed("/images/sanGuo/mailSystem/systemMail2.gif");
+}
+
+.playerMail
+{
+	skin:Embed("/images/sanGuo/mailSystem/playerMail1.gif");
+	over-skin:Embed("/images/sanGuo/mailSystem/playerMail2.gif");
+}
+
+.Announcement
+{
+	skin:Embed("/images/sanGuo/mailSystem/Announcement1.gif");
+	over-skin:Embed("/images/sanGuo/mailSystem/Announcement2.gif");
+}
+
+.Deal
+{
+	skin:Embed("/images/sanGuo/mailSystem/Deal1.gif");
+	over-skin:Embed("/images/sanGuo/mailSystem/Deal2.gif");
+}
+
+.sendMail
+{
+	skin:Embed("/images/sanGuo/peopleInformation/sendMail1.gif");
+	over-skin:Embed("/images/sanGuo/peopleInformation/sendMail2.gif");
+}
+
+.playerDeal
+{
+	skin:Embed("/images/sanGuo/peopleInformation/deal1.gif");
+	over-skin:Embed("/images/sanGuo/peopleInformation/deal2.gif");
+}
+
+.playerAddFriend
+{
+	skin:Embed("/images/sanGuo/peopleInformation/addFriend1.gif");
+	over-skin:Embed("/images/sanGuo/peopleInformation/addFriend2.gif");
+}
+
+.playerSendMail
+{
+	skin:Embed("/images/sanGuo/peopleInformation/sendMail1.gif");
+	over-skin:Embed("/images/sanGuo/peopleInformation/sendMail2.gif");
+}
+
+.playerTalk
+{
+	skin:Embed("/images/sanGuo/peopleInformation/talk1.gif");
+	over-skin:Embed("/images/sanGuo/peopleInformation/talk2.gif");
+}
+
+/* CSS file */
+.chatHeader
+{
+	skin: Embed("/images/chat/chatHeaderButton1.gif");	
+	over-skin: Embed("/images/chat/chatHeaderButton2.gif");
+	color:#897B72;
+}
+
+.chatHeaderSelect
+{
+	skin: Embed("/images/chat/chatHeaderButton2.gif");
+	color:#dfb28b; 
+}
+
+.sendMessage
+{
+	skin: Embed("/images/chat/sendMessage1.gif");
+	over-skin: Embed("/images/chat/sendMessage2.gif");
+	fontSize:12;
+}
+
+.worldUp
+{
+	skin:Embed("/images/chat/worldUp1.gif");
+	over-skin:Embed("/images/chat/worldUp2.gif");
+	fontSize:12;	
+}
+
+.upButton
+{
+	skin:Embed("/images/chat/upButton1.gif");
+	over-skin:Embed("/images/chat/upButton2.gif");	
+	fontSize:12;
+}
+
+.downButton
+{
+	skin:Embed("/images/chat/downButton1.gif");
+	over-skin:Embed("/images/chat/downButton2.gif");	
+	fontSize:12;
+}
+
+
+
+.worldUp
+{
+ 	skin: Embed("/images/chat/worldUp1.gif");
+	over-skin: Embed("/images/chat/worldUp2.gif");	
+}
+
+.world
+{
+	skin: Embed("/images/chat/world1.gif");
+	over-skin: Embed("/images/chat/world2.gif");	
+}
+
+.countryUp
+{
+	skin:Embed("/images/chat/countryUp1.gif");
+	over-skin:Embed("/images/chat/countryUp2.gif");
+}
+
+.country
+{
+	skin:Embed("/images/chat/country1.gif");
+	over-skin:Embed("/images/chat/country2.gif");
+	fontSize:12;
+}
+
+.sceneUp
+{
+	skin:Embed("/images/chat/sceneUp1.gif");
+	over-skin:Embed("/images/chat/sceneUp2.gif");
+	fontSize:12;
+}
+
+.scene
+{
+	skin:Embed("/images/chat/scene1.gif");
+	over-skin:Embed("/images/chat/scene2.gif");
+	fontSize:12;
+}
+
+.communicationUp
+{
+	skin:Embed("/images/chat/communicationUp1.gif");
+	over-skin:Embed("/images/chat/communicationUp2.gif");
+	fontSize:12;
+}
+
+.communication
+{
+	skin:Embed("/images/chat/communication1.gif");
+	over-skin:Embed("/images/chat/communication2.gif");
+	fontSize:12;
+}
+
+.legionUp
+{
+	skin:Embed("/images/chat/legionUp1.gif");
+	over-skin:Embed("/images/chat/legionUp2.gif");
+	fontSize:12;
+}
+
+.legion
+{
+	skin:Embed("/images/chat/legion1.gif");
+	over-skin:Embed("/images/chat/legion2.gif");
+	fontSize:12;
+}
+
+.teamUp
+{
+	skin:Embed("/images/chat/teamUp1.gif");
+	over-skin:Embed("/images/chat/teamUp2.gif");
+	fontSize:12;
+}
+
+.team
+{
+	skin:Embed("/images/chat/team1.gif");
+	over-skin:Embed("/images/chat/team2.gif");
+	fontSize:12;
+}
+
+.chatFace{
+	skin:Embed("/images/chat/chatFace.gif");
+}
+
+.forgetPwd
+{
+	skin:Embed("/images/sanGuo/login/forgetPwd.png");
+}
+
+.register
+{
+	skin:Embed("/images/sanGuo/login/register.png");
+}
+
+.login
+{
+	skin:Embed("/images/sanGuo/login/login1.gif");
+	over-skin:Embed("/images/sanGuo/login/login2.gif");
+}
+
+.EnterDiscuss
+{
+	skin:Embed("/images/sanGuo/login/EnterDiscuss1.gif");
+	over-skin:Embed("/images/sanGuo/login/EnterDiscuss2.gif");
+}
+
+.EnterSite
+{
+	skin:Embed("/images/sanGuo/login/EnterSite1.gif");
+	over-skin:Embed("/images/sanGuo/login/EnterSite2.gif");
+}
+
+.onlineHelp
+{
+	skin:Embed("/images/sanGuo/login/onlineHelp2.gif");
+	over-skin:Embed("/images/sanGuo/login/onlineHelp1.gif");
+}
+
+.more
+{
+	skin:Embed("/images/sanGuo/login/more.png");
+
+}
+
+.registerBtn
+{
+	skin:Embed("/images/sanGuo/login/register1.gif");
+	over-skin:Embed("/images/sanGuo/login/register2.gif");
+}
+
+.weiCamp
+{
+	skin:Embed("/images/sanGuo/Camp/weiCamp1.png");
+	over-skin:Embed("/images/sanGuo/Camp/weiCamp2.png");
+}
+
+.shuCamp
+{
+	skin:Embed("/images/sanGuo/Camp/shuCamp1.png");
+	over-skin:Embed("/images/sanGuo/Camp/shuCamp2.png");
+}
+
+.wuCamp
+{
+	skin:Embed("/images/sanGuo/Camp/wuCamp1.png");
+	over-skin:Embed("/images/sanGuo/Camp/wuCamp2.png");
+}
+
+.enterCamp
+{
+	skin:Embed("/images/sanGuo/Camp/OK1.gif");
+	over-skin:Embed("/images/sanGuo/Camp/OK2.gif");
+}
+
+.weiCampTitle
+{
+	skin:Embed("/images/sanGuo/Camp/weiTitle.png");
+}
+
+.wuCampTitle
+{
+	skin:Embed("/images/sanGuo/Camp/wuTitle.png");
+}
+
+.shuCampTitle
+{
+	skin:Embed("/images/sanGuo/Camp/shuTitle.png");
+}
+
+.forgingBtn
+{
+	skin:Embed("/images/sanGuo/forging/forging1.gif");
+	over-skin:Embed("/images/sanGuo/forging/forging2.gif");
+}
+
+.topSelectedButton
+{
+	overSkin: Embed(source="images/sanGuo/top/buttonBar2.gif");	
+	skin:Embed("/images/sanGuo/top/buttonBar2.gif");
+}
+
+.topUnSelectedButton
+{
+	skin:Embed("/images/sanGuo/top/buttonBar1.gif");
+}
+
+.lookForMyInfo
+{
+	skin:Embed("/images/sanGuo/top/findMyTop1.gif");
+	down-skin:Embed("/images/sanGuo/top/findMyTop2.gif");
+}
+
+.goToPlace
+{
+    alpha:0;
+    textDecoration:underline;
+    color:#9370DB;
+}

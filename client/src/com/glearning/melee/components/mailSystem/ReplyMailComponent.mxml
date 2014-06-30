@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:ReplyMailImpl xmlns:nscomp="com.glearning.melee.components.mailSystem.*" xmlns:filters="flash.filters.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="504" height="249" backgroundImage="images/sanGuo/itemBorder.png">
+	<mx:Label x="217" y="1" text="回复信函" width="57" textAlign="center" paddingTop="0" fontWeight="bold" color="#e0b28e">
+	<mx:filters>
+         <filters:GlowFilter color="0x5C4734"  strength="2"/>
+    </mx:filters>
+	</mx:Label>
+	<mx:LinkButton x="471" y="0" width="20" height="20" styleName="CloseBtn" click="close()"/>
+	<mx:Label x="29" y="29" text="回信对象："/>
+	<mx:Label x="91" y="29" text="{replyName}" color="#FF0000"/>
+	<mx:LinkButton x="91" y="204" click="sendMail()" styleName="sendMail"/>
+	<mx:LinkButton x="328" y="204" click="close()" styleName="cancel"/>
+	<mx:VBox x="29" y="57" height="139" width="436">
+		<mx:HBox width="100%" horizontalGap="0" height="41">
+			<mx:Label text="引用消息："/>
+			<mx:Text enabled="false" width="370" text="{reference}"/>
+		</mx:HBox>
+		<mx:HBox width="100%" horizontalGap="0" height="92">
+			<mx:Label text="信函内容："/>
+			<mx:TextArea width="371" height="90" id="content"/>
+		</mx:HBox>
+	</mx:VBox>
+</nscomp:ReplyMailImpl>

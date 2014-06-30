@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:WorkoutImpl xmlns:nscomp="com.glearning.melee.components.Workout.*" xmlns:filters="flash.filters.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="504" height="249" backgroundImage="images/sanGuo/itemBorder.png" creationComplete="setWorkoutNum()" >
+	<mx:Label x="228.5" y="1" text="修炼" color="#e0b28e" fontWeight="bold">
+	<mx:filters>
+	     <filters:GlowFilter color="0x5C4734"  strength="2"/>
+	</mx:filters>
+	</mx:Label>
+	<mx:LinkButton x="470" y="-0.8" width="20" height="20" styleName="CloseBtn" click="close()"/>
+	<mx:Text text="修炼过程中，你的角色将自动攻击该怪物直到时间结束！&#xa;在修炼状态下，无法移动或攻击他人。&#xa;修炼不消耗气血和内息，因此需要耗费一定的铜币用于自动补给。&#xa;修炼结束后，你将获得修炼的经验以及该怪物所掉落的战利品。" width="414" x="45" top="39" mouseEnabled="false"/>
+	<mx:Label x="45" y="118.8" text="请输入连续修炼的次数："/>
+	<mx:TextInput id="workout" x="178" y="117.8" width="46" text="{workoutNum}" change="setWorkoutNum()" color="#ff0000"/>
+	<mx:LinkButton x="219.5" y="117" label="MAX" textDecoration="underline" alpha="0.0" click="maxNum()"/>
+	<mx:HBox x="45" y="141" width="390">
+		<mx:Label text="( 完成后可获得"/>
+		<mx:Label text="{exp}" color="#FF0000"/>
+		<mx:Label text="点经验值 )"/>
+	</mx:HBox>
+	<mx:HBox y="165" width="414" x="45">
+		<mx:Label text="修炼消耗活力："/>
+		<mx:Label text="{energy}" color="#FF0000"/>
+		<mx:Label text="/消耗铜币："/>
+		<mx:Label text="{coin}" color="#FF0000"/>
+		<mx:Label text="/所需时间："/>
+		<mx:Label text="{time}" color="#FF0000"/>
+		<mx:Label text="分钟"/>
+	</mx:HBox>
+	<mx:HBox x="0" y="196" width="100%" horizontalAlign="center" horizontalGap="100">
+		<mx:LinkButton click="workoutStart()" styleName="workoutOk"/>
+		<mx:LinkButton click="close()" styleName="workoutCancel"/>
+	</mx:HBox>
+	
+</nscomp:WorkoutImpl>

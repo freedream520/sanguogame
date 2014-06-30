@@ -1,0 +1,16 @@
+Metadata-Version: 1.0
+Name: Melee
+Version: 0.5.0
+Summary: Web game of SanGuoShi.
+Home-page: http://www.glearning.com.cn/melee
+Author: Wu Xin
+Author-email: wuxin@glearning.com.cn
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: webgame
+Platform: any
+
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Operators
+Classifier: Topic :: Games

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:MainAvatarImpl  xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:nscomp="com.glearning.melee.components.player.*" width="172" height="192" backgroundAlpha="0"
+	    >
+	<mx:Script>
+		<![CDATA[
+			import com.glearning.melee.model.MySelf;
+		]]>
+	</mx:Script>
+	
+    <mx:Glow id="glowImage" duration="1000" alphaFrom="1.0" alphaTo="0.3" blurXFrom="0.0" blurXTo="50.0" blurYFrom="0.0" blurYTo="50.0" color="0xFF0000"/>
+    <mx:Glow id="unglowImage" duration="1000" alphaFrom="0.3" alphaTo="1.0" blurXFrom="50.0" blurXTo="0.0" blurYFrom="50.0" blurYTo="0.0" color="0xFF0000"/>
+	
+	<mx:Canvas x="0" y="0" width="172" height="100%" backgroundImage="images/head.png">
+	<mx:Canvas x="0" y="0" width="172" height="170">	    
+		<nscomp:SmoothImage id="avatarImage" width="163" height="165" source="{MySelf.instance.avatarImage}" x="4" y="2"/>
+		<mx:Canvas x="2" width="168" height="170" backgroundImage="images/headBorder.png" id="_canvas">
+			<mx:SWFLoader x="34" y="24" width="100" height="120" source="images/levelEffect.swf" visible="false" complete="event.currentTarget.content.stop()" id="levelSwf"/>
+			
+		</mx:Canvas>		
+	</mx:Canvas>
+		<mx:Grid width="172" horizontalScrollPolicy="off" y="170" horizontalGap="0">
+			<mx:GridRow width="100%" height="100%">
+				<mx:GridItem width="100%" height="100%">
+					<mx:Label text="名字"/>
+					<mx:Label text="{MySelf.instance.nickName}" id="txtName"/>
+				</mx:GridItem>
+				<mx:GridItem width="100%" height="100%">
+					<mx:Label text="等级"/>
+					<mx:Label text="{MySelf.instance.level}" id="txtLevel"/>
+				</mx:GridItem>
+			</mx:GridRow>
+		</mx:Grid>
+	</mx:Canvas>
+	
+</nscomp:MainAvatarImpl>

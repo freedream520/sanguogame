@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:ShopPageImpl xmlns:nscomp="com.glearning.melee.components.shop.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="738" height="484"
+	         backgroundImage="images/sanGuo/shop/shopBackImage.jpg" xmlns:ns1="com.glearning.melee.components.packages.*" xmlns:ns2="com.glearning.melee.components.*">
+	<mx:Image x="334" y="7" id="shopName"/>
+	<ns1:EquipmentSlotPackageComponent id="equip" x="467" y="24">
+	</ns1:EquipmentSlotPackageComponent>
+	<ns1:CharacterPackageComponent x="229" y="353" id="characterPackage" name="characterPackage">
+	</ns1:CharacterPackageComponent>
+	<nscomp:ProductListComponent x="30" y="210" id="productList">
+	</nscomp:ProductListComponent>
+	<mx:Canvas backgroundImage="images/sanGuo/shop/npcBorder.png" x="292" y="48" width="172" height="172">
+		<mx:Image x="1" y="1" height="170" width="170" id="npcPhoto"/>
+	</mx:Canvas>
+	<mx:Label x="340.5" y="240" text="商店" fontSize="15"/>
+	<mx:Label x="262" y="264" text="集市的商店，可以购买些上等装备" width="199"/>
+	<mx:Label x="243" y="310" text="新商品送达还需:"/>
+	<mx:Canvas x="333" y="310" width="63" id="refreshTimeContent"/>
+	<mx:Image x="30" y="14" id="armor" click="changeButtonSkin(event)" buttonMode="true"/>	
+	<mx:Image x="97" y="14" id="material" click="changeButtonSkin(event)" buttonMode="true"/>
+	<mx:Image x="164" y="14" id="weapon" click="changeButtonSkin(event)" buttonMode="true"/>
+	<mx:Image x="232" y="14" id="grocery" click="changeButtonSkin(event)" buttonMode="true"/>
+	<mx:Text x="33" y="81" width="236" height="81" id="description"/>
+	<mx:LinkButton x="399" y="310" styleName="refreshShop" id="refreshButton"/>
+	<mx:LinkButton x="698" y="10" width="20" height="20" styleName="CloseBtn" id="closeButton"/>
+	<ns1:CharacterTempPackageComponent x="419" y="68" visible="false" id="tempPackage">
+	</ns1:CharacterTempPackageComponent>
+	<mx:Image x="40" y="166" source="images/talk.gif"/>
+	<mx:LinkButton styleName="talkButton" x="56" y="164" id="getTask"/>
+	
+</nscomp:ShopPageImpl>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:SkillTagImpl xmlns:nscomp="com.glearning.melee.components.skill.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="220" height="46">
+	<mx:Script>
+		<![CDATA[
+			import com.glearning.melee.model.SkillInfo;
+		]]>
+	</mx:Script>
+		
+	<mx:Label x="60" y="10" id="skillName" />
+	
+	<mx:Canvas x="0" y="0" width="220" height="46" id="selectedState" toolTip=" " toolTipCreate="createCustomToolTip(event)" backgroundImage="images/sanGuo/skillpicstate.png" visible="false">
+	</mx:Canvas>
+	<mx:Canvas x="14" y="4" width="38" height="38" id="skillBorder">
+	<mx:Image width="32" height="32" id="skillPicture"  x="3" y="3" toolTip=" " toolTipCreate="createCustomToolTip(event)"/>		
+	</mx:Canvas>
+	<mx:Canvas backgroundImage="images/sanGuo/01.png" x="36" y="23" width="23" height="22" fontSize="9" textAlign="center" color="0xff0000">
+		<mx:Label x="2" y="2" width="20" height="20" id="skillLevel"/>
+	</mx:Canvas>
+</nscomp:SkillTagImpl>

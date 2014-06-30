@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:HangStartImpl xmlns:nscomp="com.glearning.melee.components.ProcedureHall.*" xmlns:filters="flash.filters.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="379" height="205" backgroundImage="images/sanGuo/procedurehall/hallBorder.png">
+	<mx:Script>
+		<![CDATA[
+			[Bindable]
+			public var time:Array = new Array('1小时','2小时','3小时','4小时','5小时','6小时','7小时','8小时','9小时','10小时','11小时','12小时');
+		]]>
+	</mx:Script>
+	<nscomp:states>
+		<mx:State name="training">
+			<mx:AddChild position="lastChild">
+				<mx:Text x="41.5" y="40" text="通过训练可以提升你的经验值。&#xa;在训练期间，你将无法出城冒险以及报名参加演武厅比武！&#xa;( 设置完成后训练会自动进行，你无需在线等待 )"/>
+			</mx:AddChild>
+			<mx:AddChild position="lastChild">
+				<mx:Label x="41" y="106" text="请选择你进行训练的时间长度："/>
+			</mx:AddChild>
+			<mx:AddChild position="lastChild">
+				<mx:ComboBox x="212" y="102" width="88" dataProvider="{time}" change="onTrainingTime()" id="trainingTime" selectedIndex="0" creationComplete="onTrainingTime()"></mx:ComboBox>
+			</mx:AddChild>
+			<mx:AddChild position="lastChild">
+				<mx:HBox x="41" y="134" width="317.5" horizontalGap="0">
+					<mx:Label text="训练所需铜币："/>
+					<mx:Label color="#FF0000" text="{trainingCoin}"/>
+					<mx:Label text="/ 训练增加经验："/>
+					<mx:Label color="#FF0000" text="{trainingExp}"/>
+				</mx:HBox>
+			</mx:AddChild>
+			<mx:AddChild position="lastChild">
+				<mx:LinkButton x="70" y="167"  click="open('训练')" styleName="trainingStart"/>
+			</mx:AddChild>
+			<mx:AddChild position="lastChild">
+				<mx:LinkButton x="247" y="167"  click="close()" styleName="trainingOver"/>
+			</mx:AddChild>
+			<mx:SetProperty name="height" value="205"/>
+		</mx:State>
+		<mx:State name="entertainer">
+			<mx:AddChild position="lastChild">
+				<mx:Label x="35.5" y="32" text="通过授艺可以赚取铜币，职位越高，你能赚取的薪酬也越高。"/>
+			</mx:AddChild>
+			<mx:AddChild position="lastChild">
+				<mx:HBox x="35.5" y="51" width="333.5" horizontalGap="0">
+					<mx:Label text="目前你的职位是【" width="103"/>
+					<mx:Label text="Label"/>
+					<mx:Label text="】，每小时可赚取"/>
+					<mx:Label text="Label"/>
+					<mx:Label text=" 铜币。"/>
+				</mx:HBox>
+			</mx:AddChild>
+			<mx:AddChild position="lastChild">
+				<mx:HBox x="35" y="71" width="334" horizontalGap="0">
+					<mx:Label text="当你的职位达到【"/>
+					<mx:Label text="Label"/>
+					<mx:Label text="】时，每小时可赚取"/>
+					<mx:Label text="Label"/>
+					<mx:Label text=" 铜币。"/>
+				</mx:HBox>
+			</mx:AddChild>
+			<mx:AddChild position="lastChild">
+				<mx:Label x="35" y="89" text="在卖艺期间，你将无法出城冒险以及报名参加演武厅比武！"/>
+			</mx:AddChild>
+			<mx:AddChild position="lastChild">
+				<mx:Label x="35" y="109" text="( 设置完成后卖艺会自动进行，你无需在线等待 )"/>
+			</mx:AddChild>
+			<mx:AddChild position="lastChild">
+				<mx:Label x="35" y="130" text="请选择你进行卖艺的时间长度："/>
+			</mx:AddChild>
+			<mx:AddChild position="lastChild">
+				<mx:ComboBox x="204" y="126" width="74" dataProvider="{time}" selectedIndex="0" id="entertainerTime" change="onEntertainerTime()" creationComplete="onEntertainerTime()"></mx:ComboBox>
+			</mx:AddChild>
+			<mx:AddChild position="lastChild">
+				<mx:Label x="35" y="153" text="授艺可赚取薪酬："/>
+			</mx:AddChild>
+			<mx:AddChild position="lastChild">
+				<mx:Label x="130" y="153" text="{entertainerCoin}"/>
+			</mx:AddChild>
+			<mx:AddChild position="lastChild">
+				<mx:LinkButton x="73" y="171" label="开始授艺" click="open('授艺')"/>
+			</mx:AddChild>
+			<mx:AddChild position="lastChild">
+				<mx:LinkButton x="215" y="171" label="放弃授艺" click="close()"/>
+			</mx:AddChild>
+			<mx:SetProperty name="height" value="205"/>
+		</mx:State>
+	</nscomp:states>
+	<mx:LinkButton x="345" y="0" width="20" height="20" styleName="CloseBtn" click="close()" id="linkbutton1"/>
+	<mx:Label y="0" text="Label" id="typeName" x="173" fontWeight="bold">
+	<mx:filters>
+	     <filters:GlowFilter color="0x5C4734"  strength="2"/>
+	</mx:filters>
+	</mx:Label>
+	
+</nscomp:HangStartImpl>

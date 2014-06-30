@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:SkillSettingsImpl xmlns:nscomp="com.glearning.melee.components.skill.*" xmlns:filters="flash.filters.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="457" height="293" backgroundImage="images/sanGuo/skill/SettingsBG.png" creationComplete="init()">
+	<mx:LinkButton x="423" y="0" click="close()" styleName="CloseBtn" width="20" height="20"/>
+	<mx:Label x="199" y="1" text="高级设置" fontWeight="bold">
+	<mx:filters>
+	     <filters:GlowFilter color="0x5C4734"  strength="20"/>
+	</mx:filters>
+	</mx:Label>
+	<mx:Text x="30" y="44" leading="10" text="与其他玩家进行对抗时，可设置不同的主动技能来应对指定的对手，&#xa;若未选择，则默认使用当前在技能面板中装备的主动技能。&#xa;(与游戏中NPC类怪物战斗，将始终使用技能面板中装备的技能)" width="397" fontWeight="bold"/>
+	<mx:LinkButton y="252" styleName="ok" x="110" click="ok()"/>
+	<mx:LinkButton y="252" styleName="cancel" x="283" click="close()"/>
+	<mx:Label x="30" y="150" text="对抗(勇士系)：" fontWeight="bold"/>
+	<mx:Label x="30" y="216" text="对抗(谋士系)：" fontWeight="bold"/>
+	<mx:Label x="30" y="184" text="对抗(武士系)：" fontWeight="bold"/>
+	<mx:ComboBox x="123" y="147" width="100" dataProvider="{activeSkillData}" id="warrior"></mx:ComboBox>
+	<mx:ComboBox x="123" y="181" width="100" dataProvider="{activeSkillData}" id="samurai"></mx:ComboBox>
+	<mx:ComboBox x="123" y="210" width="100" dataProvider="{activeSkillData}" id="advisers"></mx:ComboBox>
+	<mx:Label x="235" y="150" text="对抗(卫士系)：" fontWeight="bold"/>
+	<mx:Label x="235" y="181" text="对抗(使士系)：" fontWeight="bold"/>
+	<mx:Label x="235" y="213" text="对抗(术士系)：" fontWeight="bold"/>
+	<mx:ComboBox x="327" y="147" width="100" dataProvider="{activeSkillData}" id="guardian"></mx:ComboBox>
+	<mx:ComboBox x="327" y="178" width="100" dataProvider="{activeSkillData}" id="toShi"></mx:ComboBox>
+	<mx:ComboBox x="327" y="210" width="100" dataProvider="{activeSkillData}" id="warlock"></mx:ComboBox>
+</nscomp:SkillSettingsImpl>

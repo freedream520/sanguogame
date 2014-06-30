@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:FriendsSystemImpl xmlns:nscomp="com.glearning.melee.components.friendsSystem.*" creationComplete="init()" xmlns:mx="http://www.adobe.com/2006/mxml" width="538" height="450" backgroundImage="images/sanGuo/taskback.png">
+	<mx:Script>
+		<![CDATA[
+			import com.glearning.melee.model.FriendsSystemInfo;
+		]]>
+	</mx:Script>
+	<mx:LinkButton x="17" y="0" label="好友名录" click="openFriendsList()" styleName="roleClickButton" id="friends"/>
+	<mx:LinkButton x="132" y="0" label="仇敌名录" click="openBlackList()" styleName="roleNoClickButton" id="enemys"/>
+	<mx:LinkButton x="242" y="0" label="查找玩家" styleName="roleNoClickButton" id="select" click="selectPlayer()"/>
+	<mx:VBox y="68" height="368" id="friendsList" width="489" x="23" paddingTop="3" backgroundImage="images/sanGuo/friendsSystem/listBG.png" horizontalAlign="center" verticalAlign="top" verticalGap="1">
+		<mx:DataGrid x="10" y="75" width="98%" id="friendsLists" themeColor="#1a1511" dataProvider="{FriendsSystemInfo.instance.friendsListData}" height="25" borderThickness="0" verticalGridLines="false" horizontalGridLines="true" iconColor="#ff0000" headerColors="#1a1511" backgroundAlpha="0.0" headerSeparatorSkin="mx.skins.ProgrammaticSkin">
+			<mx:columns>
+				<mx:DataGridColumn headerText="人物名称" dataField="nickname" textAlign="center" itemRenderer="com.glearning.melee.components.ClickPlayerComponent"/>
+				<mx:DataGridColumn headerText="等级" dataField="level" textAlign="center"/>
+				<mx:DataGridColumn headerText="阵营" dataField="camp" textAlign="center"/>
+				<mx:DataGridColumn headerText="派系" dataField="profession" textAlign="center"/>
+				<mx:DataGridColumn headerText="状态" itemRenderer="com.glearning.melee.components.PlayerIsOnlineComponent" textAlign="center"/>
+				<mx:DataGridColumn headerText="交谈" itemRenderer="com.glearning.melee.components.EmailOrTalkComponent" textAlign="center"/>
+				<mx:DataGridColumn headerText="交易" itemRenderer="com.glearning.melee.components.ExChangeComponent" textAlign="center"/>
+				<mx:DataGridColumn headerText="删除" itemRenderer="com.glearning.melee.components.friendsSystem.FriendDeleteComponent" textAlign="center" />
+			</mx:columns>
+		</mx:DataGrid>
+		<mx:HBox width="100%" horizontalAlign="center" verticalAlign="middle" horizontalGap="0" id="friendsTip">
+			<mx:Label text="您还没有添加任何好友 【"/>
+			<mx:LinkButton label="点击这里开始添加好友 " height="20" click="addFriendTip()"/>
+			<mx:Label text="】"/>
+		</mx:HBox>
+	</mx:VBox>
+	<mx:VBox x="23" y="68" height="368" width="489" id="blackList" paddingTop="3" visible="false" backgroundImage="images/sanGuo/friendsSystem/listBG.png" horizontalAlign="center" verticalGap="1">
+		<mx:DataGrid x="10" y="75" width="98%" id="blackLists" dataProvider="{FriendsSystemInfo.instance.blackListData}" themeColor="#1a1511" height="25" borderThickness="0" verticalGridLines="false" horizontalGridLines="true" iconColor="#ff0000" headerColors="#1a1511" backgroundAlpha="0.0" headerSeparatorSkin="mx.skins.ProgrammaticSkin">
+			<mx:columns>
+				<mx:DataGridColumn headerText="人物名称" dataField="nickname" textAlign="center" itemRenderer="com.glearning.melee.components.ClickPlayerComponent"/>
+				<mx:DataGridColumn headerText="等级" dataField="level" textAlign="center"/>
+				<mx:DataGridColumn headerText="阵营" dataField="camp" textAlign="center"/>
+				<mx:DataGridColumn headerText="派系" dataField="profession" textAlign="center"/>
+				<mx:DataGridColumn headerText="屏蔽信息" itemRenderer="com.glearning.melee.components.friendsSystem.SheildedMailComponent" textAlign="center"/>
+				<mx:DataGridColumn headerText="状态" itemRenderer="com.glearning.melee.components.PlayerIsOnlineComponent" textAlign="center"/>
+				<mx:DataGridColumn headerText="交谈" itemRenderer="com.glearning.melee.components.EmailOrTalkComponent" textAlign="center"/>
+				<mx:DataGridColumn headerText="删除" itemRenderer="com.glearning.melee.components.friendsSystem.FriendDeleteComponent" textAlign="center"/>
+			</mx:columns>
+		</mx:DataGrid>
+		<mx:HBox width="100%" horizontalAlign="center" verticalAlign="middle" horizontalGap="0" id="enemyTip">
+			<mx:Label text="您还没有添加任何仇敌 【"/>
+			<mx:LinkButton label="点击这里开始添加仇敌 " height="20" click="addEnemyTip()"/>
+			<mx:Label text="】"/>
+		</mx:HBox>
+	</mx:VBox>
+	<mx:LinkButton x="504" y="0" styleName="CloseBtn" width="20" height="20" click="close()"/>
+	<mx:Label x="23" y="40" text="当前{type}人数"/>
+	<mx:Label x="107" y="40" text="{count}/{totleCount}" color="#FF0000"/>
+	<mx:HBox x="373" y="40" width="139" horizontalGap="4">
+		<mx:LinkButton click="openExtension()" styleName="extension"/>
+		<mx:LinkButton id="addFriend" click="addFriendTip()" styleName="addFriend"/>
+		<mx:LinkButton id="addBlack" visible="false" click="addEnemyTip()" includeInLayout="false" styleName="addEnemy"/>
+	</mx:HBox>
+	
+</nscomp:FriendsSystemImpl>

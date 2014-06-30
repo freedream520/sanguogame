@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TaskInfoImpl xmlns="com.glearning.melee.components.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="434" height="156">
+	<mx:HBox x="10" y="10" width="226">
+		<mx:Label text="Label"/>
+		<mx:Label text="Label"/>
+		<mx:Label text="Label"/>
+	</mx:HBox>
+	<mx:LinkButton x="352" y="10" label="查看详情"/>
+	<mx:List x="10" y="38" width="414" height="108" backgroundAlpha="0"></mx:List>
+	<mx:Label x="244" y="12" text="Label" width="100"/>
+</TaskInfoImpl>

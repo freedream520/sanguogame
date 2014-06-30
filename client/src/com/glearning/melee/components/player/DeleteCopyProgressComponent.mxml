@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DeleteCopyProgressImpl xmlns:filters="flash.filters.*" backgroundImage="images/sanGuo/procedurehall/hallBorder.png" xmlns="com.glearning.melee.components.player.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="379" height="205"
+	                   creationComplete="init()">
+	<mx:Text x="33.5" y="39" width="312" height="104" id="tipContent"/>
+	<mx:LinkButton x="102" y="153" id="accept" styleName="accept"/>
+	<mx:LinkButton x="204" y="153" id="cancel" styleName="cancel"/>
+	<mx:Label x="175" y="1" text="提示" fontWeight="bold" color="#e0b28e">
+		<mx:filters>
+	     <filters:GlowFilter color="0x5C4734"  strength="5"/>
+	</mx:filters>
+	</mx:Label>
+	
+</DeleteCopyProgressImpl>

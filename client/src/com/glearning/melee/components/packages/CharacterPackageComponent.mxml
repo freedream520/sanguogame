@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:CharacterPackageImpl xmlns:mx="http://www.adobe.com/2006/mxml" width="486" height="117" xmlns:nscomp="com.glearning.melee.components.packages.*"
+	     xmlns:ns1="com.glearning.melee.components.*">
+	<nscomp:PackageComponent x="103" y="7" id="packageItems" horizontalScrollPolicy="off" verticalScrollPolicy="off">
+	</nscomp:PackageComponent>
+	<ns1:CustomerButtonComponent x="22" y="69" styleName="tempPack" click="openTempPackage()" id="tempButton" data="临时包裹栏"/>
+	
+</nscomp:CharacterPackageImpl>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:CampAndNameImpl horizontalGap="1" xmlns:nscomp="com.glearning.melee.components.player.*" xmlns:mx="http://www.adobe.com/2006/mxml">
+	<mx:Image id="country"/>
+	<mx:Label id="nickname"/>
+	
+</nscomp:CampAndNameImpl>

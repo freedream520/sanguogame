@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:PlayerAttackInfoImpl xmlns:nscomp="com.glearning.melee.components.player.*" xmlns:mx="http://www.adobe.com/2006/mxml"
+	    width="240" height="198" backgroundImage="images/sanGuo/propertyUI2.png">
+	    <mx:Script>
+	    	<![CDATA[
+	    		import com.glearning.melee.model.MySelf;
+	    	]]>
+	    </mx:Script>
+	<mx:Label x="62" y="10" id="hitRate" toolTip=" " toolTipCreate="createCustomToolTip(event)" text="{MySelf.instance.hitRate}%" width="50"/>
+	<mx:Label x="62" y="33" id="criRate" toolTip=" " toolTipCreate="createCustomToolTip(event)" text="{MySelf.instance.criRate}%" width="50"/>
+	<mx:Label x="155" y="10" id="dodgeRate" toolTip=" " toolTipCreate="createCustomToolTip(event)" text="{MySelf.instance.dodgeRate}%" width="50"/>
+	<mx:Label x="155" y="33" id="bogeyRate" toolTip=" " toolTipCreate="createCustomToolTip(event)" text="{MySelf.instance.bogeyRate}%" width="50"/>	
+	<mx:Label x="68" y="73" color="#ff0000" id="attack" toolTip=" " toolTipCreate="createCustomToolTip(event)" text="{Math.round(MySelf.instance.currentDamage.minDamage)}-{Math.round(MySelf.instance.currentDamage.maxDamage)}" width="126"/>
+	<mx:Label x="69" y="94" color="#ff0000" id="guard" toolTip=" " toolTipCreate="createCustomToolTip(event)" text="{MySelf.instance.currentDefense}" width="126"/>
+	<mx:Label x="68" y="116" color="#ff0000" id="speed" toolTip=" " toolTipCreate="createCustomToolTip(event)" text="{MySelf.instance.currentSpeedDescription}" width="126"/>
+	<mx:LinkButton x="22" y="142" styleName="repair"/>
+	<mx:LinkButton x="134" y="142" styleName="allRepair"/>
+	<mx:LinkButton x="22" y="168" styleName="personality"/>
+	<mx:LinkButton x="134" y="168" styleName="battleStatics"/>
+	
+	
+	
+</nscomp:PlayerAttackInfoImpl>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:SplitItemIpml xmlns:nscomp="com.glearning.melee.components.prompts.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="379" height="122" backgroundAlpha="1"
+	    creationComplete="init()" backgroundImage="images/split.png">
+	<mx:LinkButton x="88" y="84" id="accept" styleName="ok"/>
+	<mx:LinkButton x="227" y="84" id="cancel" styleName="cancel"/>
+	<mx:Label id="alertNum" x="88" y="54" text="请输入0—{splitNum.count}之间的数字" visible="false"/>
+	<mx:HBox x="0" y="26" width="379" horizontalAlign="center">
+		<mx:Label text="请输入要拆分的数量："/>
+		<mx:TextInput width="46" id="num" height="20"/>
+		<mx:Label text="（0—{splitNum.count}）"/>
+	</mx:HBox>
+</nscomp:SplitItemIpml>

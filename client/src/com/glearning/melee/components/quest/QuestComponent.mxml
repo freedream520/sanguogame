@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:QuestImpl xmlns:nscomp="com.glearning.melee.components.quest.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="730" height="490">
+	<mx:ViewStack x="0" y="39" id="viewstack1" width="730" height="451">
+		<mx:Canvas label="当前任务" width="100%" height="100%">
+			<mx:List x="0" y="0" width="730" height="451" id="ProgressingQuest"></mx:List>
+		</mx:Canvas>
+		<mx:Canvas label="可接任务" width="100%" height="100%">
+			<mx:List x="0" y="0" width="730" height="451" id='RecievableQuest'></mx:List>
+		</mx:Canvas>
+		<mx:Canvas label="完成任务" width="100%" height="100%">
+			<mx:List x="0" y="0" width="730" height="451" id="FinishedQuest"></mx:List>
+		</mx:Canvas>
+	</mx:ViewStack>
+	<mx:LinkBar x="0" y="0" dataProvider="viewstack1" linkButtonStyleName="BigButton" horizontalGap="50" separatorWidth="0" itemClick="questLinkBar(event)">
+	</mx:LinkBar>
+	
+</nscomp:QuestImpl>

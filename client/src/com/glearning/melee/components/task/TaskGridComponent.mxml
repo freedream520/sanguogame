@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:TaskGridImpl xmlns:nscomp="com.glearning.melee.components.task.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="469" height="250"
+	     backgroundImage="images/sanGuo/taskBorder.png">
+	<mx:Script>
+		<![CDATA[
+			import com.glearning.melee.model.TaskInfo;
+		]]>
+	</mx:Script>
+	
+	
+	<mx:Canvas x="2" y="1" width="464" height="181">
+	<mx:VBox x="0" y="38" width="463" height="143" id="lists">
+	</mx:VBox>
+	<mx:HBox width="100%" y="1"  height="29" fontSize="12" fontWeight="bold">
+		<mx:Label text="任务名称" width="142" textAlign="center"/>
+		<mx:Label text="所属类别" width="57" textAlign="center"/>
+		<mx:Label text="任务类型" width="57" textAlign="center"/>
+		<mx:Label text="任务状态" width="178" textAlign="center"/>
+	</mx:HBox>
+	</mx:Canvas>
+	<mx:Canvas x="1" y="203" width="463" height="44">
+	<mx:LinkButton styleName="refrushButton" id="frushImmediate" x="396" y="21.2" click="addFrushImmediate()"/>
+	<mx:Label text="今日已接受任务数量：" width="126" x="10" y="3.75"/>
+	<mx:Label text="距离下一批任务刷新还有：" width="153" x="8" y="23"/>
+	<mx:Label width="65" id="countNum" text="{TaskInfo.instance.taskNum}/20" x="139" y="3.75"/>
+	<mx:Label width="126" id="date" x="162" y="23"/>
+	</mx:Canvas>
+	
+</nscomp:TaskGridImpl>

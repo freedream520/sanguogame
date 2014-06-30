@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:ProductListImpl xmlns:nscomp="com.glearning.melee.components.shop.*" xmlns:nscomp1='com.glearning.melee.components.packages.*' xmlns:mx="http://www.adobe.com/2006/mxml" width="187" height="260"
+	            backgroundImage="images/sanGuo/shop/shopBorder.png" creationComplete="init()">
+	<mx:Canvas x="14" y="24" width="167" height="213" id="itemContent" >
+	<nscomp1:PackageComponent id="packageItems" horizontalScrollPolicy="off" verticalScrollPolicy="off" x="0" y="0">	
+	</nscomp1:PackageComponent>
+	</mx:Canvas>
+	<mx:LinkButton styleName="lastPage"  x="28" y="235" height="15" width="15" id="last" click="lastPage(event)"/>		
+	<mx:LinkButton styleName="nextPage" x="99" y="235" height="15" width="15" id="next" click="nextPage(event)"/>
+	<mx:Label x="43" y="232" text="上一页" buttonMode="true" useHandCursor="true"/>
+	<mx:Label x="115" y="232" text="下一页" buttonMode="true" useHandCursor="true" />
+	<mx:Label x="60.5" y="0" width="66" id="itemName" fontWeight="bold" color="#A8734B"/>
+	
+</nscomp:ProductListImpl>

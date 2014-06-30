@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:RecoveryImpl xmlns:nscomp="com.glearning.melee.components.resthouse.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="691" height="261" backgroundImage="images/sanGuo/resthouse/restroomBg.png">
+	<mx:LinkButton x="38" y="44" styleName="meal" click="setHpMp()"/>
+	<mx:LinkButton x="38" y="90" styleName="nap" click="setEnergy(4,'nap')"/>
+	<mx:LinkButton x="38" y="134" styleName="lightSleep" click="setEnergy(8,'lightSleep')"/>
+	<mx:LinkButton x="38" y="181" styleName="peacefulSleep" click="setEnergy(12,'peacefulSleep')"/>
+	<mx:LinkButton x="38" y="224" styleName="spoor" click="setEnergy(24,'spoor')"/>
+	<mx:Label x="128" y="44" text="一顿美味的大餐可以让你生命与魔法安全恢复"/>
+	<mx:Label x="128" y="90" text="小憩片刻可以让你恢复4点活力"/>
+	<mx:Label x="128" y="134" text="适当的浅睡可以让你恢复8点活力"/>
+	<mx:Label x="128" y="181" text="舒舒服服的放松自己吧，安睡可以让你恢复12点活力"/>
+	<mx:Label x="128" y="224" text="酣睡到自然醒是人间最大的享受，可以让你恢复24点活力"/>
+	<mx:Label x="539" y="44" text="" id="coin"/>
+	<mx:Label x="539" y="90" text="4黄金"/>
+	<mx:Label x="539" y="135" text="8黄金"/>
+	<mx:Label x="539" y="181" text="12黄金"/>
+	<mx:Label x="539" y="224" text="24黄金"/>
+	<mx:Label x="621" y="44" text="无限次"/>
+	<mx:Label x="621" y="90" text="" id="rest"/>
+	<mx:Label x="621" y="134" text="" id="shallowSleep"/>
+	<mx:Label x="621" y="181" text="" id="sleep"/>
+	<mx:Label x="621" y="224" text="" id="sleeping"/>
+	
+</nscomp:RecoveryImpl>

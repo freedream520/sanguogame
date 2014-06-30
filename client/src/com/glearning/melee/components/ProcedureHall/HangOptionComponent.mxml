@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:HangOptionImpl xmlns:nscomp="com.glearning.melee.components.ProcedureHall.*" xmlns:filters="flash.filters.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="379" height="205" backgroundImage="images/sanGuo/procedurehall/hallBorder.png">
+	<nscomp:states>
+		<mx:State name="entertainer">
+			<mx:AddChild position="lastChild">
+				<mx:HBox x="0" y="157" width="100%" horizontalAlign="center">
+					<mx:LinkButton label="薪酬加倍" click="double('授艺')" id="entertainerDouble"/>
+					<mx:LinkButton label="中止授艺" click="over('授艺')"/>
+					<mx:LinkButton label="关闭窗口" click="close()"/>
+				</mx:HBox>
+			</mx:AddChild>
+			<mx:AddChild position="lastChild">
+				<mx:HBox x="40" y="82" width="80%" horizontalGap="0">
+					<mx:Label text="授艺完成后您将获得"/>
+					<mx:Label text="{bonusCount}" color="#FF0000"/>
+					<mx:Label text="铜币！"/>
+					<mx:Label text="(已加倍)" visible="{isDouble}" color="#00FF00"/>
+				</mx:HBox>
+			</mx:AddChild>
+			<mx:AddChild position="lastChild">
+				<mx:HBox x="40" y="54" width="80%" horizontalGap="0">
+					<mx:Label text="授艺时间："/>
+					<mx:Label color="#FF0000" text="{totalString}"/>
+					<mx:Label text="—"/>
+					<mx:Label text="{endTime}" color="#FF0000"/>
+				</mx:HBox>
+			</mx:AddChild>
+			<mx:AddChild position="lastChild">
+				<mx:HBox x="40" y="28" width="80%" horizontalGap="0">
+					<mx:Label text="你当前正在进行为期 "/>
+					<mx:Label color="#FF0000" text="{totalTime}"/>
+					<mx:Label text="小时的授艺"/>
+				</mx:HBox>
+			</mx:AddChild>
+			<mx:AddChild position="lastChild">
+				<mx:Label x="40" y="107" text="目前你的授艺时间"/>
+			</mx:AddChild>
+			<mx:AddChild position="lastChild">
+				<mx:Label x="149" y="107" text="{totalString}"/>
+			</mx:AddChild>
+			<mx:AddChild position="lastChild">
+				<mx:Label x="40" y="129" text="如果现在立即结束，你将"/>
+			</mx:AddChild>
+			<mx:AddChild position="lastChild">
+				<mx:Label x="177" y="129" text="{nowBonus}"/>
+			</mx:AddChild>
+			<mx:SetProperty name="height" value="205"/>
+		</mx:State>
+		<mx:State name="training">
+			<mx:AddChild position="lastChild">
+				<mx:HBox x="0" y="167" width="379" horizontalAlign="center">
+					<mx:LinkButton click="double('训练')" id="trainingDouble" styleName="trainingDouble"/>
+					<mx:LinkButton click="over('训练')" styleName="trainingStop"/>
+					<mx:LinkButton click="close()" styleName="closeBattle"/>
+				</mx:HBox>
+			</mx:AddChild>
+			<mx:AddChild position="lastChild">
+				<mx:HBox x="40" y="88" width="80%" horizontalGap="0">
+					<mx:Label text="训练完成后您将获得"/>
+					<mx:Label text="{bonusCount}" color="#FF0000"/>
+					<mx:Label text="点经验值！"/>
+					<mx:Label text="(已加倍)" visible="{isDouble}" color="#00FF00"/>
+				</mx:HBox>
+			</mx:AddChild>
+			<mx:AddChild position="lastChild">
+				<mx:HBox x="40" y="62" width="80%" horizontalGap="0">
+					<mx:Label text="训练时间："/>
+					<mx:Label color="#FF0000" text="{startTime}"/>
+					<mx:Label text="—"/>
+					<mx:Label text="{endTime}" color="#FF0000"/>
+				</mx:HBox>
+			</mx:AddChild>
+			<mx:AddChild position="lastChild">
+				<mx:HBox x="40" y="37" width="80%" horizontalGap="0">
+					<mx:Label text="你当前正在进行为期 "/>
+					<mx:Label color="#FF0000" text="{totalTime}"/>
+					<mx:Label text="小时的训练"/>
+				</mx:HBox>
+			</mx:AddChild>
+			<mx:AddChild position="lastChild">
+				<mx:Label x="40" y="114" text="目前你的训练时间"/>
+			</mx:AddChild>
+			<mx:AddChild position="lastChild">
+				<mx:Label x="149" y="114" text="{totalString}"/>
+			</mx:AddChild>
+			<mx:AddChild position="lastChild">
+				<mx:Label x="40" y="137" text="如果现在立即结束，你将"/>
+			</mx:AddChild>
+			<mx:AddChild position="lastChild">
+				<mx:Label x="177" y="137" text="{nowBonus}"/>
+			</mx:AddChild>
+			<mx:SetProperty name="height" value="205"/>
+		</mx:State>
+	</nscomp:states>
+	<mx:LinkButton x="345" y="0" width="20" height="20" styleName="CloseBtn" click="close()" id="linkbutton1"/>
+	<mx:Label x="176" y="2" id="typeName" fontWeight="bold">
+	<mx:filters>
+	     <filters:GlowFilter color="0x5C4734"  strength="2"/>
+	</mx:filters>
+	</mx:Label>
+	
+</nscomp:HangOptionImpl>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:NpcTaskListImpl xmlns:nscomp="com.glearning.melee.components.task.*" xmlns:mx="http://www.adobe.com/2006/mxml" height="172" width="315"
+	    creationComplete="init()">
+	<mx:Text text="Text" width="100%" id="npcTalkInfo"/>
+	<mx:VBox width="100%" id="taskTagList"/>
+	
+</nscomp:NpcTaskListImpl>

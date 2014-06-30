@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:MailSystemImpl xmlns:nscomp="com.glearning.melee.components.mailSystem.*" xmlns:filters="flash.filters.*" creationComplete="init()" xmlns:mx="http://www.adobe.com/2006/mxml" width="622" height="450" backgroundImage="images/sanGuo/mailSystem/mailSystem.png">
+	<mx:LinkButton x="588" y="0" styleName="CloseBtn" width="20" height="20" click="close()"/>
+	<mx:LinkButton x="15" y="0" label="所有信函" styleName="roleClickButton" click="openMail()" id="allMail"/>
+	<mx:LinkButton x="132" y="0" label="事件薄" styleName="roleNoClickButton" id="matter" click="openMatter()"/>
+	<mx:LinkButton x="247" y="0" label="交易记录" styleName="roleNoClickButton" click="openAnnouncement()" id="record"/>
+	<mx:LinkButton x="359" y="0" label="撰写信函" styleName="roleNoClickButton" id="write" click="openWrite()"/>
+	<mx:HBox x="371" y="35" width="225" horizontalGap="14">
+		<mx:LinkButton styleName="Announcement" id="Announcement" click="announcementList()"/>
+		<mx:LinkButton styleName="systemMail" id="systemMail" click="systemMailList()"/>
+		<mx:LinkButton styleName="playerMail" id="playerMail" click="playerMailList()"/>
+		<mx:LinkButton styleName="Deal" visible="false" includeInLayout="false" id="Deal"/>
+	</mx:HBox>
+	<mx:VBox x="25" y="59" width="572" height="366" id="mailList" horizontalAlign="center" verticalGap="10" paddingTop="3"></mx:VBox>
+	
+</nscomp:MailSystemImpl>

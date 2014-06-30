@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:PlacePlayerInfoImpl xmlns:nscomp="com.glearning.melee.components.placepanel.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="585" height="381"
+	                        initialize="init()" backgroundImage="images/sanGuo/placeplayer/placePlayerBackGround.png">
+	<mx:Script>
+		<![CDATA[
+			import com.glearning.melee.model.PlaceInfo;
+		]]>
+	</mx:Script>
+	<mx:DataGrid horizontalGridLineColor="#dfb28b"
+                  id="playList" x="18" y="67" width="546" height="295" styleName="PlayerListMap" headerColors="#19140F" backgroundAlpha="0.0" headerSeparatorSkin="mx.skins.ProgrammaticSkin">
+		<mx:columns>
+			<mx:DataGridColumn textAlign="center" headerText="人物名称" width="140" itemRenderer="com.glearning.melee.components.ClickPlayerComponent"/>
+			<mx:DataGridColumn textAlign="center" headerText="国家" dataField="camp" itemRenderer="com.glearning.melee.components.PlayerCounrtyComponent"/>
+			<mx:DataGridColumn textAlign="center" headerText="派系" dataField="profession"/>
+			<mx:DataGridColumn textAlign="center" headerText="职阶" dataField="professionStage"/>
+			<mx:DataGridColumn textAlign="center" headerText="等级" dataField="level"/>
+			<mx:DataGridColumn textAlign="center" headerText="声望" dataField="popularity"/>
+			<mx:DataGridColumn textAlign="center" headerText="善恶" dataField="goodevil"/>
+			<mx:DataGridColumn textAlign="center" headerText="状态" dataField="isOnLine" itemRenderer="com.glearning.melee.components.PlayerIsOnlineComponent"/>
+			<mx:DataGridColumn textAlign="center" headerText="交谈" itemRenderer="com.glearning.melee.components.EmailOrTalkComponent"/>
+			<mx:DataGridColumn textAlign="center" headerText="战斗" itemRenderer="com.glearning.melee.components.PlayerPKComponent"/>			
+		</mx:columns>
+	</mx:DataGrid>
+	<nscomp:PartPageComponent x="280" y="35" id="partPage">
+	</nscomp:PartPageComponent>
+	<mx:Label x="16" y="39" text="排名类型:"/>
+	<mx:ComboBox x="71" y="39" height="18" id="country" change="filterCountry(event)" dropdownStyleName="dropStyle">
+		 <mx:dataProvider>
+                <mx:Array>
+                    <mx:String>所有国家</mx:String>
+                    <mx:String>蜀国</mx:String>
+                    <mx:String>吴国</mx:String>
+                    <mx:String>魏国</mx:String>
+                </mx:Array>
+         </mx:dataProvider>
+	</mx:ComboBox>	 
+	<mx:ComboBox x="175" y="39" height="18" id="other" change="sortBy(event)" dropdownStyleName="dropStyle">
+		 <mx:dataProvider>
+                <mx:Array>
+                    <mx:String>声望排行</mx:String>
+                    <mx:String>等级排行</mx:String>
+                    <mx:String>罪恶排行</mx:String>                  
+                </mx:Array>
+         </mx:dataProvider>
+	</mx:ComboBox>
+	<mx:Label x="244" y="2" fontWeight="bold" text="场景用户列表"/>
+	<mx:LinkButton x="555" y="1" height="18" width="20" styleName="CloseBtn" id="closeButton"/>
+</nscomp:PlacePlayerInfoImpl>

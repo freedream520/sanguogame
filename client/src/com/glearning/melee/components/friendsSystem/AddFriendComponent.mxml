@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:AddFriendImpl xmlns:nscomp="com.glearning.melee.components.friendsSystem.*" backgroundImage="images/sanGuo/deathBorder.png" xmlns:mx="http://www.adobe.com/2006/mxml" width="504" height="222">
+	<mx:LinkButton x="470" y="0" styleName="CloseBtn" width="20" height="20" click="close()"/>
+	<mx:Label x="217.5" y="2" text="添加好友" fontWeight="bold"/>
+	<mx:Text x="29" y="31" mouseEnabled="false" enabled="false" text="无朋友，不出门。无兄弟，不冒险。&#xa;多交朋结友，方才能屹于乱世。&#xa;"/>
+	<mx:Label x="29" y="73" text="人物名称："/>
+	<mx:TextInput x="92" y="73" width="144.5" id="playerName"/>
+	<mx:Label x="244" y="73" text="( 请填写好友人物名称 ) "/>
+	<mx:Label x="29" y="106" text="信函通知："/>
+	<mx:TextArea x="92" y="105" width="253" height="75" id="content"/>
+	<mx:LinkButton y="188" click="ok()" styleName="ok" x="107"/>
+	<mx:LinkButton y="188" click="close()" styleName="cancel" x="333"/>
+	
+</nscomp:AddFriendImpl>

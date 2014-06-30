@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nsopw:PackageItemInfoImpl xmlns:nsopw="com.glearning.melee.components.prompts.*" xmlns:filters="flash.filters.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="504" height="249" backgroundImage="images/sanGuo/itemBorder.png">
+	<mx:Canvas x="21" y="51" width="78" height="104" styleName="itemInfo">
+	<mx:Image source="{info.image}" id="image"/>
+	</mx:Canvas>
+	<mx:HBox x="103" y="32" width="380" id="equiped">
+		<mx:Label text="{info.itemName}"/>
+	</mx:HBox>
+	<mx:LinkButton x="471" y="0" width="20" height="20" styleName="CloseBtn" click="closeInfo()"/>
+	<mx:HBox x="52" y="209" width="400" horizontalAlign="center">
+	<mx:LinkButton x="10" y="266" label="使用" id="apply" click="applyItem()"/>
+	<mx:LinkButton x="64" y="266" label="修理" id="mend"/>
+	<mx:LinkButton x="116" y="266" label="出售" id="sell" click="sellItem()"/>
+	<mx:LinkButton x="170" y="266" label="丢弃" id="dice" click="diceItem()"/>
+	<mx:LinkButton x="224" y="266" label="展示" id="reveal"/>
+	<mx:LinkButton x="278" y="266" label="入库" id="storage" click="storageItem()"/>
+	<mx:LinkButton x="332" y="266" label="关闭" click="closeInfo()"/>
+	</mx:HBox>
+	<mx:Canvas x="103" y="60" width="380" height="141">
+		<mx:VBox x="0" y="0" width="380" height="141" id="infos">
+		</mx:VBox>
+	</mx:Canvas>
+	<mx:Label x="217" y="1" text="查看物品" width="57" textAlign="center" paddingTop="0" fontWeight="bold" color="#e0b28e">
+	<mx:filters>
+         <filters:GlowFilter color="0x5C4734"  strength="2"/>
+    </mx:filters>
+	</mx:Label>
+	
+</nsopw:PackageItemInfoImpl>

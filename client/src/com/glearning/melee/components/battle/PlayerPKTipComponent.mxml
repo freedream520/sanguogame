@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:PlayerPKTipImpl xmlns:nscomp="com.glearning.melee.components.battle.*" xmlns:filters="flash.filters.*" xmlns:mx="http://www.adobe.com/2006/mxml" backgroundImage="images/sanGuo/deathBorder.png" width="504" height="222">
+	<mx:Label x="217" y="0.79999995" text="发起战斗" width="59" fontWeight="bold" color="#e0b28e">
+	<mx:filters>
+	     <filters:GlowFilter color="0x5C4734"  strength="2"/>
+	</mx:filters>
+	</mx:Label>
+	<mx:LinkButton x="470" y="0" styleName="CloseBtn" width="20" height="20" click="close()"/>
+	<mx:LinkButton x="56" y="55" label="切磋"/>
+	<mx:LinkButton x="56" y="103" label="刺杀"/>
+	<mx:Label x="124" y="57" text="需要对方确认，友好的切磋技艺，点到即止，不会造成损伤"/>
+	<mx:Text x="124" y="105" text="无需对方确认，可杀死对方并抢夺经验及装备&#xa;刺杀 非敌国 玩家会增加罪恶值，每次刺杀需消耗 3 点精力"/>
+</nscomp:PlayerPKTipImpl>

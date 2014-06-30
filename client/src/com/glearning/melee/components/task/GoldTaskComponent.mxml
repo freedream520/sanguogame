@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:GoldTaskImpl xmlns:nscomp="com.glearning.melee.components.task.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="738" height="484" 
+	    backgroundImage="images/sanGuo/goldgoverBackGround.png">
+	<nscomp:GoldTaskNpcComponent x="25" y="28" id="Npc">
+	</nscomp:GoldTaskNpcComponent>
+	<nscomp:TaskGridComponent x="32" y="212" id="taskList">
+	</nscomp:TaskGridComponent>
+	<nscomp:CurrentTaskListComponent x="509" y="212" id="playerTask">
+	</nscomp:CurrentTaskListComponent>
+	<mx:LinkButton x="700" y="4" styleName="CloseBtn" width="20" height="18" id="closeButton"/>	
+	<mx:Image x="319" y="5" width="111" source="images/sanGuo/gold/goldTitle.png"/>
+</nscomp:GoldTaskImpl>

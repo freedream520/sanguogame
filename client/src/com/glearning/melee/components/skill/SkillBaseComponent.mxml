@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:SkillBaseInfo xmlns:nscomp="com.glearning.melee.components.skill.*" xmlns:filters="flash.filters.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="197" height="432"
+	    backgroundImage="images/sanGuo/left.png">
+	<mx:Script>
+		<![CDATA[
+			import com.glearning.melee.model.MySelf;
+		]]>
+	</mx:Script>
+	<mx:Label x="10" y="10" width="177" textAlign="center" fontWeight="bold" color="0xE0B28E" text="{MySelf.instance.profession}">
+	<mx:filters>
+         <filters:GlowFilter color="0x5C4734"  strength="50"/>
+    </mx:filters>
+	</mx:Label>
+	<mx:Label x="10" y="364" text="20级转职任务" width="89" color="0x18821D" textAlign="center" fontWeight="bold"/>
+	<mx:Label x="10" y="398" text="38级转职任务" width="89" color="0x18821D" textAlign="center" fontWeight="bold"/>
+	<mx:Label x="10" y="302" text="被动技能" width="64" textAlign="center" color="0x000cc" fontWeight="bold"/>
+	<mx:Label x="10" y="217" text="辅助技能" width="64" textAlign="center" color="0xffffff" fontWeight="bold"/>
+	<mx:Label x="10" y="40" text="装备技能" width="64" textAlign="center" fontWeight="bold"/>
+	<mx:VBox backgroundColor="0xffffff" backgroundAlpha="0.1" x="82" y="43" width="32" height="32" id="currentSkill">
+	
+	</mx:VBox>
+	<mx:LinkButton x="115" y="50" label="高级设置" textDecoration="underline" width="72" height="20" color="0X932003" alpha="0" click="openSettings()"/>
+	<mx:Label x="10" y="119" text="主动技能" width="64" textAlign="center" color="0xff0000" fontWeight="bold"/>
+	<mx:Text x="78" y="116" text="拖入[装备技能]内或单击技能后选择[应用技能],即装备,只有装备的技能才会在战斗中自动施展" width="110" height="87"/>
+	<mx:Text x="79" y="214" text="拖到人物形象图片上,或单击技能后选择[应用技能],产生效果" width="108" height="73"/>
+	<mx:Text x="79" y="299" text="无需施展,在修炼后即会生效" width="108" height="54"/>
+	<mx:Label x="87" y="83" width="91" height="18" textAlign="center" id="currentSkillName"/>
+	<mx:LinkButton x="87" y="364" width="110" id="lv20"/>
+	<mx:LinkButton x="87" y="398" width="110" id="lv38"/>
+	
+</nscomp:SkillBaseInfo>

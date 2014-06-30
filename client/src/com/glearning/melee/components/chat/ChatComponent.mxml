@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:ChatImpl verticalGap="0" xmlns:nscomp="com.glearning.melee.components.chat.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="396" height="137"
+	 backgroundImage="images/chat/chatBG.png" color="#000000" creationComplete="initChatWindow()">
+	 
+
+	
+	<mx:HBox width="396" height="22">
+		<mx:Canvas width="395" height="22">
+			<mx:LinkButton x="23" y="3" label="综合" id="complex" width="45" height="18" styleName="chatHeaderSelect" click="chooseChanleHandler(event)"/>
+			<mx:LinkButton x="68" y="3" label="世界" id="world" width="45" height="18" styleName="chatHeader" click="chooseChanleHandler(event)"/>
+			<mx:LinkButton x="113" y="3" label="国家" id ="country" width="45" height="18" styleName="chatHeader" click="chooseChanleHandler(event)"/>
+			<mx:LinkButton x="158" y="3" label="场景" id="scene" width="45" height="18" styleName="chatHeader" click="chooseChanleHandler(event)"/>
+			<mx:LinkButton x="203" y="3" label="密语" id="chatTo" width="45" height="18" styleName="chatHeader" click="chooseChanleHandler(event)"/>
+			<mx:LinkButton x="248" y="3" label="军团" id="legion" width="45" height="18" styleName="chatHeader" click="chooseChanleHandler(event)"/>
+			<mx:LinkButton x="293" y="3" label="队伍" id="procession" width="45" height="18" styleName="chatHeader" click="chooseChanleHandler(event)"/>
+			
+		</mx:Canvas>
+	</mx:HBox>
+	<mx:VBox width="389" height="95" verticalScrollPolicy="off">
+		<mx:UIComponent id="chatInfoContainer" width="375" height="95">
+	    </mx:UIComponent>
+	</mx:VBox>	
+	<mx:HBox width="396" height="20">
+		<mx:Canvas width="396" height="25">
+			<mx:ComboBox rowCount="6" dropdownWidth="40" change="filterChannel(event)" id="channelSelect" x="3" y="3" width="33" height="14" itemRenderer="com.glearning.melee.components.chat.ChannelChangeComponent" styleName="worldUp"/>			  
+		
+			<mx:TextInput x="39" y="2" height="18" width="300" id="textInput" backgroundImage="images/chat/longTextInput.png"
+				 color="#FFFFFF" borderStyle="none" focusThickness="0"/>
+		    <mx:TextInput width="53" height="18" id="nameInput" backgroundImage="images/chat/nameInputBG.png"
+		         color="#FFFFFF" borderStyle="none" visible="false" includeInLayout="false" focusThickness="0" x="39" y="2"/>
+			<mx:LinkButton x="361" y="3" id="sendButton" styleName="sendMessage" width="27" height="14"/>
+			<mx:LinkButton x="346" y="2" id="smile" width="16" height="15"  styleName="chatFace" click="facesWindowClick(event)" />
+		
+		</mx:Canvas>
+	</mx:HBox>
+	
+</nscomp:ChatImpl>

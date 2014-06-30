@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:TaskDetailInfoImpl xmlns:nscomp="com.glearning.melee.components.task.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="600" height="450">
+	<mx:HBox width="100%" horizontalAlign="center">
+		<mx:Label text="Label"/>
+	</mx:HBox>
+	<mx:Label text="Label"/>
+	<mx:HRule width="100%"/>
+	<mx:Canvas width="100%" height="129">
+		<mx:Image x="481" y="10" width="109" height="109"/>
+		<mx:Text x="10" y="10" text="Text" width="445" height="109"/>
+	</mx:Canvas>
+	<mx:HRule width="100%"/>
+	<mx:Label text="[任务奖励]"/>
+	<mx:Text text="Text" width="100%"/>
+	<mx:Label text="[任务目标]"/>
+	<mx:Text text="Text" width="100%"/>
+	<mx:HBox width="100%" horizontalAlign="center">
+		<mx:LinkButton label="确定"/>
+	</mx:HBox>
+</nscomp:TaskDetailInfoImpl>

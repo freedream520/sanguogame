@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:NpcTaskImpl xmlns:nscomp="com.glearning.melee.components.task.*" xmlns:mx="http://www.adobe.com/2006/mxml" height="261" width="515"
+	   backgroundImage="images/sanGuo/taskPanel.png" creationComplete="init()">
+	<mx:Image x="20" y="41" width="134" height="135" id="npcImage"/>
+	<mx:Label x="35" y="189" width="106" id="npcName" textAlign="center"/>
+	<mx:LinkButton x="482" y="2" width="20" height="18" styleName="CloseBtn" id="closeButton"/>
+	<mx:HBox x="171" y="41" width="318" height="173" id="npcTalkTask">
+	</mx:HBox>
+	<mx:Label x="227" y="2" text="查看任务" width="60" textAlign="center" fontWeight="bold"/>
+	
+</nscomp:NpcTaskImpl>

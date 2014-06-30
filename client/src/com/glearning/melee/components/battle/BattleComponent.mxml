@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BattleImpl xmlns="com.glearning.melee.components.battle.*" xmlns:filters="flash.filters.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="980" height="540" backgroundColor="#000000" backgroundAlpha="0.85">
+	<mx:Script>
+		<![CDATA[
+			import mx.collections.ArrayCollection;
+			import com.glearning.melee.model.BattleInfo;
+		]]>
+	</mx:Script>
+	<mx:Canvas y="143" width="176" height="175" id="player1Canvas" x="128" backgroundImage="images/battle/playerBorder.png">
+		<mx:Image x="3" y="2" source="{BattleInfo.instance.player1Img}" width="170" height="170"/>
+	</mx:Canvas>
+	<mx:Image source="images/battle/HPMPRight.png" y="58" height='30' width="159" x="58">
+	</mx:Image>
+	<mx:Image source="images/battle/HPMPRight.png" y="24" height='30' width="159" x="79">
+	</mx:Image>
+	<mx:Label y="12" text="{BattleInfo.instance.player1HP}" width="63" textAlign="center" fontWeight="bold" color="#ff0000" styleName="battleNumStyle" x="102">
+	<mx:filters>
+         <filters:GlowFilter color="#ffffff"  strength="2"/>
+    </mx:filters>
+	</mx:Label>
+	<mx:Label y="45" text="{BattleInfo.instance.player1MP}" width="63" textAlign="center" fontWeight="bold" color="#0000ff" styleName="battleNumStyle" x="80">
+	<mx:filters>
+         <filters:GlowFilter color="#ffffff"  strength="2"/>
+    </mx:filters>
+	</mx:Label>
+	<mx:Canvas y="143" width="176" height="175" id="player2Canvas" x="676" backgroundImage="images/battle/playerBorder.png">
+		<mx:Image x="3" y="2" source="{BattleInfo.instance.player2Img}" width="170" height="170" />
+	</mx:Canvas>	
+	<mx:Image source="images/battle/HPMPLeft.png" y="24" height='30' width="155" x="746">
+	</mx:Image>	
+	<mx:Image source="images/battle/HPMPLeft.png" y="58" height='30' width="159" x="763">
+	</mx:Image>
+	<mx:Label y="12" text="{BattleInfo.instance.player2HP}" width="71" textAlign="center" fontWeight="bold" color="#ff0000" styleName="battleNumStyle" x="807">
+	<mx:filters>
+         <filters:GlowFilter color="#ffffff"  strength="2"/>
+    </mx:filters>
+	</mx:Label>
+	<mx:Label y="45" text="{BattleInfo.instance.player2MP}" width="63" textAlign="center" fontWeight="bold" color="#0000ff" styleName="battleNumStyle" x="837">
+	<mx:filters>
+         <filters:GlowFilter color="#ffffff"  strength="2"/>
+    </mx:filters>
+	</mx:Label>
+	<mx:VBox width="134" height="98" verticalAlign="center" backgroundImage="images/battle/battleTimer.png" y="10" x="423">
+	</mx:VBox>
+	
+	<mx:LinkButton width="20" height="20" styleName="CloseBtn" click="closeBattle()" x="945" y="10"/>
+	<mx:Image source="images/battle/battleBG.png" width="951" height="215" y="324" x="15"/>
+	<mx:Canvas x="10" y="126" width="80" height="96">
+	 <mx:Image x="0" y="0" width="80" height="96" id="l1"/>
+	</mx:Canvas>
+	<mx:Canvas x="10" y="234" width="80" height="96">
+	 <mx:Image x="0" y="0" width="80" height="96" id="l2"/>
+	</mx:Canvas>
+	<mx:Canvas x="890" y="232" width="80" height="96">
+	 <mx:Image x="0" y="0" width="80" height="96" id="r1"/>
+	</mx:Canvas>
+	<mx:Canvas x="888" y="128" width="80" height="96">
+	 <mx:Image x="0" y="0" width="80" height="96" id="r2"/>
+	</mx:Canvas>
+	<BattleMiniPersonComponent x="425" y="311" id="player1">
+	</BattleMiniPersonComponent>
+	<BattleMiniPersonComponent x="425" y="311" id="player2">
+	</BattleMiniPersonComponent>
+	<mx:Canvas y="96" width="291" height="39" x="102" backgroundImage="images/battle/playerLeftBG.png">
+		<mx:Label y="22" width="125" height="17" color="#00ff00" text="{BattleInfo.instance.player1Skill}" fontWeight="bold" left="43"/>
+		<mx:HBox left="10"  horizontalGap="0">
+			<mx:Label text="{BattleInfo.instance.player1Name}" color="#DB3A25" fontWeight="bold"/>
+			<mx:Label text="[" fontWeight="bold" width="8"/>
+			<mx:Label text="LV{BattleInfo.instance.player1Level}" fontWeight="bold" color="#DB3A25"/>
+			<mx:Label text="]" fontWeight="bold" width="8"/>
+			<mx:Label text="{BattleInfo.instance.player1Profession}" fontWeight="bold"/>
+			<mx:Label text="{BattleInfo.instance.player1ProfessionStage}" fontWeight="bold"/>
+		</mx:HBox>
+		
+	</mx:Canvas>
+	<mx:Canvas y="96" width="291" height="39" right="102" backgroundImage="images/battle/playerRightBG.png">
+		<mx:Label y="22" width="125" height="17" color="#00ff00" text="{BattleInfo.instance.player2Skill}" fontWeight="bold" right="43"/>
+		<mx:HBox horizontalAlign="right" right="10" horizontalGap="0">
+			<mx:Label text="{BattleInfo.instance.player2Name}" color="#DB3A25" fontWeight="bold"/>
+			<mx:Label text="[" fontWeight="bold" width="8"/>
+			<mx:Label text="LV{BattleInfo.instance.player2Level}" fontWeight="bold" color="#DB3A25"/>
+			<mx:Label text="]" fontWeight="bold" width="8"/>
+			<mx:Label text="{BattleInfo.instance.player2Profession}" fontWeight="bold"/>
+			<mx:Label text="{BattleInfo.instance.player2ProfessionStage}" fontWeight="bold"/>
+		</mx:HBox>
+		
+	</mx:Canvas>
+	<mx:Label width="97" text="{BattleInfo.instance.battleTime}" textAlign="center" x="443" y="68" fontWeight="bold" styleName="battleNumStyle">
+	<mx:filters>
+         <filters:GlowFilter color="#291d16"  strength="30"/>
+    </mx:filters>
+    </mx:Label>
+	<mx:Label text="{BattleInfo.instance.battleType}" textAlign="center" height="25" x="441" y="18" fontSize="20" fontWeight="bold" width="97">
+	<mx:filters>
+         <filters:GlowFilter color="#291d16"  strength="30"/>
+    </mx:filters>
+    </mx:Label>
+	<mx:Canvas x="0" y="37" width="980" height="503" backgroundAlpha="0" id="traversalCanvas">
+	</mx:Canvas>
+	<mx:Canvas y="26" width="195" height="13" backgroundImage="images/battle/kuang.png" x="160">
+		<mx:Canvas height="11" styleName="battleHp" y="1" id="player1Hp" left="2">
+		</mx:Canvas>
+	</mx:Canvas>
+	<mx:Canvas y="62" width="195" height="13" backgroundImage="images/battle/kuang.png" x="141">
+		<mx:Canvas y="1" height="11" styleName="battleMp" id="player1Mp" left="2">
+		</mx:Canvas>
+	</mx:Canvas>
+	<mx:Canvas y="26" width="195" height="13" backgroundImage="images/battle/kuang.png" x="625">
+		<mx:Canvas y="1" height="11" styleName="battleHp" id="player2Hp" right="2">
+		</mx:Canvas>
+	</mx:Canvas>
+	<mx:Canvas y="62" width="195" height="13" backgroundImage="images/battle/kuang.png" x="644">
+		<mx:Canvas y="1" height="11" styleName="battleMp" id="player2Mp" right="2">
+		</mx:Canvas>
+	</mx:Canvas>
+	<mx:Canvas x="0" y="37" width="980" height="503"  backgroundAlpha="0" id="effectScene">
+	</mx:Canvas>
+	
+</BattleImpl>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:NormalTipImpl xmlns:nscomp="com.glearning.melee.components.prompts.*" xmlns:filters="flash.filters.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="287" height="138" backgroundImage="images/NormalTip/NprmalTip.png">
+	<mx:Text x="10" y="30" width="267" id="tipText" textAlign="center"/>
+	<mx:HBox x="0" y="104" width="100%" horizontalAlign="center">
+		<mx:LinkButton id="accept" styleName="ok"/>
+		<mx:LinkButton click="close()" id="cancel" styleName="cancel"/>
+	</mx:HBox>
+	<mx:Label x="126" y="2" text="提醒" fontWeight="bold" color="#e0b28e">
+	<mx:filters>
+	     <filters:GlowFilter color="0x5C4734"  strength="5"/>
+	</mx:filters>
+	</mx:Label>
+	
+</nscomp:NormalTipImpl>

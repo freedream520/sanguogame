@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DateInfoImpl xmlns="com.glearning.melee.components.login.*" xmlns:mx="http://www.adobe.com/2006/mxml">
+	<mx:Label id="dateInfo" color="#3888E9"/>
+	
+</DateInfoImpl>

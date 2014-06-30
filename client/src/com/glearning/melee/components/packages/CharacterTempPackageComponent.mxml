@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:CharacterTempPackageImpl xmlns:nscomp="com.glearning.melee.components.packages.*" xmlns:filters="flash.filters.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="298" height="281" backgroundImage="images/sanGuo/tempPackage.png">
+	<mx:Label x="17" y="251" text="请把战利品拖入您的正式包裹"/>
+	<mx:Label text="临时包裹" x="122" y="3">
+	<mx:filters>
+     <filters:GlowFilter color="0x5C4734"  strength="2"/>
+    </mx:filters>
+	</mx:Label>
+	<mx:LinkButton x="201" y="249" label="全部出售" styleName="CommonLinkButton" alpha="0" click="sellAll()" height="20"/>
+	<mx:LinkButton x="263" y="-1" styleName="CloseBtn" width="20" height="20" click="close()"/>
+	<nscomp:PackageComponent x="17" y="35" id="tempPackage">
+	</nscomp:PackageComponent>
+
+</nscomp:CharacterTempPackageImpl>

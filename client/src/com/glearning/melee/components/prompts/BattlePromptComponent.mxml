@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BattlePromptImpl xmlns="com.glearning.melee.components.prompts.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="290" height="339">
+	<mx:Image maintainAspectRatio="false"  x="0" y="0" width="290" height="339" source="images/battle/battleResultBG.png" />
+	<mx:LinkButton y="313" styleName="closeBattle" id="closeAllBattle" width="64" height="19" x="113"/>
+	<mx:Image id="img" source="images/battle/success.jpg" y="28" horizontalCenter="0"/>
+	<mx:Canvas y="236" height="76" width="244" x="23">
+		<mx:Text x="0" y="0" id="loserPlayer" width="95%"/>
+		<mx:Text x="0" y="18" id="winnerPlayer" width="95%"/>
+		<mx:Label x="0" y="36" id="winnerPlayerExp"/>
+		<mx:Text x="0" y="51" id="itemBonuses" width="95%"/>
+	</mx:Canvas>
+	
+	
+</BattlePromptImpl>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:PlayerCountryImpl horizontalAlign="center" xmlns:nscomp="com.glearning.melee.components.*" xmlns:mx="http://www.adobe.com/2006/mxml" >
+	<mx:Image x="0" y="0" id="country"/>
+	
+</nscomp:PlayerCountryImpl>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:GoldTaskNpcImpl xmlns:nscomp="com.glearning.melee.components.task.*" xmlns:ns1 = "com.glearning.melee.components.*" xmlns:mx="http://www.adobe.com/2006/mxml" height="180" width="695" creationComplete="init()">
+	<mx:Image x="518" y="5" width="170" height="170" id="npcPic"/>
+	<mx:Text x="10" y="20" width="494" height="127" id="npcTalk" mouseEnabled="false"/>
+	<mx:LinkButton x="36" y="150" id="talkButton" styleName="talkButton"/>
+	<mx:Image x="21" y="151" source="images/talk.gif"/>
+	
+</nscomp:GoldTaskNpcImpl>

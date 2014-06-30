@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:ExChangeImpl xmlns:nscomp="com.glearning.melee.components.*" xmlns:mx="http://www.adobe.com/2006/mxml" backgroundAlpha="0" horizontalAlign="center" verticalAlign="middle" horizontalGap="0" verticalGap="0">
+	<mx:Image click="playerExchange();" id="exchange"/>
+</nscomp:ExChangeImpl>

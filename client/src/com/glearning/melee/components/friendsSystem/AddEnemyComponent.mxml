@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:AddEnemyImpl xmlns:nscomp="com.glearning.melee.components.friendsSystem.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="379" height="184" backgroundImage="images/sanGuo/payMoney.png">
+	<mx:LinkButton x="345" y="0" width="20" height="20" styleName="CloseBtn" click="close()"/>
+	<mx:Label x="162" y="2" text="添加仇敌" fontWeight="bold"/>
+	<mx:Label x="27" y="80" text="人物名称："/>
+	<mx:Text x="27" y="38" mouseEnabled="false" text="害人之心不可有，防人之心不可无。&#xa;行走乱世，当爱憎分明，对待敌人如秋风扫落叶。" enabled="false" />
+	<mx:TextInput x="91" y="80" width="100" id="playerName"/>
+	<mx:Label x="199" y="80" text="( 请填写仇敌人物名称 )"/>
+	<mx:Label x="27" y="108" text="屏蔽信函："/>
+	<mx:CheckBox x="91" y="106" label="是否拒绝接收该人物发送的信函 " width="197" id="isCheck"/>
+	<mx:LinkButton y="136" click="ok()" styleName="ok" x="91"/>
+	<mx:LinkButton y="136" click="close()" styleName="cancel" x="224"/>
+	
+</nscomp:AddEnemyImpl>

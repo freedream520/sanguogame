@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:SheildedMailImpl xmlns:nscomp="com.glearning.melee.components.friendsSystem.*" xmlns:mx="http://www.adobe.com/2006/mxml" label="未屏蔽" textDecoration="underline" click="sheildedMail();" alpha="0.0" height="20">
+
+</nscomp:SheildedMailImpl>

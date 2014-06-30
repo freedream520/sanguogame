@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LoginImpl xmlns="com.glearning.melee.components.login.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="980" height="541" backgroundImage="images/sanGuo/login/loginBg.jpg"
+	 creationComplete="initLoginComponent()">	
+	       <mx:Canvas  x="355" y="222" width="607" height="239" backgroundImage="images/sanGuo/login/loginBG.png">
+	       	<mx:TextInput id="userName" backgroundAlpha="0.5"  x="72" y="23" width="105" styleName="input"/>	
+			<mx:TextInput id="password" displayAsPassword="true" editable="true" x="72" y="56" width="105" styleName="input"/>	
+			<mx:Button styleName="login" id="loginSubmit" color="#000000" x="84" y="95"/>
+			<mx:LinkButton x="183" y="24" styleName="register" id="register"/>
+			<mx:LinkButton x="183" y="58" styleName="forgetPwd"/>
+			<mx:DataGrid x="310" y="5" width="296" height="224" showHeaders="false" styleName="dataGrid" id="gameInfo" alpha="0" useRollOver="false" selectionColor="#ffffcc">
+						<mx:columns>
+									<mx:DataGridColumn dataField="title" width="250" itemRenderer="com.glearning.melee.components.login.AdvanceInfoComponent"/>
+									<mx:DataGridColumn dataField="date"  itemRenderer="com.glearning.melee.components.login.DateInfoComponent"/>									
+						</mx:columns>
+			</mx:DataGrid>
+			<mx:Image x="25" y="26" source="images/sanGuo/login/username.png"/>
+			<mx:Image x="24" y="62" source="images/sanGuo/login/pwd.png"/>
+
+	       </mx:Canvas>
+	       <mx:LinkButton x="664" y="470" styleName="EnterDiscuss" width="94" height="24"/>
+	       <mx:LinkButton x="765" y="470" styleName="EnterSite" width="94" height="24"/>
+	       <mx:LinkButton x="868" y="470" styleName="onlineHelp" width="94" height="24"/>
+	       <mx:LinkButton x="916" y="206" styleName="more" width="22" height="14"/>
+	       <mx:Image x="353" y="10" width="274" height="152" source="images/sanGuo/login/gameLogo.png"/>
+	       <mx:Image x="377.5" y="184" width="199" height="30" source="images/sanGuo/login/userLoginTitle.png"/>
+	       <mx:Image x="666" y="200" width="76" height="20" source="images/sanGuo/login/gameAd.png"/>
+	       <mx:Label x="791" y="10" text="当前版本号" width="68"/>
+	       <mx:Label x="867" y="10" width="103" id="version"/>
+			
+</LoginImpl>

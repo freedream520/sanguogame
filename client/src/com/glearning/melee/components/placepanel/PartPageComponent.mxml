@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PartPageImpl horizontalGap="0" verticalAlign="middle" xmlns="com.glearning.melee.components.placepanel.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="284" height="24"
+	         >
+	<mx:LinkButton x="51" y="0" label="上一页" textDecoration="underline" id="lastPage" width="71" alpha="0" color="#744624" disabledColor="#C4A37A" click="goToLastPage(event)"/>
+	<mx:LinkButton x="130" y="0" label="下一页" textDecoration="underline" id="nextPage" alpha="0" color="#744624" disabledColor="#C4A37A" click="goToNextPage(event)"/>
+	<mx:LinkButton alpha="0" label="首页" textDecoration="underline" id="firstPage" color="#744624" disabledColor="#C4A37A" click="goToFirstPage(event)"/>
+	<mx:LinkButton x="197" y="0" alpha="0" label="尾页" textDecoration="underline"  id="finalPage" color="#744624" disabledColor="#C4A37A" click="goToFinalPage(event)"/>
+	<mx:ComboBox height="18" width="55" id="pageNum" change="getNewPlayerList(event)" dropdownStyleName="dropStyle"/>
+	
+</PartPageImpl>

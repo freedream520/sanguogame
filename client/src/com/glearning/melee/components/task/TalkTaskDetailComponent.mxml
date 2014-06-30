@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:TalkTaskDetailImpl xmlns:nscomp="com.glearning.melee.components.task.*" xmlns:mx="http://www.adobe.com/2006/mxml"
+	    verticalGap="4" height="173" width="317" >
+	<mx:Script>
+		<![CDATA[
+			
+			import com.glearning.melee.model.TaskInfo;
+		]]>
+	</mx:Script>
+	<mx:HBox width="100%">
+		<mx:Image width="20" height="20"/>
+		<mx:Label width="171" id="taskName" />
+		<mx:Label  width="63" id="taskType" />
+	</mx:HBox>
+	<mx:Text width="100%" id="description" />
+	<mx:VBox width="100%">
+		<mx:Label text="目标"/>
+		<mx:Text width="100%" id="target" />
+		<mx:Label text="您将获得"/>
+		<mx:Text width="100%" id="award" />
+		<mx:Text width="100%" id="itemBouns" toolTip=" " toolTipCreate="createCustomToolTip(event)" />
+	</mx:VBox>
+	<mx:HBox width="100%" horizontalAlign="center">
+		<mx:LinkButton id="accept"/>
+		<mx:LinkButton label="返回" id="backForward"/>
+	</mx:HBox>
+	
+</nscomp:TalkTaskDetailImpl>

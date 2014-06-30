@@ -1,0 +1,8 @@
+"iId	",sName,sImageLeft,sImageRight,iTime,iWidth,iHeight,iXAxis,iYAxis,iTextXAxisLeft,iTextYAxisLeft,iTextXAxisRight,iTextYAxisRight,iTextWidth,iTextHeight
+1,正常,images/Balloon/DM/00L.png,images/Balloon/DM/00L.png,2000,228,46,234,44,25,35,25,35,87,73
+111,11型1,images/Balloon/11_1.png,images/Balloon/11_2.png,2000,228,49,275,179,27,10,25,10,176,30
+611,61型1,images/Balloon/61_1.png,images/Balloon/61_2.png,2000,237,253,239,121,61,108,60,108,117,85
+211,21型1,images/Balloon/21_1.png,images/Balloon/21_2.png,2000,173,165,242,61,32,21,30,21,111,68
+311,31型1,images/Balloon/31_1.png,images/Balloon/31_2.png,2000,169,128,242,127,26,25,19,25,125,42
+411,41型1,images/Balloon/41_1.png,images/Balloon/41_2.png,2000,121,98,263,198,26,28,21,28,76,55
+511,51型1,images/Balloon/51_1.png,images/Balloon/51_2.png,2000,192,200,264,146,17,67,60,67,117,82

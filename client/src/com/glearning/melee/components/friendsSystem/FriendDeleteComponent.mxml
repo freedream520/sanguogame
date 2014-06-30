@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:FriendDeleteImpl click="del();" height="20" label="删除" xmlns:nscomp="com.glearning.melee.components.friendsSystem.*" xmlns:mx="http://www.adobe.com/2006/mxml" alpha="0.0" textDecoration="underline">
+
+</nscomp:FriendDeleteImpl>

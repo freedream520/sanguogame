@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:NpcDescriptionImpl xmlns:nscomp="com.glearning.melee.components.*" xmlns:mx="http://www.adobe.com/2006/mxml" height="222" width="504"
+	                     backgroundImage="images/sanGuo/deathBorder.png">
+	<mx:Image x="19" y="34" width="170" height="170" id="npcImage"/>
+	<mx:Label x="216" y="1" text="人物简介" color="#e0b28e" fontWeight="bold" />
+	<mx:LinkButton x="475" y="1" styleName="CloseBtn" id="closeButton" width="19" height="18"/>
+	<mx:Label x="213" y="34" width="281" id="npcName"/>
+	<mx:Text x="213" y="62" width="281" height="142" id="description"/>	
+</nscomp:NpcDescriptionImpl>

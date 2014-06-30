@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:HangImpl xmlns:nscomp="com.glearning.melee.components.ProcedureHall.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="416" height="241" backgroundImage="images/sanGuo/procedurehall/hallBG.png">
+	<mx:Image x="10" y="10" width="154" height="104" source="images/sanGuo/procedurehall/hallimg.png"/>
+	<mx:Text x="172" y="10" text="道馆&#xa;城里供给有能力的武者修行的地方，是训练和传艺的绝佳场所。" width="230" fontWeight="bold"/>
+	<mx:HBox x="5" y="193" width="100%">
+		<mx:Label text="Label" id="hangAlert"/>
+		<mx:Label text="" id="countdown" color="#ff0000"/>
+		<mx:LinkButton id="training" click="start('training')" styleName="training"/>
+		<mx:LinkButton label="训练设置" height="20" id="trainingSet" click="openSet('training')"/>
+		<mx:LinkButton label="授艺" height="20" id="entertainer" click="start('entertainer')"/>
+		<mx:LinkButton label="授艺设置" height="20" id="entertainerSet" click="openSet('entertainer')"/>
+	</mx:HBox>
+	<mx:Text x="10" y="122" text="在这里，你只需向支付一定的费用，便能请到道馆的馆主对你倾囊相授。为了对抗动漫世界的危机，道馆目前还在不断扩建中，以后还希望你能在这里为别人传授技艺。" width="392" height="63" fontWeight="bold"/>
+</nscomp:HangImpl>

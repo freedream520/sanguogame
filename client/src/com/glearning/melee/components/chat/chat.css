@@ -1,0 +1,55 @@
+/* CSS file */
+.chatHeader
+{
+	skin: Embed("images/chat/chatHeaderButton1.gif");
+	over-skin: Embed("images/chat/chatHeaderButton2.gif");
+	font-size: 10px;
+	font-weight: normal;
+	color:#FFFFFF;
+}
+
+.sendMessage
+{
+	skin: Embed("images/chat/sendMessage1.gif");
+	over-skin: Embed("images/chat/sendMessage2.gif");
+}
+
+.worldUp
+{
+	skin: Embed("images/chat/worldUp1.gif");
+	over-skin: Embed("images/chat/worldUp2.gif");	
+}
+
+.upButton
+{
+	skin: Embed("images/chat/upButton1.gif");
+	over-skin: Embed("images/chat/upButton2.gif");	
+}
+
+.downButton
+{
+	skin: Embed("images/chat/downButton1.gif");
+	over-skin: Embed("images/chat/downButton2.gif");	
+}
+
+.complex
+{
+	skin: Embed("images/chat/complex1.gif");
+	over-skin: Embed("images/chat/complex2.gif");	
+}
+
+.world
+{
+/* 	skin: Embed("images/chat/world1.gif");
+	over-skin: Embed("images/chat/world2.gif");	 */
+}
+
+.country
+{
+	skin: Embed("images/chat/country1.gif");
+	over-skin: Embed("images/chat/country2.gif");
+}
+
+.chatFace{
+	skin: Embed("images/chat/chatFace.gif");
+}

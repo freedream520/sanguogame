@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nscomp:NpcItemImpl xmlns:nscomp="com.glearning.melee.components.*" xmlns:mx="http://www.adobe.com/2006/mxml" width="140" height="40" backgroundAlpha="0.0">
+	<mx:Image x="0" y="0" id="npcIcon" data="{npcData.id}" source="{npcData.image}" click="NpcInfo()">
+	</mx:Image>
+	<mx:Label x="40" y="0" text="{npcData.name}" id="npcName" height="21" />
+	<mx:Image x="40" y="20" id="talkNpc" click="talk();">
+		<mx:source>images/icon-talk.gif</mx:source>
+	</mx:Image>
+</nscomp:NpcItemImpl>
